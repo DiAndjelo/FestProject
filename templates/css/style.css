@@ -1,11 +1,59 @@
 body{
   background: #0D0D0D !important;
 }
+.otstup{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.btn_child_gallery{
+   background: 0;
+}
+.child_gallery{
+background: url("../img/Захар.png") no-repeat;
+display: block;
+width: 166px;
+height: 195px;
+-webkit-transition: .4s ease; /* Safari and Chrome */
+-moz-transition: .4s ease; /* Firefox 4 */
+-o-transition: .4s ease; /* Opera */
+}
+button:hover .child_gallery{
+background: url("../img/Олег.png") no-repeat !important;
+transition: 0.4s;
+}
 .btn-city{
   width: 30%;
 }
 .navbar-collapse{
-  
+
+}
+.footer_title{
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+}
+.footer_about{
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+.callmebaby{
+  color: #ffffff;
+}
+.callmebaby:hover{
+  text-decoration: none;
+  color: #EDC043;
+  transition: 0.4s;
+}
+.footer_nav_link{
+  color: #ffffff;
+  fill: #ffffff;
+}
+.footer_nav_link:hover{
+  color: #EDC043;
+  fill: #EDC043;
+  transition: 0.4s;
+  text-decoration: none;
 }
 @media (max-width: 575px) {
   .btn-city{
@@ -84,10 +132,13 @@ h6.thisday{
 }
 .nav_link_menu{
   color: #fff;
+  fill: #fff;
 }
 .nav_link_menu:hover{
   text-decoration: none;
-  color: #fff;
+  color: #EDC043;
+  transition: 0.4s;
+  fill: #EDC043;
   opacity: 80%;
 }
 .nav-item.col-lg-2{
@@ -110,6 +161,14 @@ h6.thisday{
   font-weight: bold;
   font-size: 32px;
   line-height: 32px;
+  color: #ffffff;
+}
+.nickname:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+.opacity{
+  opacity: 20%;
 }
 .bg-main{
   position: absolute;
@@ -163,6 +222,18 @@ h6.thisday{
 .navbar-toggler{
   border: 0 !important;
 }
+
+.text-welcome{
+  font-weight: normal;
+font-size: 14px;
+line-height: 14px;
+text-indent: 20px;
+}
+.cooperation_about{
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 20px;
+}
 .buy_ticket{
   background: 0;
   color: #ffffff;
@@ -175,6 +246,8 @@ h6.thisday{
   color: #FFFFFF;
   opacity: 80%;
   transition: 0.4s;
+  border-bottom: 2px solid #EDC043 !important;
+
 }
 .title_project{
   font-weight: bold;
