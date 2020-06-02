@@ -1,6 +1,7 @@
 body{
   background: #0D0D0D !important;
 }
+<<<<<<< HEAD
 .otstup{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -21,10 +22,13 @@ button:hover .child_gallery{
 background: url("../img/Олег.png") no-repeat !important;
 transition: 0.4s;
 }
+=======
+>>>>>>> 4549f016365e45066e9f72bb9eb8d50d8210597a
 .btn-city{
   width: 30%;
 }
 .navbar-collapse{
+<<<<<<< HEAD
 
 }
 .footer_title{
@@ -54,6 +58,9 @@ transition: 0.4s;
   fill: #EDC043;
   transition: 0.4s;
   text-decoration: none;
+=======
+  
+>>>>>>> 4549f016365e45066e9f72bb9eb8d50d8210597a
 }
 @media (max-width: 575px) {
   .btn-city{
@@ -132,6 +139,7 @@ h6.thisday{
 }
 .nav_link_menu{
   color: #fff;
+<<<<<<< HEAD
   fill: #fff;
 }
 .nav_link_menu:hover{
@@ -139,6 +147,12 @@ h6.thisday{
   color: #EDC043;
   transition: 0.4s;
   fill: #EDC043;
+=======
+}
+.nav_link_menu:hover{
+  text-decoration: none;
+  color: #fff;
+>>>>>>> 4549f016365e45066e9f72bb9eb8d50d8210597a
   opacity: 80%;
 }
 .nav-item.col-lg-2{
@@ -161,6 +175,7 @@ h6.thisday{
   font-weight: bold;
   font-size: 32px;
   line-height: 32px;
+<<<<<<< HEAD
   color: #ffffff;
 }
 .nickname:hover{
@@ -169,6 +184,8 @@ h6.thisday{
 }
 .opacity{
   opacity: 20%;
+=======
+>>>>>>> 4549f016365e45066e9f72bb9eb8d50d8210597a
 }
 .bg-main{
   position: absolute;
@@ -222,6 +239,7 @@ h6.thisday{
 .navbar-toggler{
   border: 0 !important;
 }
+<<<<<<< HEAD
 
 .text-welcome{
   font-weight: normal;
@@ -234,6 +252,8 @@ text-indent: 20px;
   font-size: 20px;
   line-height: 20px;
 }
+=======
+>>>>>>> 4549f016365e45066e9f72bb9eb8d50d8210597a
 .buy_ticket{
   background: 0;
   color: #ffffff;
@@ -246,8 +266,11 @@ text-indent: 20px;
   color: #FFFFFF;
   opacity: 80%;
   transition: 0.4s;
+<<<<<<< HEAD
   border-bottom: 2px solid #EDC043 !important;
 
+=======
+>>>>>>> 4549f016365e45066e9f72bb9eb8d50d8210597a
 }
 .title_project{
   font-weight: bold;
