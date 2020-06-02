@@ -1,6 +1,9 @@
 body{
   background: #0D0D0D !important;
 }
+header{
+  background: red !important;
+}
 .otstup{
   margin-top: 50px;
   margin-bottom: 50px;
