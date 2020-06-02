@@ -6,4 +6,4 @@ from django.views.generic.base import View
 
 class LandingView(View):
     def get(self, request):
-        return render(request, 'Landing/index.html', {'range1': range(3)})
+        return render(request, 'Landing/landing.html', {'range1': range(3)})
