@@ -41,7 +41,7 @@
                   <li class="navbar_mobile">
                     <ul class="d-flex flex-column flex-lg-row m-0 list-unstyled py-4 py-lg-0">
                       <li class="nav-item text-center text-lg-left">
-                        <a class="nav_link_menu text-center mr-0 mr-lg-3   btn-block" href=#>фестиваль<span class="sr-only">(current)</span></a>
+                        <a class="nav_link_menu text-center mr-0 mr-lg-3  btn-block" href=#>фестиваль<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item text-center text-lg-left">
                         <a class="nav_link_menu mr-0 mr-lg-3  btn-block" href=#>участники<span class="sr-only">(current)</span></a>
@@ -104,26 +104,25 @@
 
     <section>
 
-      <div class="container-fluid" style="background: url('../../static/img/imghead12.png') no-repeat; background-size: cover;">
-        <div class="row d-flex justify-content-center align-items-center" style="padding-top: 76px; height: 714px;">
+      <div class="container-fluid" style="background: url('../../static/img/imghead12.png') no-repeat; background-size: cover; height: 100vh;">
+        <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
           <!--<img src="{% static 'img/imghead.png' %}" alt="" class="bg-main img-fluid">-->
           <div class="text-center" style="">
-            <img src="{% static 'img/logo.png' %}" class="logo_print img-fluid" alt="">
-            <h4 class="title_project_about text-uppercase my-4">БУДЕМ ВМЕСТЕ  24/08/2020 - 31/08/2020</h4>
+            <img src="{% static 'img/logo.png' %}" class="logo_print img-fluid my-4" alt="">
             <div class="d-flex flex-column flex-md-row justify-content-center" href="#ched">
-              <button type="button" class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0" href="#shedule">
+              <button onclick="window.location.href = '#schedule';" type="button" class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0" href="#shedule">
                 <svg width="6" height="12" class="mr-2"viewBox="0 0 6 12" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.96967C0.512563 0.676777 0.987437 0.676777 1.28033 0.96967L5.78033 5.46967C6.07322 5.76256 6.07322 6.23744 5.78033 6.53033L1.28033 11.0303C0.987437 11.3232 0.512563 11.3232 0.21967 11.0303C-0.0732233 10.7374 -0.0732233 10.2626 0.21967 9.96967L4.18934 6L0.21967 2.03033C-0.0732233 1.73744 -0.0732233 1.26256 0.21967 0.96967Z"/>
                 </svg>
               расписание
               </button>
-              <button class="btn btn-light text-left text-md-center my-4 my-md-0 btn-style text-uppercase px-4 mx-2 mx-md-4">
+              <button onclick="window.location.href = '#camping';" type="button" class="btn btn-light text-left text-md-center my-4 my-md-0 btn-style text-uppercase px-4 mx-2 mx-md-4">
                 <svg width="6" height="12" class="mr-2"viewBox="0 0 6 12" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.96967C0.512563 0.676777 0.987437 0.676777 1.28033 0.96967L5.78033 5.46967C6.07322 5.76256 6.07322 6.23744 5.78033 6.53033L1.28033 11.0303C0.987437 11.3232 0.512563 11.3232 0.21967 11.0303C-0.0732233 10.7374 -0.0732233 10.2626 0.21967 9.96967L4.18934 6L0.21967 2.03033C-0.0732233 1.73744 -0.0732233 1.26256 0.21967 0.96967Z"/>
                 </svg>
               кемпинг
               </button>
-              <button class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0">
+              <button onclick="window.location.href = '#coop';" type="button" class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0">
                 <svg width="6" height="12" class="mr-2"viewBox="0 0 6 12" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.96967C0.512563 0.676777 0.987437 0.676777 1.28033 0.96967L5.78033 5.46967C6.07322 5.76256 6.07322 6.23744 5.78033 6.53033L1.28033 11.0303C0.987437 11.3232 0.512563 11.3232 0.21967 11.0303C-0.0732233 10.7374 -0.0732233 10.2626 0.21967 9.96967L4.18934 6L0.21967 2.03033C-0.0732233 1.73744 -0.0732233 1.26256 0.21967 0.96967Z"/>
                 </svg>
@@ -132,72 +131,75 @@
             </div>
             <div class="col-12 d-block d-md-none"><div class="row text-muted justify-content-end mt-2 px-2">18+</div></div>
           </div>
-          <div class="d-none d-md-block col-12 text-muted p-0" style="position: absolute; margin-top: 305px;"><div class="row pl-0 pb-0 pl-sm-3 pb-sm-3 mx-2">18+</div></div>
+          <div class="d-none d-md-block col-12 text-muted p-0" style="position: absolute; bottom: 0;"><div class="row pl-0 pb-0 pl-sm-3 pb-sm-3 mx-2">18+</div></div>
         </div>
       </div>
     </section>
 
 
-    <section style="background: linear-gradient(180deg, #200404 0%, #0D0D0D 18.23%);">
-      <div class="container">
+    <section style="background: linear-gradient(180deg, rgba(14, 10, 22, 0) 0%, #00060F 18.23%);">
+      <div class="container py-2 py-md-5">
         <div class="row">
-          <div class="col-12 col-md-6 text-white">
-            <h5 class="text-uppercase text-center text-md-right">location & якорная щель</h5>
+          <div class="col-12 col-md-12 text-white">
+            <h5 class="section_title text-center mb-4">якорная щель</h5>
           </div>
-          <div class="col-12 col-md-6 text-white"></div>
         </div>
         <div class="row text-white">
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-12 col-lg-7 col-xl-7  d-none d-sm-block">
             <div class="row my-0">
               <div class="col-12">
                 <div class="">
-                  <a><img src="{% static 'img/white.png' %}" class="img-fluid w-100"></a>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="row mt-4">
-                    {% for i in range1 %}
-                        <div class="col-4">
-                            <div class="">
-                                <a><img src="{% static 'img/white.png' %}" class="img-fluid"></a>
-                            </div>
-                        </div>
-                    {% endfor %}
+                  <a><img src="{% static 'img/Mask Group.png' %}" class="w-100 img-fluid"></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 mt-4 mt-md-0">
+          <div class="col-12 col-md-12 col-lg-5 col-xl-5 mt-4 mt-lg-0  d-none d-sm-block">
             <div class="d-flex flex-column h-100">
-              <div class="">
-                <h4 class="text-muted">The place where we found ourselves</h4>
-              </div>
-              <div class="">
-                <p class="text-justify text-welcome m-0">
-                  Приветствуем вас, затухающие после самоизоляции сердца. Представляем вам наш фестиваль, впервые проходящий в пансионате "Якорная Щель" и в России.     Именно в этом месте, впитавшем в себя морской бриз, лесные массивы и горные серпантины, во всю кипит творческая жизнь.
-                </p>
-                <p class="text-justify text-welcome m-0">2020 год, начало нового десятилетия, а значит и пора что-то менять. Дебютный фестиваль <span style="color: #EDC043;">"ЧесТнок"</span> открывает дорогу молодым и талантливым исполнителям, которые смогут выступить на одной сцене с профессиональными музыкантами нашей страны. Вдали от пыльного города в ритме с природой.
-                </p>
-                <p class="text-justify text-welcome">Наш фестиваль долгое время был в разработке и наконец выходит в свет. Да, мир после пандемии не  будет прежним, но никто и не заморозил пути для питания своих нажежд и достижения целей. Даже во-время " всемирного потопа", творчество семимильными шагами идет вперёд. Пленящий морской горизонт, теплая зелень леса. Тихое место, в котором  раскрываются самые громкие сердца. Здесь мы пишем свою музыку, находим себя в разных сферах, при этом, узнаем таинства природы, её обитателей,  ведь в каждом человеке и существе можно обнаружить то, что не описать словами. Тут, мы влюбляемся, сопереживаем, сплачивпемся и верим в будущее. Именно сейчас, мы хотим умножать желание действовать, строить новые ступени творческого и социального мира и возвысить понятия о музыке, поэзии и кино.
-                </p>
-              </div>
+              <a><img src="{% static 'img/main_3.jpg' %}" class="w-100 img-fluid"></a>
               <div class="mt-auto">
-                <button class="btn btn-style text-uppercase px-4">
-                  <svg width="9" height="11" class="mr-2" viewBox="0 0 9 11" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0.916674C3.54522 0.916674 2.62955 1.30298 1.95442 1.99062C1.27928 2.67826 0.9 3.6109 0.9 4.58337C0.9 6.00332 1.80708 7.38117 2.80168 8.45047C3.28978 8.97523 3.7794 9.40483 4.1475 9.70338C4.2845 9.81449 4.40416 9.90704 4.5 9.97918C4.59584 9.90704 4.7155 9.81449 4.8525 9.70338C5.2206 9.40483 5.71022 8.97523 6.19832 8.45047C7.19292 7.38117 8.1 6.00332 8.1 4.58337C8.1 3.6109 7.72072 2.67826 7.04558 1.99062C6.37045 1.30298 5.45478 0.916674 4.5 0.916674ZM4.5 10.5417C4.25038 10.9231 4.25027 10.923 4.25014 10.9229L4.24886 10.9221L4.24586 10.92L4.23554 10.9129C4.22678 10.9068 4.21428 10.8981 4.1983 10.8869C4.16634 10.8643 4.12041 10.8315 4.06251 10.7889C3.94675 10.7037 3.78286 10.5794 3.58687 10.4205C3.1956 10.1031 2.67272 9.6447 2.14832 9.08091C1.11792 7.97311 0 6.37177 0 4.58337C2.68221e-08 3.36778 0.474106 2.20199 1.31802 1.34244C2.16193 0.482889 3.30653 0 4.5 0C5.69347 0 6.83807 0.482889 7.68198 1.34244C8.52589 2.20199 9 3.36778 9 4.58337C9 6.37177 7.88208 7.97311 6.85168 9.08091C6.32728 9.6447 5.8044 10.1031 5.41313 10.4205C5.21714 10.5794 5.05325 10.7037 4.93749 10.7889C4.87959 10.8315 4.83366 10.8643 4.8017 10.8869C4.78572 10.8981 4.77322 10.9068 4.76446 10.9129L4.75414 10.92L4.75114 10.9221L4.75019 10.9227C4.75006 10.9228 4.74961 10.9231 4.5 10.5417ZM4.5 10.5417L4.74961 10.9231C4.59846 11.0257 4.4013 11.0256 4.25014 10.9229L4.5 10.5417Z" />
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 3.66667C4.00294 3.66667 3.6 4.07708 3.6 4.58335C3.6 5.08961 4.00294 5.50002 4.5 5.50002C4.99706 5.50002 5.4 5.08961 5.4 4.58335C5.4 4.07708 4.99706 3.66667 4.5 3.66667ZM2.7 4.58335C2.7 3.57082 3.50589 2.75 4.5 2.75C5.49411 2.75 6.3 3.57082 6.3 4.58335C6.3 5.59588 5.49411 6.41669 4.5 6.41669C3.50589 6.41669 2.7 5.59588 2.7 4.58335Z"/>
-                  </svg>
-                  карта
-                </button>
+                <div class="d-flex flex-column flex-xl-row">
+                  <button class="my-4 my-xl-0 btn btn-block btn-showmap">
+                    <svg width="16" class="mr-2" height="18" viewBox="0 0 16 18" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1.50001C6.30261 1.50001 4.67475 2.13216 3.47452 3.25738C2.27428 4.38261 1.6 5.90875 1.6 7.50006C1.6 9.82362 3.21259 12.0783 4.98076 13.828C5.84849 14.6867 6.71893 15.3897 7.37334 15.8783C7.61689 16.0601 7.82962 16.2115 8 16.3296C8.17038 16.2115 8.38311 16.0601 8.62666 15.8783C9.28107 15.3897 10.1515 14.6867 11.0192 13.828C12.7874 12.0783 14.4 9.82362 14.4 7.50006C14.4 5.90875 13.7257 4.38261 12.5255 3.25738C11.3253 2.13216 9.69739 1.50001 8 1.50001ZM8 17.2501C7.55624 17.8742 7.55604 17.874 7.55581 17.8739L7.55352 17.8725L7.54819 17.8691L7.52985 17.8575C7.51428 17.8476 7.49206 17.8333 7.46365 17.8149C7.40682 17.778 7.32517 17.7242 7.22223 17.6545C7.01644 17.5152 6.72509 17.3118 6.37666 17.0517C5.68107 16.5324 4.75151 15.7822 3.81924 14.8597C1.98741 13.0469 0 10.4265 0 7.50006C4.76837e-08 5.51092 0.842855 3.60325 2.34315 2.19672C3.84344 0.790182 5.87827 0 8 0C10.1217 0 12.1566 0.790182 13.6569 2.19672C15.1571 3.60325 16 5.51092 16 7.50006C16 10.4265 14.0126 13.0469 12.1808 14.8597C11.2485 15.7822 10.3189 16.5324 9.62334 17.0517C9.27491 17.3118 8.98356 17.5152 8.77777 17.6545C8.67483 17.7242 8.59318 17.778 8.53635 17.8149C8.50794 17.8333 8.48572 17.8476 8.47015 17.8575L8.45181 17.8691L8.44648 17.8725L8.44479 17.8735C8.44456 17.8737 8.44376 17.8742 8 17.2501ZM8 17.2501L8.44376 17.8742C8.17504 18.0421 7.82453 18.0419 7.55581 17.8739L8 17.2501Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00005 6.00007C7.11639 6.00007 6.40005 6.67165 6.40005 7.50008C6.40005 8.32852 7.11639 9.00009 8.00005 9.00009C8.8837 9.00009 9.60005 8.32852 9.60005 7.50008C9.60005 6.67165 8.8837 6.00007 8.00005 6.00007ZM4.80005 7.50008C4.80005 5.84322 6.23274 4.50006 8.00005 4.50006C9.76736 4.50006 11.2 5.84322 11.2 7.50008C11.2 9.15695 9.76736 10.5001 8.00005 10.5001C6.23274 10.5001 4.80005 9.15695 4.80005 7.50008Z"/>
+                    </svg>
+                    <a class="">показать на карте</a>
+                  </button>
+                  <div class="mx-2"></div>
+                  <button class="btn btn-block btn-showmap">
+                    <svg width="18" class="mr-2" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.612 2.41452C17.1722 1.96607 16.65 1.61034 16.0752 1.36763C15.5005 1.12492 14.8844 1 14.2623 1C13.6401 1 13.0241 1.12492 12.4493 1.36763C11.8746 1.61034 11.3524 1.96607 10.9126 2.41452L9.99977 3.34476L9.08699 2.41452C8.19858 1.50912 6.99364 1.00047 5.73725 1.00047C4.48085 1.00047 3.27591 1.50912 2.38751 2.41452C1.4991 3.31992 1 4.5479 1 5.82833C1 7.10875 1.4991 8.33674 2.38751 9.24214L3.30029 10.1724L9.99977 17L16.6992 10.1724L17.612 9.24214C18.0521 8.79391 18.4011 8.26171 18.6393 7.67596C18.8774 7.0902 19 6.46237 19 5.82833C19 5.19428 18.8774 4.56645 18.6393 3.9807C18.4011 3.39494 18.0521 2.86275 17.612 2.41452V2.41452Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <a class="">ХОЧУ УЧАСТВОВАТЬ!</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 col-md-11">
+            <p class="text_page">
+              Приветствуем Вас, затухающие после самоизоляции сердца. Представляем вам наш дебютный фестиваль, проходящий в пансионате “Якорная Щель” в г. Сочи. Именно в этом месте, впитавшем в себя морской бриз, лесные массивы и горные серпантины, во всю кипит творческая жизнь. Начало нового десятилетия, а значит и пора что-то менять. Наш фестиваль открывает дорогу молодым и талантливым исполнителям, которые смогут выступить на одной сцене с профессиональными музыкантами нашей страны. Вдали от пыльного города в ритме любимой музыки, в унисон с природой.
+            </p>
+            <p class="text_page mt-4">
+              Фестиваль долгое время был в разработке и наконец выходит в свет. Да, мир после пандемии не  будет прежним, но никто и не заморозил пути для питания своих нажежд и достижения целей. Даже во-время "всемирного потопа", творчество семимильными шагами идет вперёд. Пленящий морской горизонт, теплая зелень леса. Тихое место, в котором  раскрываются самые громкие сердца. Здесь мы пишем свою музыку, находим себя в разных сферах, при этом, узнаем таинства природы, её обитателей,  ведь в каждом человеке и существе можно обнаружить то, что не описать словами. Тут, мы влюбляемся, сопереживаем, сплачивпемся и верим в будущее. Именно сейчас, мы хотим умножать желание действовать, строить новые ступени творческого и социального мира и возвысить понятия о музыке, поэзии и кино.
+            </p>
+          </div>
+          <a href="#members" style="text-decoration: none; "class="d-none d-md-block col-md-1 text-vertical w-100 py-2 px-2 text-uppercase text-white">
+            нас вдохновляет твоя<br>музыка
+            <svg class="arrow_sea" width="16" height="78" viewBox="0 0 16 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99995 -4.3711e-08C8.55223 -1.95701e-08 8.99994 0.432581 8.99994 0.966197L8.99994 76.8127C8.99994 77.3463 8.55222 77.7789 7.99995 77.7789C7.44767 77.7789 6.99996 77.3463 6.99996 76.8127L6.99996 0.966197C6.99996 0.432581 7.44767 -6.78519e-08 7.99995 -4.3711e-08Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8137 71.4201C16.1347 71.8543 16.0306 72.4577 15.5812 72.7679L8 78L0.418839 72.7679C-0.0305698 72.4577 -0.13466 71.8543 0.186346 71.4201C0.507352 70.9858 1.1319 70.8853 1.5813 71.1954L8 75.6253L14.4187 71.1954C14.8681 70.8853 15.4927 70.9858 15.8137 71.4201Z" fill="white"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
 
-    <section class="otstup">
+    <section class="otstup" id="schedule">
       <div class="container">
         <div class="row">
           <div class="col-6 text-white">
@@ -764,7 +766,7 @@
       </div>
     </section>
 
-    <section class="otstup">
+    <section class="otstup" id="members">
       <div class="container">
         <div class="row">
           <div class="col-6 text-white">
@@ -1037,7 +1039,7 @@
     </section>
 
 
-    <section class="otstup">
+    <section class="otstup" id="camping">
       <div class="container">
         <div class="row">
           <div class="col-6 text-white">
@@ -1082,7 +1084,7 @@
 
 
 
-    <section class="otstup">
+    <section class="otstup" id="coop">
       <div class="container">
         <div class="row">
           <div class="col-12 text-white">

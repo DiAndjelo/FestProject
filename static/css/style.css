@@ -1,5 +1,70 @@
 body{
-  background: #0D0D0D !important;
+  background: #00060F !important;
+}
+.text_page{
+  text-indent: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: justify;
+  color: #fff;
+}
+.text-vertical{
+  writing-mode: tb-rl;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 128%;
+}
+.arrow_sea{
+  -webkit-transition: 0.4s ease; /* Safari and Chrome */
+  -moz-transition: 0.4s ease; /* Firefox 4 */
+  -o-transition: 0.4s ease; /* Opera */
+}
+.text-vertical:hover .arrow_sea{
+  position: relative;
+  width: 100%;
+  margin-top: 85%;
+  transition: .4s !important;
+}
+.btn-showmap{
+  border: 2px solid #fff !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: 0 !important;
+  color: #fff;
+  fill: #fff;
+  border-radius: 2px !important;
+  -webkit-transition: 0.4s ease !important; /* Safari and Chrome */
+  -moz-transition: 0.4s ease !important; /* Firefox 4 */
+  -o-transition: 0.4s ease !important; /* Opera */
+  stroke: #fff !important;
+  stroke-width: 0px !important;
+}
+.btn-showmap:hover{
+  color: #000;
+  transition: .4s;
+  fill: #000;
+  background: #EDC043 !important;
+  border: 2px solid #EDC043 !important;
+  stroke: #000 !important;
+}
+.btn-showmap:hover{
+
+
+}
+.section_title{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+  text-transform: uppercase;
 }
 @media (max-width: 991px) {
   .navbar_mobile{
@@ -160,6 +225,13 @@ h6.thisday{
 .nav_link_menu{
   color: #fff;
   fill: #fff;
+  Font Style: Medium;
+  Font Size: 14px;
+  Line Height: 14px;
+  Line Height: 100%;
+  -webkit-transition: .4s ease; /* Safari and Chrome */
+  -moz-transition: .4s ease; /* Firefox 4 */
+  -o-transition: .4s ease; /* Opera */
 }
 .nav_link_menu:hover{
   text-decoration: none;
