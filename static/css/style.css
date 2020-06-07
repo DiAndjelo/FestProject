@@ -1,5 +1,6 @@
 body{
   background: #00060F !important;
+    overflow-x: hidden !important;
 }
 .about_org{
   color: #fff;
@@ -140,18 +141,76 @@ body{
     background: #EDC043;
     border-radius: 4px !important;
   }
-  .nav-item>.btn-block{
-    display: block !important;
+  .btn_howroad_mom{
     width: 100% !important;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 6px;
-    margin-bottom: 6px;
+  }
+  .btn_question{
+    width: 100% !important;
   }
 }
+.station_title{
+  font-weight: 550;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 14px;
+}
+.station{
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+}
+.btn_howroad_mom{
+  width: 33%;
+}
+.nav-link.btn_howroad{
+   border: 2px solid #fff !important;
+   border-radius: 4px !important;
+   color: #fff !important;
+   font-weight: bold;
+   font-size: 14px;
+   line-height: 14px;
+   padding: 15px 0px;;
+
+}
+.btn_question{
+  font-weight: bold !important;
+  background: 0 !important;
+  color: #fff !important;
+  border: 2px solid #ffffff !important;
+  font-weight: 550;
+  width: 65%;
+}
+.btn.btn_question{
+  border-radius: 4px !important;
+}
+.btn_question:hover{
+  font-weight: bold !important;
+  background: #EDC043 !important;
+  border: 2px solid #EDC043 !important;
+  color: #00060F !important;
+  font-weight: 550;
+}
+.btn_howroad:hover{
+  background: #EDC043 !important;
+  border: 2px solid #EDC043 !important;
+  color: #00060F !important;
+  font-weight: bold;
+}
+.btn_howroad.active{
+  background: #EDC043 !important;
+  border: 2px solid #EDC043 !important;
+  color: #00060F !important;
+  font-weight: bold;
+}
 .otstup{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 576px) {
+  .otstup{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 .btn_child_gallery{
    background: 0;
@@ -335,14 +394,52 @@ h6.thisday{
   text-transform: lowercase;
 }
 .foodbox{
-  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
   text-decoration: none !important;
 }
+.foodbox_img{
+  width: 138px;
+  margin: 0 auto;
+}
+.switch_1{
+  width: 20%;
+}
+@media (max-width: 576px) {
+  .foodbox_img{
+    width: 102px;
+  }
+  .switch_1{
+    width: 33%;
+  }
+  .nickname{
+    font-size: 15px !important;
+    line-height: 15px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .nickname{
+    font-size: 25px !important;
+    line-height: 15px !important;
+  }
+}
+@media (max-width: 768px) {
+  .nickname{
+    font-size: 17px !important;
+    line-height: 15px !important;
+  }
+}
 .nickname{
+  font-style: normal;
   font-weight: bold;
   font-size: 32px;
   line-height: 32px;
-  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  color: #01112B !important;
+  cursor: default;
 }
 .nickname:hover{
   text-decoration: none;
