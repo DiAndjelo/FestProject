@@ -1,6 +1,29 @@
 body{
   background: #00060F !important;
 }
+.about_org{
+  color: #fff;
+  margin-top: -30px;
+}
+.inst{
+  fill: #fff !important;
+}
+.coop_contact{
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+}
+.about_org_row{
+  position: relative;
+  margin-top: -30px;
+    background: rgba(0, 0, 0, 0.35);
+}
+.name_org{
+  font-size: 13px;
+  line-height: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 .text_page{
   text-indent: 15px;
   font-style: normal;
@@ -54,6 +77,39 @@ body{
   background: #EDC043 !important;
   border: 2px solid #EDC043 !important;
   stroke: #000 !important;
+}
+.service_hover:hover{
+  cursor: pointer;
+}
+.service_hover, .spec_border{
+  -webkit-transition: 0.4s ease !important; /* Safari and Chrome */
+  -moz-transition: 0.4s ease !important; /* Firefox 4 */
+  -o-transition: 0.4s ease !important; /* Opera */
+}
+.service_hover, .cos{
+  -webkit-transition: 0.4s ease !important; /* Safari and Chrome */
+  -moz-transition: 0.4s ease !important; /* Firefox 4 */
+  -o-transition: 0.4s ease !important; /* Opera */
+}
+.service_hover:hover .spec_border{
+  border: 3px solid  #EDC043;
+  background: #EDC043;
+  transition: .4s;
+}
+.service_hover:hover .cos{
+ color: #EDC043;
+ transition: .4s;
+}
+.spec_border{
+  border: 3px solid  #393939;
+  background: #393939;
+  border-radius: 2px;
+}
+.camp_about{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
 }
 .btn-showmap:hover{
 
@@ -110,8 +166,16 @@ height: 195px;
 -o-transition: .4s ease; /* Opera */
 }
 button:hover .child_gallery{
-background: url("../img/Олег.png") no-repeat !important;
+background: url("../img/lil_org_example.jpg") no-repeat !important;
 transition: 0.4s;
+}
+.btn_child_gallery:hover ul {
+  color: #EDC043 !important;
+  transition: .4s;
+}
+.btn_child_gallery:hover .inst{
+  fill: #EDC043 !important;
+  transition: .4s;
 }
 .btn-city{
   width: 30%;
@@ -243,13 +307,32 @@ h6.thisday{
   margin-bottom: 2em;
 }
 .cos{
+  font-style: normal;
   font-weight: bold;
   font-size: 50px;
-  line-height: 40px;
+  line-height: 50px;
+}
+@media (max-width: 576px) {
+  .cos{
+    font-size: 27px;
+    line-height: 22px;
+  }
+  .service_hover:hover .cos{
+    color: #fff !important;
+  }
+}
+@media (max-width: 576px) {
+  .rubonday{
+    font-size: 12px !important;
+    line-height: 7px;
+  }
 }
 .rubonday{
-  font-size: 20px;
-  line-height: 20px;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 15px;
+  line-height: 17px;
+  text-transform: lowercase;
 }
 .foodbox{
   margin-bottom: 1.5em;
@@ -331,8 +414,8 @@ h6.thisday{
 }
 .cooperation_about{
   font-weight: normal;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 14px;
 }
 
 .buy_ticket{
