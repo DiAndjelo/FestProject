@@ -1,6 +1,7 @@
 body{
   background: #00060F !important;
-    overflow-x: hidden !important;
+  transition: background 11.15s linear;
+  overflow-x: hidden !important;
 }
 .about_org{
   color: #fff;
@@ -47,16 +48,16 @@ body{
 }
 .text-vertical:hover .arrow_sea{
   position: relative;
-  width: 100%;
-  margin-top: 85%;
   transition: .4s !important;
+  margin-top: 40%;
 }
 .btn-showmap{
+  padding: 10px 0 !important;
   border: 2px solid #fff !important;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 15px !important;
+  line-height: 15px !important;
   text-transform: uppercase;
   display: flex !important;
   justify-content: center;
@@ -282,23 +283,44 @@ btn.focus, .btn:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
 }
 .bg-btnday{
-  background: #373737 !important;
+  background: radial-gradient(50% 50% at 50% 50%, #01112B 0%, #020C1C 100%) !important;
 }
 .abs{
   position: absolute;
 }
-
+.title_time{
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px !important;
+  line-height: 16px;
+}
+.title_member{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px !important;
+  line-height: 12px !important;
+  }
 .btnday_hover{
   -webkit-transition: 1s ease; /* Safari and Chrome */
   -moz-transition: 1s ease; /* Firefox 4 */
   -o-transition: 1s ease; /* Opera */
 }
 .bg-btnday.active{
-  background: #4B0082 !important;
+  background: radial-gradient(50% 50% at 50% 50%, #4A0225 0%, #020C1C 100%) !important;
 }
 .btnday_hover:hover{
-  background: #4B0082;
-  transition: 0.4s;
+  position: absolute;
+  background: radial-gradient(50% 50% at 50% 50%, #4A0225 0%, #020C1C 100%) !important;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 50%;
+  transition: all .5s;
+  transition: .4s !important;
 }
 
 .box {
@@ -429,6 +451,18 @@ h6.thisday{
   .nickname{
     font-size: 17px !important;
     line-height: 15px !important;
+  }
+  h6.moonth{
+    color: #ffffff !important;
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 10px;
+    margin: 0 !important;
+    text-transform: uppercase;
+  }
+  h6.thisday{
+    font-size: 30px;
+    line-height: 30px;
   }
 }
 .nickname{
