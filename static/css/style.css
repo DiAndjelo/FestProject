@@ -698,6 +698,8 @@ h6.thisday{
 }
 @media (max-width: 768px) {
   .coop_contact_mail{
+    font-style: normal;
+    font-weight: normal;
     font-size: 18px;
     line-height: 18px ;
   }
