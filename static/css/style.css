@@ -1,7 +1,47 @@
+@font-face {
+font-family: "HelveticaNeueCyr";
+src: url("../fonts/HelveticaNeueCyr-Black.otf") format("truetype");
+font-style: normal;
+font-weight: normal;
+}
+@font-face {
+font-family: "HelveticaNeueCyr";
+src: url("../fonts/HelveticaNeueCyr-Bold.otf") format("truetype");
+
+font-style: normal;
+font-weight: bold;
+}
+@font-face {
+font-family: "HelveticaNeueCyr";
+src: url("../fonts/HelveticaNeueCyr-Heavy.otf") format("truetype");
+font-style: normal;
+font-weight: normal;
+}
+@font-face {
+font-family: "HelveticaNeueCyr";
+src: url("../fonts/HelveticaNeueCyr-Light.otf") format("opentype");
+font-style: normal;
+font-weight: 300;
+}
+@font-face {
+font-family: "HelveticaNeueCyr";
+src: url("../fonts/HelveticaNeueCyr-Medium.otf") format("truetype");
+font-style: normal;
+font-weight: 550;
+}
+@font-face {
+font-family: "HelveticaNeueCyr";
+src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
+font-style: normal;
+font-weight: normal;
+}
+
+
 body{
   background: #00060F !important;
   transition: background 11.15s linear;
   overflow-x: hidden !important;
+  font-family: "HelveticaNeueCyr" !important;
 }
 .about_org{
   color: #fff;
@@ -56,14 +96,18 @@ body{
     }
   }
 .arrow{
-  -webkit-transition: 0.4s ease; /* Safari and Chrome */
-  -moz-transition: 0.4s ease; /* Firefox 4 */
-  -o-transition: 0.4s ease; /* Opera */
+  -webkit-transition: .4s ease; /* Safari and Chrome */
+  -moz-transition: .4s ease; /* Firefox 4 */
+  -o-transition: .4s ease; /* Opera */
   fill: #fff;
+  margin-top: 15px;
+}
+.arrow_box{
+    cursor: pointer;
 }
 .arrow_box:hover .arrow{
   transition: .4s !important;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 .btn-showmap{
   padding: 10px 0 !important;
@@ -385,10 +429,9 @@ h6.thisday{
 .nav_link_menu{
   color: #fff;
   fill: #fff;
-  Font Style: Medium;
-  Font Size: 14px;
-  Line Height: 14px;
-  Line Height: 100%;
+  Font-style: Medium;
+  font-size: 14px;
+  line-height: 14px;
   -webkit-transition: .4s ease; /* Safari and Chrome */
   -moz-transition: .4s ease; /* Firefox 4 */
   -o-transition: .4s ease; /* Opera */
@@ -565,7 +608,7 @@ h6.thisday{
 .cooperation_about{
   font-weight: normal;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
 }
 
 .buy_ticket{
