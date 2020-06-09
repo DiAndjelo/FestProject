@@ -22,9 +22,9 @@ from Landing import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.LandingView.as_view()),
-    path('contacts/', views.ContactView.as_view()),
-    path('payment/', include('Payment.urls')),
+    path('', views.LandingView.as_view(), name='landing'),
+    path('contacts/', views.ContactView.as_view(), name='contacts'),
+    path('tickets/', include('Payment.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

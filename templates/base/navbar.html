@@ -5,7 +5,7 @@
     <div class="row py-2">
       <div class="col-12">
         <nav class="m-0 p-0 navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href=#>
+          <a class="navbar-brand" href={% url 'landing' %}>
             <img class="" width="65" height="40" src="{% static 'img/logo.png' %}" alt="">
           </a>
           <form class="ml-auto mr-2 pb-2 form-inline d-block d-lg-none m-0 p-0 justify-content-between my-lg-0">
@@ -22,19 +22,19 @@
               <li class="navbar_mobile  py-3 py-lg-0">
                 <ul class="d-flex flex-column flex-lg-row m-0 list-unstyled">
                   <li class="nav-item text-center text-lg-left">
-                    <a class="nav_link_menu text-center mr-0 mr-lg-3 btn-block " href=#>фестиваль<span class="sr-only">(current)</span></a>
+                    <a class="nav_link_menu text-center mr-0 mr-lg-3 btn-block " href='{% url 'landing' %}'>фестиваль<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item text-center text-lg-left">
                     <a class="nav_link_menu mr-0 mr-lg-3 btn-block" href=#>участники<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item text-center text-lg-left">
-                    <a class="nav_link_menu mr-0 mr-lg-3 btn-block" href=#>билеты<span class="sr-only">(current)</span></a>
+                    <a class="nav_link_menu mr-0 mr-lg-3 btn-block" href={% url 'tickets' %}>билеты<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item text-center text-lg-left">
                     <a class="nav_link_menu mr-0 mr-lg-3 btn-block" href=#>проживание<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item text-center text-lg-left">
-                    <a class="nav_link_menu mr-0 mr-lg-3 btn-block" href=#>контакты<span class="sr-only">(current)</span></a>
+                    <a class="nav_link_menu mr-0 mr-lg-3 btn-block" href={% url 'contacts' %}>контакты<span class="sr-only">(current)</span></a>
                   </li>
                 </ul>
               </li>
