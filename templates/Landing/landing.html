@@ -20,13 +20,13 @@
     <title>Дебютный фестиваль ЧесTnok в г. Сочи</title>
   </head>
   <body>
-    <header class="" style="position: absolute; width: 100%; z-index: 0;">
+    <header class="" style="position: absolute; width: 100%; z-index: 1;">
       <div class="container">
         <div class="row py-2">
           <div class="col-12">
             <nav class="m-0 p-0 navbar navbar-expand-lg navbar-light">
               <a class="navbar-brand" href=#>
-                <img class="" width="70" height="45" src="{% static 'img/logo.png' %}" alt="">
+                <img class="" width="65" height="40" src="{% static 'img/logo.png' %}" alt="">
               </a>
               <form class="ml-auto mr-2 pb-2 form-inline d-block d-lg-none m-0 p-0 justify-content-between my-lg-0">
                 <button class="btn buy_ticket d-flex mx-0 align-items-center my-2 px-0 my-sm-0">
@@ -167,7 +167,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-12 col-lg-4 col-xl-5 mt-4 mt-lg-0  d-none d-sm-block">
+          <div class="col-12 col-md-12 col-lg-4 col-xl-5 mt-4 mt-lg-0">
             <div class="d-flex flex-column h-100">
               <a><img src="{% static 'img/main_3.jpg' %}" class="w-100 img-fluid"></a>
               <div class="mt-auto">
@@ -251,63 +251,65 @@
           <button type="button" class="text-right close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" class="text-white">&times;</span>
           </button>
-          <div class="border-0 d-block">
-            <h5 class="modal-title text-center px-2">Заявка на участие в фестивале!</h5>
-          </div>
-          <div class="modal-body">
-            <div class="container p-0 px-lg-5">
-              <div class="modal-about text-center mb-4">
-                Ты <span style="color: #EDC043; text-decoration: underline;">музыкант</span>? У тебя есть своя группа?<br>
-                Мы рассмотрим твою заявку и организуем твоё выступление на <span style="color: #EDC043; text-decoration: underline;">сцене фестиваля</span>!
-              </div>
-              <form class="needs-validation" novalidate>
+          <div class=" py-2">
+            <div class="border-0 d-block">
+              <h5 class="modal-title text-center px-5">Заявка на участие в фестивале!</h5>
+            </div>
+            <div class="modal-body">
+              <div class="container p-0 px-lg-5">
+                <div class="modal-about text-center mb-4">
+                  Ты <span style="color: #EDC043; text-decoration: underline;">музыкант</span>? У тебя есть своя группа?<br>
+                  Мы рассмотрим твою заявку и организуем твоё выступление на <span style="color: #EDC043; text-decoration: underline;">сцене фестиваля</span>!
+                </div>
+                <form class="needs-validation" novalidate>
 
-                <div class="row justify-content-between">
-                  <div class="col-12 col-lg-5 pr-lg-0 mt-2 mt-lg-4">
-                    <label for="name_Label">Название коллектива:</label>
-                    <input class="form-control input_modal py-2 px-4 text-white w-100" id="name_label" placeholder="Йорш" type="tel" value="" autocomplete="off" required>
-                    <div class="invalid-feedback">
-                      Введите название коллектива
+                  <div class="row justify-content-between">
+                    <div class="col-12 col-lg-5 pr-lg-0 mt-2 mt-lg-4">
+                      <label for="name_Label">Название коллектива:</label>
+                      <input class="form-control input_modal py-2 px-4 text-white w-100" id="name_label" placeholder="Йорш" type="tel" value="" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                        Введите название коллектива
+                      </div>
+                    </div>
+                    <div class="col-12 col-lg-5 pl-lg-0 mt-2 mt-lg-4">
+                      <label for="structure">Музыкальный состав</label>
+                      <input class="form-control input_modal py-2 px-4 text-white w-100" id="structure" placeholder="Гитара, бас, ударник, вокалист" autocomplete="off" type="text" value="" required>
+                      <div class="invalid-feedback">
+                      Введите музыкальный состав
+                      </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-5 pl-lg-0 mt-2 mt-lg-4">
-                    <label for="structure">Музыкальный состав</label>
-                    <input class="form-control input_modal py-2 px-4 text-white w-100" id="structure" placeholder="Гитара, бас, ударник, вокалист" autocomplete="off" type="text" value="" required>
-                    <div class="invalid-feedback">
-                    Введите музыкальный состав
+                  <div class="row justify-content-between">
+                    <div class="col-12 col-lg-5 pr-lg-0 mt-2 mt-lg-4">
+                      <label for="tel">Телефон:</label>
+                      <input class="form-control input_modal py-2 px-4 text-white w-100" id="tel" placeholder="Телефон" type="tel" value="" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                        Введите Ваш номер телефона
+                      </div>
+                    </div>
+                    <div class="d-none d-lg-block col-md-2 text-center abs" style="top: 65px;">или</div>
+                    <div class="col-12 col-lg-5 pl-lg-0 mt-2 mt-lg-4">
+                      <label for="email">Электронная почта:</label>
+                      <input class="form-control input_modal py-2 px-4 text-white w-100" id="email" placeholder="Электронная почта" type="text" value="" autocomplete="off" required>
+                      <div class="invalid-feedback">
+                      Введите Ваш электронный адрес
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row justify-content-between">
-                  <div class="col-12 col-lg-5 pr-lg-0 mt-2 mt-lg-4">
-                    <label for="tel">Телефон:</label>
-                    <input class="form-control input_modal py-2 px-4 text-white w-100" id="tel" placeholder="Телефон" type="tel" value="" autocomplete="off" required>
-                    <div class="invalid-feedback">
-                      Введите Ваш номер телефона
+                  <div class="row justify-content-between">
+                    <div class="col-12 mt-2 mt-lg-4">
+                      <label for="about_you">Почему именно ты?</label>
+                      <textarea class="form-control input_modal text-white input_modal w-100" id="about_you" placeholder="Расскажите о себе" type="text" value="" autocomplete="off" required name="name" rows="3" cols="80"></textarea>
+                      <div class="invalid-feedback">
+                      Расскажи немного о себе
+                      </div>
                     </div>
                   </div>
-                  <div class="d-none d-lg-block col-md-2 text-center abs" style="top: 65px;">или</div>
-                  <div class="col-12 col-lg-5 pl-lg-0 mt-2 mt-lg-4">
-                    <label for="email">Электронная почта:</label>
-                    <input class="form-control input_modal py-2 px-4 text-white w-100" id="email" placeholder="Электронная почта" type="text" value="" autocomplete="off" required>
-                    <div class="invalid-feedback">
-                    Введите Ваш электронный адрес
-                    </div>
+                  <div class="row justify-content-center">
+                    <button type="submit" class="btn text-uppercase btn-active rounded mt-4 mt-lg-4">отправить</button>
                   </div>
-                </div>
-                <div class="row justify-content-between">
-                  <div class="col-12 mt-2 mt-lg-4">
-                    <label for="about_you">Почему именно ты?</label>
-                    <textarea class="form-control input_modal text-white input_modal w-100" id="about_you" placeholder="Расскажите о себе" type="text" value="" autocomplete="off" required name="name" rows="3" cols="80"></textarea>
-                    <div class="invalid-feedback">
-                    Расскажи немного о себе
-                    </div>
-                  </div>
-                </div>
-                <div class="row justify-content-center">
-                  <button type="submit" class="btn text-uppercase btn-active rounded mt-4 mt-lg-4">отправить</button>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>

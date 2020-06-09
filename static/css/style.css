@@ -35,8 +35,6 @@ src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
 font-style: normal;
 font-weight: normal;
 }
-
-
 body{
   background: #00060F !important;
   transition: background 11.15s linear;
@@ -265,7 +263,8 @@ body{
     color: #252525 !important;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding: 3px 25px;
+    padding: 9px 25px;
+    font-size: 16px !important;
   }
   .nav_link_menu:hover{
     color: #ffffff !important;
@@ -711,7 +710,7 @@ h6.thisday{
     height: 170px;
   }
   .close{
-    position: relative;
+    
   }
   .modal-header{
     margin-top: -30px;
