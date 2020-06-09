@@ -23,6 +23,7 @@ from Landing import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.LandingView.as_view()),
+    path('contacts/', views.ContactView.as_view()),
     path('payment/', include('Payment.urls')),
 ]
 if settings.DEBUG:
