@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}
+    Оплата
+{% endblock %}
+{% block content %}
+    {% block payment_first %}
+        <div class="layerBody">
+    {% endblock %}
+
+    <section class="tickets_warning mb-2">
+        <div class="container">
+            <div class="row align-items-center text-center">
+                <div class="col-12 tickets_warning_block">
+                    <div class="row align-items-center text-center">
+                        <div class="col-1 text-right pr-0">
+                            <span class="warning_sign">!</span>
+                        </div>
+                        <div class="col-10 col-sm-11 text-justify">
+                            <p class="m-0 px-2 py-3"> с 01.06.2020 по 01.07.2020 00:00 стоимость билета фестиваля ЧесТnok - <span>3000 руб.</span>, в период с 01.07.2020 по 24.08.2020 - <span>5000 руб.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Оплата -->
+
+    <section class="tickets_payment mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 tickets_payment_section">
+                    <!-- Информация о фестивале -->
+                    <div class="tickets_payment_block px-sm-3">
+                        <h2 class="tickets_block_name text-uppercase my-4">Рок фестиваль ЧесTnok покупка билетов:</h2>
+                        <div class="row align-items-center">
+                            <div class="col-sm-12 col-md-3 tickets_label">
+                                <p class="mb-3">Возрастные ограничения:</p>
+                            </div>
+                            <div class="col-sm-12 col-md-9 tickets_description">
+                                <p class="mb-3">14+</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-12 col-md-3 tickets_label">
+                                <p class="mb-3">Место проведения:</p>
+                            </div>
+                            <div class="col-sm-12 col-md-9 tickets_description">
+                                <p class="mb-3">Территория пансионата "Якорная щель" г. Сочи, Краснодарский край</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-12 col-md-3 tickets_label">
+                                <p class="mb-3">Дата:</p>
+                            </div>
+                            <div class="col-sm-12 col-md-9 tickets_description">
+                                <p class="mb-3">24.08.2020 - 06.09.2020</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-12 col-md-3 tickets_label">
+                                <p class="mb-2">Цена билета:</p>
+                            </div>
+                            <div class="col-sm-12 col-md-9 tickets_description">
+                                <p class="mb-3">3.000 рублей</p>
+                            </div>
+                        </div>
+                        <p class="tickets_text">Информация о проживании в здании пансионата, аренде кемпинг-зон и питании по телефону: <a href="tel:89136378982">8 (913) 637 - 89 - 82</a></p>
+                        <p class="tickets_text">Совершая покупку билета, вы соглашаетесь с порядком и <a href="#">правилами посещения фестиваля</a> “ЧесТnock”</p>
+                        <p class="tickets_text">После оплаты на Вашу почту будет отправлено автоматическое письмо с <u>кодом участника</u>, а Ваши данные будут внесены в <u>список пропускного контроля</u>.</p>
+                    </div>
+                    <!-- Добавление участников, ввод и проверка данных участников -->
+                    <div class="tickets_payment_block px-sm-3">
+                        <h2 class="tickets_block_name text-uppercase my-4">Информация об участниках</h2>
+                        <div class="row tickets_add mb-4">
+                            <div class="col-12">
+                                <span class="tickets_add_block">Добавить участника</span>
+                                <button type="button" class="btn ticket_remove" onclick="ticketRemove()">-</button>
+                                <span class="tickets_count"></span>
+                                <button type="button" class="btn ticket_add" onclick="ticketAdd()">+</button>
+                            </div>
+                        </div>
+                        <div class="row tickets_block_row mb-3">
+                            <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                Билет <span>№<span class="number_r"></span></span>
+                            </div>
+                            <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                <label>Фамилия</label>
+                                <input type="text" class="form-control secondName" oninput="s_nameValidation(this.value, this.id, 'esname1', 1)" placeholder="Фамилия">
+                                <div class="errorSName mt-1" ></div>
+                            </div>
+                            <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                <label>Имя</label>
+                                <input type="text" class="form-control firstName" oninput="f_nameValidation(this.value, this.id, 'efname1', 1)" placeholder="Имя">
+                                <div class="errorFName mt-1">
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                <label>Номер телефона</label>
+                                <input type="text" class="form-control telName"
+                                oninput="$(this).mask('+7(999)999-99-99');" onblur="telValidation(this.id, 'etel1', 1)" placeholder="+7 (xxx) xxx-xx-xx">
+                                <div class="errorTel mt-1"></div>
+                            </div>
+                        </div>
+                        <p class="tickets_text"><span>Билеты будут отправлены на Вашу электронную почту.</span><br></span> Будьте внимательны! Проверьте правильность ввода адреса перед подтверждением платежа.</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xl-2 d-none d-lg-block">
+                            </div>
+                            <div class="col-10 col-md-4 col-lg-3">
+                                <label for="email">Электронная почта</label>
+                                <input type="email" class="form-control" id='mailReview' onblur="mailValidation(this.value)" placeholder="Email">
+                                <div class="errorRecord mt-1" id="errorReviewMail">
+                                </div>
+                            </div>
+                            <div class="col-10 col-md-4 col-lg-3">
+                                <label for="emailConfirm">Подтверждение эл. п.</label>
+                                <input type="email" class="form-control" id="emailConfirm" onblur="conmailValidation(this.value)" placeholder="Подтверждение Email">
+                                <div class="errorRecord mt-1" id="errorReviewMailConf"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Блок с вводом данных карты -->
+                    <!-- <div class="tickets_payment_block px-sm-3">
+                        <h2 class="tickets_block_name text-uppercase my-4">Оплата банковской картой</h2>
+                        <p class="tickets_text">Оплата банковской картой только для жителей РФ. Для преобретения билета введите данные карты с обеих сторон карты.</p>
+                        <div class="row">
+                            <div class="col-1 d-none d-xl-block"></div>
+                            <div class="col-12 col-lg-6 col-xl-5">
+                                <div class="tickets_card my-4">
+                                    <div class="number_card">
+                                        <label for="numberCard" class="label_card pl-5 mt-5 mb-0">Номер карты</label>
+                                        <input type="text" class=" pl-5 text-left" id="numberCard" placeholder="0000-0000-0000-0000">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="ownerName" class="pl-5 mt-4 mb-0">Держатель карты</label></label><br>
+                                                <input type="text" class="secondField ml-5" id="ownerName" placeholder="Фамилия и имя">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="data_card" class="pl-5 mt-4 mb-0">Срок действия</label><br>
+                                                <input type="text" class="secondField ml-5" id="data_card" placeholder="MM/YY">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 col-xl-5">
+                                <div class="tickets_card my-4">
+                                    <div class="number_card pt-2">
+                                        <div class="card_grey_block mt-4"></div>
+                                        <div class="cvvCode mt-4">
+                                            <label for="cvv_code" class="label_card mb-0">CVV</label><br>
+                                            <input type="text" class="secondField pl-5 text-left" id="cvv_code" placeholder="000">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="tickets_text">*Для оплаты используется <u><b>защищенное SSL соединение.</b></u></p>
+                    </div> -->
+
+                    <!-- Проверка и подтверждение введённых данных, переход к оплате -->
+                    <div class="tickets_payment_block px-sm-3">
+                        <h2 class="tickets_block_name text-uppercase my-4">Проверка и подтверждение</h2>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-5 tickets_total mb-4">
+                                <div class="row align-items-center">
+                                    <div class="col-5 tickets_label">
+                                        <p class="mb-3">ФИО участника №521:</p>
+                                    </div>
+                                    <div class="col-7 tickets_description">
+                                        <p class="mb-3"><span class="fam"></span> <span class="nam"></span></p>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-5 tickets_label">
+                                        <p class="mb-3">Номер телефона:</p>
+                                    </div>
+                                    <div class="col-7 tickets_description">
+                                        <p class="mb-3"><span class="num"></span></p>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-5 tickets_label">
+                                        <p class="mb-3">Цена билета:</p>
+                                    </div>
+                                    <div class="col-7 tickets_description">
+                                        <p class="mb-3">3000 рублей</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="row align-items-center tickets_summ">
+                                    <div class="col-5 col-md-5 col-lg-2 tickets_payment_label">
+                                        <p class="mb-2">Сумма к оплате:</p>
+                                    </div>
+                                    <div class="col-7 col-lg-10 tickets_payment_description">
+                                        <p class="mb-2 total_summ">3000 руб.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-payment">Оплатить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок успешной оплаты (Изначально скрыт) -->
+
+    <section class="successPaySection tickets_payment mb-5 d-none">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 tickets_payment_section">
+                    <div class="row align-items-center mt-5 successPayBlock">
+                        <div class="col-12 col-sm-4 mb-3 text-center text-sm-right">
+                            <svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M55.5004 0C24.8973 0 0 24.897 0 55.4996C0 86.1023 24.8973 110.999 55.5004 110.999C86.103 110.999 111 86.1023 111 55.4996C111 24.897 86.103 0 55.5004 0ZM55.5004 101.901C29.9141 101.901 9.0983 81.0859 9.0983 55.4996C9.0983 29.9138 29.9141 9.0983 55.5004 9.0983C81.0862 9.0983 101.902 29.9138 101.902 55.4996C101.902 81.0859 81.0862 101.901 55.5004 101.901Z" fill="#9FFFB4"/>
+                            <path d="M79.5094 34.1978L46.5568 67.1507L31.4907 52.0847C29.714 50.3083 26.8338 50.3083 25.0571 52.0847C23.2808 53.8614 23.2808 56.7416 25.0571 58.5183L43.34 76.8011C44.2283 77.6891 45.3926 78.1335 46.5568 78.1335C47.721 78.1335 48.8852 77.6891 49.7736 76.8011L85.943 40.6318C87.7193 38.855 87.7193 35.9749 85.943 34.1982C84.1662 32.4215 81.2857 32.4215 79.5094 34.1978Z" fill="#9FFFB4"/>
+                            </svg>
+                        </div>
+                        <div class="col-12 col-sm-8 text-center text-sm-left">
+                            <p>Ваш платёж обработан успешно!</p>
+                            <p>Мы отправили Ваши электронные билеты на почту <span>bagration1976@gmail.com</span></p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-payment" name="button">Вернуться на главную</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% block payment_second %}
+        </div>
+    {% endblock %}
+{% endblock %}

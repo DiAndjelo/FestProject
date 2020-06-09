@@ -1,36 +1,36 @@
 @font-face {
     font-family: "HelveticaNeueCyr";
-    src: url("../fonts/HelveticaNeueCyr-Black.otf") format("truetype");
+    src: url("../../templates/fest (2)/fest/fonts/HelveticaNeueCyr-Black.otf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "HelveticaNeueCyr";
-    src: url("../fonts/HelveticaNeueCyr-Bold.otf") format("truetype");
+    src: url("../../templates/fest (2)/fest/fonts/HelveticaNeueCyr-Bold.otf") format("truetype");
     font-style: normal;
     font-weight: bold;
 }
 @font-face {
     font-family: "HelveticaNeueCyr";
-    src: url("../fonts/HelveticaNeueCyr-Heavy.otf") format("truetype");
+    src: url("../../templates/fest (2)/fest/fonts/HelveticaNeueCyr-Heavy.otf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "HelveticaNeueCyr";
-    src: url("../fonts/HelveticaNeueCyr-Light.otf") format("opentype");
+    src: url("../../templates/fest (2)/fest/fonts/HelveticaNeueCyr-Light.otf") format("opentype");
     font-style: normal;
     font-weight: 300;
 }
 @font-face {
     font-family: "HelveticaNeueCyr";
-    src: url("../fonts/HelveticaNeueCyr-Medium.otf") format("truetype");
+    src: url("../../templates/fest (2)/fest/fonts/HelveticaNeueCyr-Medium.otf") format("truetype");
     font-style: normal;
     font-weight: 550;
 }
 @font-face {
     font-family: "HelveticaNeueCyr";
-    src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
+    src: url("../../templates/fest (2)/fest/fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
@@ -64,7 +64,7 @@ footer{
 .layerBody{
     position: absolute;
     top: 0;
-    background: url(../img/layer.jpg) no-repeat;
+    background: url(../../templates/fest (2)/fest/img/layer.jpg) no-repeat;
     width: 100%;
     background-size: 100%;
 }
