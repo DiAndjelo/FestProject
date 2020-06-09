@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Black.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Bold.otf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Heavy.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Light.otf") format("opentype");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Medium.otf") format("truetype");
+    font-style: normal;
+    font-weight: 550;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Основные стили */
+
+body{
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    background-color: #00060F;
+    font-family: "HelveticaNeueCyr";
+}
+
+/* Стили для заголовка письма */
+
+.logoLetter{
+    margin: 30px 130px;
+}
+
+.linkLetter{
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+    .linkLetter a{
+        color: #EDC043;
+    }
+
+.headLetter h2{
+    font-weight: bold !important;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+/* Стили билетов*/
+
+.inf_tick{
+    font-weight: 300;
+    color: #ffffff;
+}
+
+    .inf_tick h3{
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .inf_tick span{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+        color: #ffffff;
+    }
+
+    .inf_tick_block{
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+        .inf_tick_block_2{
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 18px;
+            color: #EDC043;
+        }
+
+    .inf_tick hr{
+        height: 0;
+        border: 0.5px solid #3e3b3b;
+    }
+
+/* Стили остальной информации письма */
+
+.inf_text{
+    font-family: "HelveticaNeueCyr";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+}
+
+.btn-letter{
+    padding: 14px 28px;
+    background: #EDC043;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    color: #0D0D0D;
+    border-radius: 6px !important;
+}
+
+.rulesFest{
+    color: #EDC043;
+    text-decoration: underline;
+}
+
+    .rulesFest:hover{
+        color: #EDC043;
+    }
+
+.foot-text{
+    font-size: 14px;
+    line-height: 14px;
+    color: #EDC043;
+}
+
+@media(min-width: 523px){
+    .foot-text{
+        padding: 0 150px;
+    }
+}

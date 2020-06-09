@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Black.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Bold.otf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Heavy.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Light.otf") format("opentype");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Medium.otf") format("truetype");
+    font-style: normal;
+    font-weight: 550;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Основные стили */
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #00060F ! important;
+    font-family: "HelveticaNeueCyr";
+}
+input, button{
+    outline: none!important;
+    box-shadow: none!important;
+}
+input:focus{
+    outline:none!important;
+    border: 1px solid #ced4da!important;
+}
+header{
+    top: 0;
+    font-family: "HelveticaNeueCyr";
+    font-size: 14px;
+}
+footer{
+    font-family: "HelveticaNeueCyr";
+    font-size: 14px;
+}
+
+.layerBody{
+    position: absolute;
+    top: 0;
+    background: url(../img/layer.jpg) no-repeat;
+    width: 100%;
+    background-size: 100%;
+}
+
+/* Стили для блока контактной информации */
+
+.contact_section{
+    margin-top: 110px;
+}
+
+@media (max-width: 567px) {
+    .contact_section{
+        padding: 0 20px;
+    }
+}
+
+.contact_section_block{
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+}
+
+    .contact_section_block h2{
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 30px;
+        color: #ffffff;
+    }
+
+    .contact_section_block p{
+        font-family: "HelveticaNeueCyr";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 17px;
+        color: #ffffff;
+    }
+
+    .contact_section_block a{
+        color: #ffffff;
+    }
+
+        .contact_section_block a:hover{
+            color: #EDC043;
+            text-decoration: none;
+        }
+
+    .contact_section_block svg{
+        width: 25px;
+    }
+
+    .contactTel{
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 50px;
+        color: #ffffff;
+    }
+
+    .contactMail{
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 28px;
+        color: #ffffff;
+    }
+
+    @media(max-width:567px){
+        .contactTel{
+            font-size: 27px;
+            line-height: 27px;
+        }
+        .contactMail{
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }

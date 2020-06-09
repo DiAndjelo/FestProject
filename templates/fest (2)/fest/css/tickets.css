@@ -1,0 +1,259 @@
+/* Подключение шрифтов */
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Black.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Bold.otf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Heavy.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Light.otf") format("opentype");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Medium.otf") format("truetype");
+    font-style: normal;
+    font-weight: 550;
+}
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Основные стили */
+
+body{
+    width: 100%;
+    height: 100%;
+    background: #00060F;
+}
+input, button{
+    outline: none!important;
+    box-shadow: none!important;
+}
+input:focus{
+    outline:none!important;
+    border: 1px solid #ced4da!important;
+}
+header{
+    top: 0;
+    font-family: "HelveticaNeueCyr";
+    font-size: 14px;
+}
+footer{
+    font-family: "HelveticaNeueCyr";
+    font-size: 14px;
+}
+
+@media (max-width: 567px) {
+    .tickets_warning, .tickets_payment{
+        padding: 0 20px;
+    }
+}
+
+.layerBody{
+    position: absolute;
+    top: 0;
+    background: url(../img/layer.jpg) no-repeat;
+    width: 100%;
+    background-size: 100%;
+}
+
+/* Предупреждение */
+
+.tickets_warning{
+    margin-top: 110px;
+}
+
+.tickets_warning_block{
+    background-color: #ffffff;
+    font-family: "HelveticaNeueCyr";
+    border-radius: 12px;
+}
+
+    .warning_sign{
+        font-size: 25px;
+        line-height: 25px;
+        position: relative;
+        top: 1px;
+    }
+
+    .tickets_warning span{
+        font-weight: bold;
+        color: #D10A0A;
+    }
+
+    .tickets_warning_block p{
+        font-size: 14px;
+        line-height: 14px;
+        color: #000000;
+    }
+
+/* Оплата */
+
+.tickets_payment_section{
+    background-color: #ffffff;
+    font-family: "HelveticaNeueCyr";
+    border-radius: 12px;
+}
+
+/* Информация о фестивале */
+
+    .tickets_block_name{
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 22px;
+        color: #000000;
+    }
+
+        .tickets_label{
+            font-weight: 550;
+            font-size: 14px;
+            line-height: 14px;
+            color: #000000;
+        }
+
+        .tickets_description{
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            color: #000000;
+        }
+
+            .tickets_description span{
+                font-weight: 300 !important;
+                font-size: 14px;
+                line-height: 14px;
+                color: #000000;
+            }
+
+        .tickets_text{
+            text-align: justify;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            color: #000000;
+        }
+
+            .tickets_text a{
+                font-weight: bold;
+                color: #000000;
+                text-decoration: underline;
+            }
+
+                .tickets_text a:hover{
+                    color: #edc043;
+                    transition: 0.4s;
+                }
+
+/* Информация о участниках */
+
+    .tickets_add_block{
+        font-weight: 300!important;
+        font-size: 14px;
+        line-height: 14px;
+        color: #000000;
+    }
+
+    .ticket_remove, .ticket_add{
+        font-weight: 550;
+        font-size: 24px;
+        line-height: 24px;
+        color: #000000;
+        padding-top: 0;
+    }
+
+    .tickets_count{
+        font-weight: 550;
+        font-size: 24px;
+        line-height: 24px;
+        color: #000000;
+        position: relative;
+        top: 3px;
+    }
+
+    .tickets_payment_block span{
+        font-weight: bold;
+    }
+
+    .tickets_payment_block input{
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+        .tickets_payment_block input::placeholder{
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+        }
+
+/* Проверка и подтверждение */
+
+    .tickets_summ{
+        font-weight: 550;
+        font-size: 18px;
+        line-height: 18px;
+        color: #000000;
+    }
+
+    .btn-payment{
+        padding: 14px 28px;
+        background: #EDC043;
+        border-radius: 6px !important;
+        font-weight: 550;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 50px 0;
+    }
+
+/* Validation */
+
+    .errorInputColor{
+        border: 2px solid #EB7070!important;
+    }
+
+        .errorInputColor:focus{
+            border: 2px solid #EB7070!important;
+        }
+
+    .successInputColor{
+        border: 2px solid #9FFFB4!important;
+    }
+
+        .successInputColor:focus{
+            border: 2px solid #9FFFB4!important;
+        }
+
+    .errorRecord, .errorSName, .errorFName, .errorTel{
+        font-size: 10px;
+        line-height: 10px;
+        color: #EB7070;
+        height:20px;
+    }
+
+/* Стили для успешной оплаты */
+
+    .successPayBlock{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+}
