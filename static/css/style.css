@@ -120,7 +120,12 @@ body{
 .inst{
   fill: #fff !important;
 }
-.coop_contact{
+.coop_contact_mail{
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+}
+.coop_contact_phone{
   font-weight: bold;
   font-size: 22px;
   line-height: 22px;
@@ -692,6 +697,14 @@ h6.thisday{
   margin-top: 14%;
 }
 @media (max-width: 768px) {
+  .coop_contact_mail{
+    font-size: 18px;
+    line-height: 18px ;
+  }
+  .coop_contact_phone{
+    font-size: 22px;
+    line-height: 22px;
+  }
   .coop_icon_pc{
     position: absolute;
     margin-top: 2%;
