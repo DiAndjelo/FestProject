@@ -72,14 +72,10 @@ footer{
 /* Стили для блока контактной информации */
 
 .contact_section{
-    margin-top: 110px;
+    padding-top: 110px;
 }
 
-@media (max-width: 567px) {
-    .contact_section{
-        padding: 0 20px;
-    }
-}
+
 
 .contact_section_block{
     background: rgba(0, 0, 0, 0.6);
