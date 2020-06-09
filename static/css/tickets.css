@@ -39,8 +39,6 @@
 /* Основные стили */
 
 body{
-    width: 100%;
-    height: 100%;
     background: #00060F;
 }
 input, button{
@@ -67,18 +65,12 @@ footer{
     }
 }
 
-.layerBody{
-    position: absolute;
-    top: 0;
-    background: url(../../templates/fest (2)/fest/img/layer.jpg) no-repeat;
-    width: 100%;
-    background-size: 100%;
-}
+
 
 /* Предупреждение */
 
 .tickets_warning{
-    margin-top: 110px;
+    padding-top: 110px;
 }
 
 .tickets_warning_block{
