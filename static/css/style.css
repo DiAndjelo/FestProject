@@ -43,6 +43,78 @@ body{
   overflow-x: hidden !important;
   font-family: "HelveticaNeueCyr" !important;
 }
+.modal-content{
+  background: #020C1C !important;
+  color: #fff;
+}
+.form-control{
+  border-color: #285193 !important;
+}
+.input_modal.focus{
+  border: 1px solid #285193 !important;
+}
+.form-control{
+  background: #020C1C !important;
+
+
+}
+.form-control.focus{
+
+}
+
+.btn-active{
+  padding: 15px 40px !important;
+  border: 2px solid #fff !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px !important;
+  line-height: 14px !important;
+  text-transform: uppercase;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: 0 !important;
+  color: #fff;
+  fill: #fff;
+  border-radius: 2px !important;
+  -webkit-transition: 0.4s ease !important; /* Safari and Chrome */
+  -moz-transition: 0.4s ease !important; /* Firefox 4 */
+  -o-transition: 0.4s ease !important; /* Opera */
+  stroke: #fff !important;
+  stroke-width: 0px !important;
+}
+.w-88{
+  width: 88%;
+}
+.btn-active:hover{
+  color: #000;
+  transition: .4s;
+  fill: #000;
+  background: #EDC043 !important;
+  border: 2px solid #EDC043 !important;
+  stroke: #000 !important;
+}
+.input_modal{
+
+}
+.close{
+  position: absolute;
+  right: 3%;
+  opacity: 1 !important;
+  text-shadow: 0 0px 0 #fff !important;
+}
+.modal-title{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+}
+.modal_about{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 20px;
+}
 .about_org{
   color: #fff;
   margin-top: -30px;
@@ -105,6 +177,7 @@ body{
 .arrow_box{
     cursor: pointer;
 }
+
 .arrow_box:hover .arrow{
   transition: .4s !important;
   margin-top: 60px;
@@ -170,10 +243,6 @@ body{
   font-weight: normal;
   font-size: 16px;
   line-height: 16px;
-}
-.btn-showmap:hover{
-
-
 }
 .section_title{
   font-style: normal;
@@ -338,14 +407,11 @@ transition: 0.4s;
 .bg-main{
   background: #0D0D0D
 }
-btn.focus, .btn:focus {
+.btn.focus, .btn:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
 }
-.bg-btnday{
-  background: radial-gradient(50% 50% at 50% 50%, #01112B 0%, #020C1C 100%) !important;
-}
-.abs{
-  position: absolute;
+.form-control.focus{
+
 }
 .title_time{
   font-style: normal;
@@ -360,28 +426,119 @@ btn.focus, .btn:focus {
   line-height: 12px !important;
   }
 .btnday_hover{
-  -webkit-transition: 1s ease; /* Safari and Chrome */
-  -moz-transition: 1s ease; /* Firefox 4 */
-  -o-transition: 1s ease; /* Opera */
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(50% 50% at 50% 50%, #01112B 0%, #020C1C 100%)  !important;
+}
+.bg-btnday:hover ul>li>ul.zoomIn{
+  position: absolute;
+  z-index: -1;
+  background: radial-gradient(50% 50% at 50% 50%, #4A0225 0%, #020C1C 100%) !important;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.day_1_color{
+  color: #ffffff;
+}
+.day_2_color{
+  color: #DFD470;
+}
+.day_3_color{
+  color: #E9A41F;
+}
+.day_4_color{
+  color: #CCE91F;
+}
+.day_5_color{
+  color: #4FC01A;
+}
+.day_6_color{
+  color: #11AD75;
+}
+.day_7_color{
+  color: #48F5D6;
+}
+.day_8_color{
+  color: #0D819A;
+}
+.day_9_color{
+  color: #0C3DBD;
+}
+.day_10_color{
+  color: #250CBD;
+}
+.day_11_color{
+  color: #E181F1;
+}
+.day_12_color{
+  color: #BD459B;
+}
+.day_13_color{
+  color: #C91C5A;
+}
+.day_14_color{
+  color: #D4082D;
+}
+.disable{
+  position: relative;
+  z-index: -1;
+  color: #fff !important;
+}
+.bg-btnday.disable{
+  opacity: 30%;
+}
+.bg-btnday:hover .disable{
+  opacity: 100% !important;
 }
 .bg-btnday.active{
-  background: radial-gradient(50% 50% at 50% 50%, #4A0225 0%, #020C1C 100%) !important;
+  background: radial-gradient(50% 50% at 50% 50%, #01112B 0%, #020C1C 100%)  !important;
 }
-.btnday_hover:hover{
+.bg-btnday.active>ul>li>ul.zoomIn{ /*активный элемент*/
+    position: absolute;
+    z-index: 2;
+    background: radial-gradient(50% 50% at 50% 50%, #4A0225 0%, #020C1C 100%) !important;
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+/*пиздец это была заёбистая анимаци, я ебал, если ты читаешь это, вырази мне респект, йоу*/
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.zoomIn{
   position: absolute;
-  background: radial-gradient(50% 50% at 50% 50%, #4A0225 0%, #020C1C 100%) !important;
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  transform: scale(1.05);
-  background-position: center;
-  background-size: cover;
-  width: 50%;
-  height: 50%;
-  transition: all .5s;
-  transition: .4s !important;
+  z-index: -1;
+  background: radial-gradient(50% 50% at 50% 50%, #01112B 0%, #020C1C 100%);
 }
 
+
+.abs{
+  position: absolute;
+}
 .box {
    padding-bottom: 100%;
    position: relative;
@@ -401,6 +558,8 @@ img:hover{
     transition: 0.4s;
 }
 h6.dayweek{
+  position: relative;
+  z-index:10;
   color: #ffffff;
   font-weight: 900;
   font-size: 11px;
@@ -409,6 +568,8 @@ h6.dayweek{
   text-transform: uppercase;
 }
 h6.moonth{
+  position: relative;
+  z-index:10;
   color: #ffffff !important;
   font-weight: 900;
   font-size: 20px;
@@ -417,6 +578,8 @@ h6.moonth{
   text-transform: uppercase;
 }
 h6.thisday{
+  position: relative;
+  z-index:10;
   font-weight: bold;
   font-size: 60px;
   line-height: 60px;
@@ -505,14 +668,61 @@ h6.thisday{
     line-height: 15px !important;
   }
 }
+.china_icon{
+  margin-top: 33%;
+  width: 211px;
+  height: 340px;
+}
+.guitar_icon{
+  position: absolute;
+  left: 0;
+  margin-top: 13%;
+  width: 613px;
+  height: 748px;
+}
+.coop_icon_pc{
+  position: absolute;
+  margin-top: 2%;
+  width: 258px;
+  height: 258px;
+}
+.coop_icon_device{
+  position: absolute;
+  left: 0;
+  margin-top: 14%;
+}
 @media (max-width: 768px) {
-  .nickname{
-    font-size: 17px !important;
-    line-height: 15px !important;
+  .coop_icon_pc{
+    position: absolute;
+    margin-top: 2%;
+    width: 258px;
+    height: 258px;
+  }
+  .guitar_icon{
+    left: 0;
+    margin-top: -13%;
+    width: 306px;
+    height: 374px;
+    display: none;
+  }
+  .china_icon{
+    margin-top: 0%;
+    width: 105px;
+    height: 170px;
+  }
+  .close{
+    position: relative;
+  }
+  .modal-header{
+    margin-top: -30px;
   }
   .text_page{
     font-size: 15px;
     line-height: 15px;
+  }
+  .nickname{
+    font-size: 17px !important;
+    line-height: 15px !important;
   }
   h6.moonth{
     color: #ffffff !important;
