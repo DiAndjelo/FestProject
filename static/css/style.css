@@ -41,15 +41,29 @@ body{
   font-size: 18px;
   line-height: 128%;
 }
-.arrow_sea{
+
+.square {
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-name: square1;
+}
+@keyframes square1 {
+    from {
+
+    }
+    to {
+
+    }
+  }
+.arrow{
   -webkit-transition: 0.4s ease; /* Safari and Chrome */
   -moz-transition: 0.4s ease; /* Firefox 4 */
   -o-transition: 0.4s ease; /* Opera */
+  fill: #fff;
 }
-.text-vertical:hover .arrow_sea{
-  position: relative;
+.arrow_box:hover .arrow{
   transition: .4s !important;
-  margin-top: 40%;
+  margin-top: 30px;
 }
 .btn-showmap{
   padding: 10px 0 !important;
@@ -136,6 +150,9 @@ body{
   }
   .nav_link_menu{
     color: #252525 !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 3px 25px;
   }
   .nav_link_menu:hover{
     color: #ffffff !important;
@@ -203,14 +220,12 @@ body{
   color: #00060F !important;
   font-weight: bold;
 }
-.otstup{
-  margin-top: 20px;
-  margin-bottom: 20px;
+.container-padding-bottom{
+  padding-bottom: 50px;
 }
 @media (max-width: 576px) {
-  .otstup{
-    margin-top: 0px;
-    margin-bottom: 0px;
+  .container-padding-bottom{
+    padding-bottom: 30px;
   }
 }
 .btn_child_gallery{
@@ -451,6 +466,10 @@ h6.thisday{
   .nickname{
     font-size: 17px !important;
     line-height: 15px !important;
+  }
+  .text_page{
+    font-size: 15px;
+    line-height: 15px;
   }
   h6.moonth{
     color: #ffffff !important;
