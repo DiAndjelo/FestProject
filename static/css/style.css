@@ -325,6 +325,7 @@ body{
   border: 2px solid #EDC043 !important;
   color: #00060F !important;
   font-weight: bold;
+  transition: 0.4s;
 }
 .btn_howroad.active{
   background: #EDC043 !important;
@@ -710,7 +711,7 @@ h6.thisday{
     height: 170px;
   }
   .close{
-    
+
   }
   .modal-header{
     margin-top: -30px;
