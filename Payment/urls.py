@@ -7,4 +7,5 @@ from Payment import views
 
 urlpatterns = [
     path('', views.LandingView.as_view(), name='tickets'),
+    path('success/', views.SuccessView.as_view(), name='success_view'),
 ]

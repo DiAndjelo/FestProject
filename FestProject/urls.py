@@ -19,12 +19,15 @@ from django.urls import path, include
 
 from django.conf import settings
 from Landing import views
+from Payment.views import YandexPayment, YandexNotifications
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.LandingView.as_view(), name='landing'),
     path('contacts/', views.ContactView.as_view(), name='contacts'),
     path('tickets/', include('Payment.urls')),
+    path('api/payment/', YandexPayment.as_view(), name='payment_view'),
+    path('api/payment/notifications/', YandexNotifications.as_view(), name='payment_notification_view'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
