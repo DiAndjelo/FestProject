@@ -105,6 +105,7 @@ footer{
         .contact_section_block a:hover{
             color: #EDC043;
             text-decoration: none;
+            transition: .4s;
         }
 
     .contact_section_block svg{
