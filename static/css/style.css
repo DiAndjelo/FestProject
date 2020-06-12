@@ -65,6 +65,21 @@ body{
   overflow-x: hidden !important;
   font-family: "HelveticaNeueCyr" !important;
 }
+.video_wrap {
+    position: absolute;
+    overflow: hidden;
+
+    min-height: 100vh !important;
+    z-index: -999;
+}
+.video_bg {
+    display: block;
+    position: relative;
+    z-index: -999;
+    margin: 0 auto;
+    min-width: 100vh !important;
+    min-height: 100vh !important;
+}
 .background_member_lay{
   position: absolute;
   bottom: 0;
@@ -305,8 +320,6 @@ background: #020C1C !important;
 @media (max-width: 991px) {
   .navbar_mobile{
     background: white !important;
-    position: absolute;
-    right: 0;
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -910,12 +923,18 @@ h6.thisday{
   font-size: 14px;
   line-height: 14px;
   border-bottom: 2px solid #FFFFFF !important;
+  fill: #ffffff;
 }
 .buy_ticket:hover{
+  text-decoration: none !important;
   color: #FFFFFF;
   opacity: 80%;
   transition: 0.4s;
   border-bottom: 2px solid #EDC043 !important;
+  fill: #EDC043;
+}
+.buy_ticket a:hover{
+  text-decoration: none !important;
 }
 .title_project{
   font-weight: bold;
