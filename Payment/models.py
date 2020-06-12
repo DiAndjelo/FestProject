@@ -16,49 +16,15 @@ class Ticket(models.Model):
         verbose_name_plural = "Билеты"
 
 
-class TicketPay(models.Model):
-    """ Модель принадлежности билета + генерация индивидуального кода
-    """
-    customer_name = models.CharField("Имя", max_length=64, blank=False, null=False, default=None)
-    customer_surname = models.CharField("Фамилия", max_length=64, blank=False, null=False, default=None)
-    customer_email = models.EmailField("Email", max_length=128, blank=False, null=False, default=None)
-    customer_phone = models.CharField("Телефон", max_length=48, blank=True, null=True, default=None)
-    generated_code = models.CharField("Персональный ключ", max_length=6, blank=True, null=False)
-    created = models.DateTimeField("Создано", auto_now_add=True, auto_now=False)
-    updated = models.DateTimeField("Обновлено", auto_now_add=False, auto_now=True)
-
-    def save(self, *args, **kwargs):
-        b = ''
-        alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-                    'U', 'V', 'W', 'X', 'Y', 'Z',
-                    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-                    'u', 'v', 'w', 'x', 'y', 'z',
-                    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-
-        for i in range(5):
-            a = randint(0, 35)
-            b = str(b) + str(alphabet[a])
-
-        self.generated_code = b
-
-        super(TicketPay, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return "%s %s" % (self.customer_surname, self.customer_name)
-
-    class Meta:
-        verbose_name = "Заказанный билет"
-        verbose_name_plural = "Заказанные билеты"
-
-
 class PaymentModel(models.Model):
     """ Модель оплаты заказа. Здесь считается количество заказанных билетов и их стоимость. Отсюда будем брать сумму
         и передавать в ЯКассы
     """
-    order = models.ManyToManyField(TicketPay, verbose_name="Заказ", blank=True, default=None)
-    ticket = models.ForeignKey(Ticket, verbose_name="Билет", blank=True, default=1, null=True,
+    # ticket_pay = models.ManyToManyField(TicketPay, verbose_name="Заказ", blank=True, default=None)
+    email = models.EmailField('Email', max_length=64, blank=False, null=False)
+    ticket = models.ForeignKey(Ticket, verbose_name="Билет", blank=True, default='Билет за 3000 RUB', null=True,
                                on_delete=models.SET_NULL)
-    nmb = models.IntegerField("Количество", default=1)
+    nmb = models.IntegerField("Количество", default=0)
     price_per_item = models.DecimalField("Стоимость", default=0, max_digits=10, decimal_places=2)
     total_price = models.DecimalField("Сумма", default=0, max_digits=10, decimal_places=2)  # price*nmb
     created = models.DateTimeField("Создано", auto_now_add=True, auto_now=False)
@@ -74,7 +40,55 @@ class PaymentModel(models.Model):
     def save(self, *args, **kwargs):
         price_per_item = self.ticket.price
         self.price_per_item = price_per_item
-        self.nmb = self.order.count()
+        nmb = 0
+        for i in TicketPay.objects.all():
+            if PaymentModel.objects.get(id=i.order.id):
+                nmb += 1
+            print(nmb)
+        self.nmb = nmb
         self.total_price = int(self.nmb) * price_per_item
 
         super(PaymentModel, self).save(*args, **kwargs)
+
+
+class TicketPay(models.Model):
+    """ Модель принадлежности билета + генерация индивидуального кода
+    """
+    order = models.ForeignKey(PaymentModel, on_delete=models.CASCADE)
+    name = models.CharField("Имя", max_length=64, blank=False, null=False, default=None)
+    surname = models.CharField("Фамилия", max_length=64, blank=False, null=False, default=None)
+    # customer_email = models.EmailField("Email", max_length=128, blank=False, null=False, default=None)
+    phone = models.CharField("Телефон", max_length=48, blank=True, null=True, default=None)
+    generated_code = models.CharField("Персональный ключ", max_length=6, blank=True, null=False)
+    created = models.DateTimeField("Создано", auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField("Обновлено", auto_now_add=False, auto_now=True)
+
+    def save(self, *args, **kwargs):
+        b = ''
+        alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                    'U', 'V', 'W', 'X', 'Y', 'Z',
+                    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                    'u', 'v', 'w', 'x', 'y', 'z',
+                    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+        checker = False
+        count = ''
+        for i in range(5):
+            a = randint(0, 35)
+            b = str(b) + str(alphabet[a])
+        for i in PaymentModel.objects.all():
+            print(i.id, ' ', self.order.id)
+            if i.id == self.order.id:
+                checker = True
+                count = i
+
+        self.generated_code = b
+        if checker:
+            count.save(*args, **kwargs)
+        super(TicketPay, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return "Билет №%s" % self.id
+
+    class Meta:
+        verbose_name = "Заказанный билет c ключом"
+        verbose_name_plural = "Заказанные билеты с ключом"
