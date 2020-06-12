@@ -65,6 +65,22 @@ body{
   overflow-x: hidden !important;
   font-family: "HelveticaNeueCyr" !important;
 }
+.grad-mask{
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(14, 10, 22, 0) 0%, #00060F 100%);
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width:991px) {
+  .grad-mask{
+    height: 300vh;
+    background: linear-gradient(180deg, rgba(14, 10, 22, 0) 0%, #00060F 100%);
+    bottom: 0;
+    width: 100%;
+  }
+}
 video {
     max-width: 100%;
     width: 100%;
@@ -82,8 +98,7 @@ video {
     width: 100%;
     min-width: 720px;
     height: 100vh;
-    min-height: 350px;
-/*     background: url(../images/video-bg.png) center no-repeat; */
+    min-height: 100vh;
     -webkit-background-size: cover;
     background-size: cover;
     object-fit: cover;
@@ -124,6 +139,7 @@ video {
     left: 0;
     right: 0;
     bottom: 0;
+
 }
 .background_member_lay{
   position: absolute;
