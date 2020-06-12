@@ -562,7 +562,7 @@ transition: 0.4s;
 .bg-btnday.active>ul>li>ul.zoomIn{ /*активный элемент*/
     position: absolute;
     z-index: 2;
-    background: radial-gradient(50% 50% at 50% 50%, #4A0225 0%, #020C1C 100%) !important;
+    background: radial-gradient(50% 50% at 50% 50%, #610B34 0%, #020C1C 100%) !important;
     -webkit-animation-name: zoomIn;
     animation-name: zoomIn;
     -webkit-animation-duration: .4s;
