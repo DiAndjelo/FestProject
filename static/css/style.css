@@ -35,11 +35,59 @@ src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
 font-style: normal;
 font-weight: normal;
 }
+.width_text{
+  width: 68%;
+}
+.text_member_add_about{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+}
+@media (max-width: 1199px) {
+  .width_text{
+    width: 70%;
+  }
+  .text_member_add_about{
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .width_text{
+    width: 90%;
+  }
+}
+@media query {
+
+}
 body{
   background: #00060F !important;
   transition: background 11.15s linear;
   overflow-x: hidden !important;
   font-family: "HelveticaNeueCyr" !important;
+}
+.background_member_lay{
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.row_members_add{
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.row_name_member{
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 19px;
+}
+.row_about_member{
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 10px;
 }
 .modal-content{
   background: #020C1C !important;
@@ -393,6 +441,16 @@ transition: 0.4s;
   color: #EDC043;
   transition: 0.4s;
 }
+.member_icon{
+  color: #ffffff;
+  fill: #ffffff;;
+}
+.member_icon:hover{
+  color: #EDC043;
+  fill: #EDC043;
+  transition: 0.4s;
+  text-decoration: none;
+}
 .footer_nav_link{
   color: #ffffff;
   fill: #ffffff;
@@ -402,7 +460,6 @@ transition: 0.4s;
   fill: #EDC043;
   transition: 0.4s;
   text-decoration: none;
-
 }
 @media (max-width: 575px) {
   .btn-city{
@@ -548,10 +605,10 @@ transition: 0.4s;
    padding-bottom: 100%;
    position: relative;
 }
-img{
-  -webkit-transition: 0.4s ease; /* Safari and Chrome */
-  -moz-transition: 0.4s ease; /* Firefox 4 */
-  -o-transition: 0.4s ease; /* Opera */
+/*img{
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
 }
 img:hover{
     animation-name: scale;
@@ -561,7 +618,7 @@ img:hover{
     transform-origin: 50% 50%;
     transform: scale(1.02);
     transition: 0.4s;
-}
+}*/
 h6.dayweek{
   position: relative;
   z-index:10;
@@ -697,6 +754,16 @@ h6.thisday{
   margin-top: 14%;
 }
 @media (max-width: 768px) {
+  .member_icon{
+
+  }
+  .row_name_member{
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+  }
   .coop_contact_mail{
     font-style: normal;
     font-weight: normal;
