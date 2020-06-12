@@ -6,14 +6,23 @@
 {% block content %}
 
     <section>
-      <div class="container-fluid" style="height: 100vh;">
-        <!--<div class="row w-100">
-          <div class="video_wrap">
-              <video class="video_bg" autoplay="autoplay" loop="loop" muted>
-                  <source src="../static/img/videos4.mp4" type="video/mp4" />
-              </video>
+
+
+      <div class="custom-video section" data-section="about">
+        <div class="video_section" id="section0">
+          <video autoplay loop muted id="myVideo">
+            <source src="../static/img/videos4.mp4" type="video/mp4">
+          </video>
+          <div class="layer">
+            <div class="wrap wrap_video">
+
+            </div>
+
           </div>
-        </div>-->
+        </div>
+      </div>
+      <div class="container-fluid">
+
         <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
           <!--<img src="{% static 'img/imghead.png' %}" alt="" class="bg-main img-fluid">-->
           <div class="text-center" style="">
@@ -45,7 +54,7 @@
       </div>
     </section>
 
-    <section style="background: linear-gradient(180deg, rgba(14, 10, 22, 0) 0%, #00060F 18.23%); z-index: 1;">
+    <section style="background: linear-gradient(180deg, rgba(14, 10, 22, 0) 0%, #00060F 18.23%); z-index: 1; position: relative;">
       <svg class="china_icon" style="position: absolute; right: 0;" viewBox="0 0 211 340" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0)">
         <path d="M170 158.634C126.194 158.634 90.6829 194.146 90.6829 237.951C90.6829 281.757 126.194 317.269 170 317.269C213.806 317.269 249.317 281.757 249.317 237.951C249.27 194.166 213.787 158.681 170 158.634ZM170 305.938C132.453 305.938 102.014 275.499 102.014 237.951C102.014 200.404 132.453 169.965 170 169.965C207.547 169.965 237.986 200.404 237.986 237.951C237.946 275.483 207.531 305.897 170 305.938Z" fill="#020C1C"/>
@@ -1399,7 +1408,7 @@
 
 
                   <button class="btn btn_child_gallery text-right py-0 mt-0 mb-3">
-                    <a class="child_gallery"></a>
+                    <a class="child_gallery_oleg"></a>
                     <ul class="list-unstyled about_org_row text-white row justify-content-between align-items-center mb-2 mx-0 px-2">
                       <li class="name_org">олег</li>
                       <li>
@@ -1412,7 +1421,7 @@
                     </ul>
                   </button>
                   <button class="btn btn_child_gallery text-right py-0 mt-0 mb-3">
-                    <a class="child_gallery"></a>
+                    <a class="child_gallery_zakhar"></a>
                     <ul class="list-unstyled about_org_row text-white row justify-content-between align-items-center mb-2 mx-0 px-2">
                       <li class="name_org">захар</li>
                       <li>
@@ -1425,7 +1434,7 @@
                     </ul>
                   </button>
                   <button class="btn btn_child_gallery text-right py-0 mt-0 mb-3">
-                    <a class="child_gallery"></a>
+                    <a class="child_gallery_anastasia_1"></a>
                     <ul class="list-unstyled about_org_row text-white row justify-content-between align-items-center mb-2 mx-0 px-2">
                       <li class="name_org">настя</li>
                       <li>
@@ -1438,7 +1447,7 @@
                     </ul>
                   </button>
                   <button class="btn btn_child_gallery text-right py-0 mt-0 mb-3">
-                    <a class="child_gallery"></a>
+                    <a class="child_gallery_evgeniya"></a>
                     <ul class="list-unstyled about_org_row text-white row justify-content-between align-items-center mb-2 mx-0 px-2">
                       <li class="name_org">женя</li>
                       <li>
@@ -1451,7 +1460,7 @@
                     </ul>
                   </button>
                   <button class="btn btn_child_gallery text-right py-0 mt-0 mb-3">
-                    <a class="child_gallery"></a>
+                    <a class="child_gallery_viktor"></a>
                     <ul class="list-unstyled about_org_row text-white row justify-content-between align-items-center mb-2 mx-0 px-2">
                       <li class="name_org">витя</li>
                       <li>
@@ -1464,7 +1473,7 @@
                     </ul>
                   </button>
                   <button class="btn btn_child_gallery text-right py-0 mt-0 mb-3">
-                    <a class="child_gallery"></a>
+                    <a class="child_gallery_nikita"></a>
                     <ul class="list-unstyled about_org_row text-white row justify-content-between align-items-center mb-2 mx-0 px-2">
                       <li class="name_org">никита</li>
                       <li>
@@ -1477,7 +1486,7 @@
                     </ul>
                   </button>
                   <button class="btn btn_child_gallery text-right py-0 mt-0 mb-3">
-                    <a class="child_gallery"></a>
+                    <a class="child_gallery_anastasia_2"></a>
                     <ul class="list-unstyled about_org_row text-white row justify-content-between align-items-center mb-2 mx-0 px-2">
                       <li class="name_org">настя</li>
                       <li>
@@ -1489,7 +1498,6 @@
                       </li>
                     </ul>
                   </button>
-
                 </div>
               </div>
             </div>

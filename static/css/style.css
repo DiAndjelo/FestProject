@@ -65,20 +65,65 @@ body{
   overflow-x: hidden !important;
   font-family: "HelveticaNeueCyr" !important;
 }
-.video_wrap {
-    position: absolute;
-    overflow: hidden;
-
-    min-height: 100vh !important;
-    z-index: -999;
-}
-.video_bg {
+video {
+    max-width: 100%;
+    width: 100%;
+    vertical-align: middle;
+    border: 0;
     display: block;
-    position: relative;
-    z-index: -999;
     margin: 0 auto;
-    min-width: 100vh !important;
-    min-height: 100vh !important;
+}
+.custom-video{
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+#myVideo {
+    width: 100%;
+    min-width: 720px;
+    height: 100vh;
+    min-height: 350px;
+/*     background: url(../images/video-bg.png) center no-repeat; */
+    -webkit-background-size: cover;
+    background-size: cover;
+    object-fit: cover;
+    z-index: 3;
+}
+
+#section0 {
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+@media only screen and (min-width: 770px) {
+  #section0 {
+      position: relative;
+      overflow: hidden;
+      max-height: 100vh !important;
+      min-height: 100vh;
+      height: 100% !important;
+      display: block;
+  }
+}
+#section0 .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.34);
+    text-align: center;
+}
+
+.wrap_video {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .background_member_lay{
   position: absolute;
@@ -410,19 +455,126 @@ background: #020C1C !important;
 .btn_child_gallery{
    background: 0;
 }
-.child_gallery{
-background: url("../img/Захар.png") no-repeat;
+/*галлерея организаторов*/
+
+.child_gallery_oleg{
+background: url("../img/org/oleg_org.jpg") no-repeat;
 display: block;
 width: 166px;
-height: 195px;
+height: 210px;
 -webkit-transition: .4s ease; /* Safari and Chrome */
 -moz-transition: .4s ease; /* Firefox 4 */
 -o-transition: .4s ease; /* Opera */
 }
-button:hover .child_gallery{
-background: url("../img/lil_org_example.jpg") no-repeat !important;
+button:hover .child_gallery_oleg{
+background: url("../img/org/lil_oleg_org.jpg") no-repeat !important;
 transition: 0.4s;
 }
+
+
+
+.child_gallery_zakhar{
+background: url("../img/org/zakhar_org.jpg") no-repeat;
+display: block;
+width: 166px;
+height: 210px;
+-webkit-transition: .4s ease; /* Safari and Chrome */
+-moz-transition: .4s ease; /* Firefox 4 */
+-o-transition: .4s ease; /* Opera */
+}
+button:hover .child_gallery_zakhar{
+background: url("../img/org/lil_zakhar_org.jpg") no-repeat !important;
+transition: 0.4s;
+}
+
+
+
+.child_gallery_anastasia_1{
+background: url("../img/org/anastasiaya_org.jpg") no-repeat;
+display: block;
+width: 166px;
+height: 210px;
+-webkit-transition: .4s ease; /* Safari and Chrome */
+-moz-transition: .4s ease; /* Firefox 4 */
+-o-transition: .4s ease; /* Opera */
+}
+button:hover .child_gallery_anastasia_1{
+background: url("../img/org/lil_anastasiaya_org.jpg") no-repeat !important;
+transition: 0.4s;
+}
+
+
+
+.child_gallery_evgeniya{
+background: url("../img/org/evgenia_org.jpg") no-repeat;
+display: block;
+width: 166px;
+height: 210px;
+-webkit-transition: .4s ease; /* Safari and Chrome */
+-moz-transition: .4s ease; /* Firefox 4 */
+-o-transition: .4s ease; /* Opera */
+}
+button:hover .child_gallery_evgeniya{
+background: url("../img/org/lil_evgenia_org.jpg") no-repeat !important;
+transition: 0.4s;
+}
+
+
+
+.child_gallery_viktor{
+background: url("../img/org/victor_org.jpg") no-repeat;
+display: block;
+width: 166px;
+height: 210px;
+-webkit-transition: .4s ease; /* Safari and Chrome */
+-moz-transition: .4s ease; /* Firefox 4 */
+-o-transition: .4s ease; /* Opera */
+}
+button:hover .child_gallery_viktor{
+background: url("../img/org/lil_victor_org.jpg") no-repeat !important;
+transition: 0.4s;
+}
+
+
+
+.child_gallery_nikita{
+background: url("../img/org/nikita_org.jpg") no-repeat;
+display: block;
+width: 166px;
+height: 210px;
+-webkit-transition: .4s ease; /* Safari and Chrome */
+-moz-transition: .4s ease; /* Firefox 4 */
+-o-transition: .4s ease; /* Opera */
+}
+button:hover .child_gallery_nikita{
+background: url("../img/org/lil_nikita_org.jpg") no-repeat !important;
+transition: 0.4s;
+}
+
+
+
+.child_gallery_anastasia_2{
+background: url("../img/org/anastasia2_org.jpg") no-repeat;
+display: block;
+width: 166px;
+height: 210px;
+-webkit-transition: .4s ease; /* Safari and Chrome */
+-moz-transition: .4s ease; /* Firefox 4 */
+-o-transition: .4s ease; /* Opera */
+}
+button:hover .child_gallery_anastasia_2{
+background: url("../img/org/lil_anastasia2_org.jpg") no-repeat !important;
+transition: 0.4s;
+}
+
+
+
+
+
+
+
+
+
 .btn_child_gallery:hover ul {
   color: #EDC043 !important;
   transition: .4s;
