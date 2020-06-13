@@ -35,6 +35,30 @@ src: url("../fonts/HelveticaNeueCyr-Roman.otf") format("truetype");
 font-style: normal;
 font-weight: normal;
 }
+.zoom {
+  display:inline-block;
+  position: relative;
+}
+
+
+/* magnifying glass icon */
+.zoom:after {
+  content:'';
+  display:block;
+  width:33px;
+  height:33px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+.zoom img {
+
+}
+
+.zoom img::selection { background-color: transparent; }
+
+#ex2 img:hover { cursor: url(grab.cur), default; }
+#ex2 img:active { cursor: url(grabbed.cur), default; }
 .section_about{
   font-style: normal;
   font-weight: 300;
