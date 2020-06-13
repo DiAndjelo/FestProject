@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.LandingView.as_view(), name='landing'),
     path('contacts/', views.ContactView.as_view(), name='contacts'),
+    path('members/', views.MembersView.as_view(), name='members'),
     path('tickets/', include('Payment.urls')),
     path('api/payment/', YandexPayment.as_view(), name='payment_view'),
     path('api/payment/notifications/', YandexNotifications.as_view(), name='payment_notification_view'),
