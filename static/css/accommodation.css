@@ -1,0 +1,200 @@
+.mainBlock {
+    opacity: 0.8;
+    background-color: #0D0D0D ;
+}
+
+.headerRow h2 {
+    font-size:30px;
+    margin-top:50px;
+}
+
+.opacity {
+    opacity:0.8;
+}
+
+.infoBlock {
+    margin-top:30px;
+}
+
+.costLeft {
+    margin-top:30px;
+}
+
+.costLeft div {
+    font-size:85px;
+    line-height: 85px;
+    font-weight:bold;
+}
+
+.costLeft span {
+    font-size:17px;
+    line-height: 17px;
+}
+
+.prosLeft {
+     margin-top:60px;
+}
+
+.first {
+   margin-top:30px;
+}
+
+.first div:first-child {
+    font-size:30px;
+    margin-right:0px;
+    
+}
+
+.first div:last-child {
+    font-size:15px;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+.reserveBtn {
+    margin-top:60px;
+}
+
+.btnReservation {
+    background: #EDC043;
+    border-radius: 6px!important;
+    width: 196px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color:white;
+}
+
+.campingName {
+    font-size:22px;
+    margin-top:50px;
+    color:white;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+
+.optionName {
+    font-size:22px;
+    color:white;
+    text-transform:uppercase;
+    font-weight: bold;
+    text-align:left;
+    margin-top: 30px;
+}
+
+.optionText {
+    color:white;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: justify;
+    display: inline-block;
+    margin-left:15px;
+}
+
+.line {
+    width: 5px;
+    height: 63px;
+    
+    background: #393939;
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    top:2px;
+}
+
+.optionSumm div{
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color:white;
+}
+
+.optionSumm span{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 17px;
+    color:white;
+    text-transform: lowercase;
+}
+
+.optionSummVip div{
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color:#EDC043;
+}
+
+.optionSummVip span{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 17px;
+    color:#EDC043;
+    text-transform: lowercase;
+}
+
+.lineVip {
+    width: 5px;
+    height: 63px;
+    
+    background: #EDC043;
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    top:2px;
+}
+
+.lineNutrition {
+    width: 5px;
+    height: 45px;
+    
+    background: #393939;
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    top:2px;
+}
+
+.lineBBQ {
+        width: 5px;
+    height: 31px;
+    
+    background: #393939;
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    top:2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

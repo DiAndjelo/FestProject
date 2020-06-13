@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}
+    Проживание
+{% endblock %}
+{% block content %}
+    {% block payment_first %}
+    {% endblock %}
+    <video class="video_background" poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
+      <source src="../static/img/videos4.mp4" type="video/mp4">
+    </video>
+
+    <section>
+        <div class="container mainBlock">
+            <div class="row headerRow">
+                <div class="col-12 text-white text-center" >
+                    <h2 class="text-uppercase">Пансионат якорная щель</h2>
+                    <span class="text-uppercase opacity">Упрощенная схема пансионата</span>
+                </div>
+            </div>
+            <div class="row infoBlock">
+                <div class="col-xl-4 col-lg-4 col-md-12 text-white text-center">
+                    <div class="costLeft">
+                        <div>500</div>
+                        <span>руб/сут</span>
+                    </div>
+                    <div class="prosLeft">
+                        <div class="row first align-items-center">
+                            <div class="col-4 text-right">200</div>
+                            <div class="col-8 text-left">Гостевых мест</div>
+                        </div>
+                        <div class="row first second align-items-center">
+                            <div class="col-4 text-right">200</div>
+                            <div class="col-8 text-left">Прохладная сторона<br> с выходом на северную<br> часть территории</div>
+                        </div>
+                        <div class="row first third align-items-center">
+                            <div class="col-4 text-right">200</div>
+                            <div class="col-8 text-left">Тихое место для любителей<br> спокойного отдыха</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 text-white text-center">
+                    схема
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 text-white text-center">
+                    <div class="costLeft">
+                        <div>700</div>
+                        <span>руб/сут</span>
+                    </div>
+                    <div class="prosLeft">
+                        <div class="row first align-items-center">
+                            <div class="col-4 text-right">300</div>
+                            <div class="col-8 text-left">Гостевых мест</div>
+                        </div>
+                        <div class="row first second align-items-center">
+                            <div class="col-4 text-right">200</div>
+                            <div class="col-8 text-left">Вид на линию<br> морского горизонта</div>
+                        </div>
+                        <div class="row first third align-items-center">
+                            <div class="col-4 text-right">200</div>
+                            <div class="col-8 text-left">Инфраструктура фестиваля<br> в шаговой доступности</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row reserveBtn">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btnReservation">Забронировать</button>
+                </div>
+            </div>
+            <div class=" text-center">
+                <h2 class="campingName">Кемпинг</h2>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-6 text-left">
+                        <h2 class="optionName">Standart</h2>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-2"></div>
+                    <div class="col-6 text-left">
+                        <span class="line"></span>
+                        <span class="optionText">Кемпинг-зона большой повышенной площади территориально<br>
+                        расположена с обратной стороны от сцены фестиваля. Доступны<br>
+                        объединение “островков” для расположения нескольких палаток.<br>
+                        Шумным большим компаниям рекомендуется!</span>
+                    </div>
+                    <div class="col-3 text-center optionSumm">
+                        <div>250</div>
+                        <span>руб/сут</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-6 text-left">
+                        <h2 class="optionName">vip</h2>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-2"></div>
+                    <div class="col-6 text-left">
+                        <span class="lineVip"></span>
+                        <span class="optionText">Кемпинг-зона отделённая от общей территории с отдельным<br>
+                        охраняемым входом. Площадь разбита на просторные палаточные<br>
+                        “островки”. Создана для родителей с детьми и компаний любящих<br>
+                        отдохнуть в тишине.</span>
+                    </div>
+                    <div class="col-3 text-center optionSummVip">
+                        <div>350</div>
+                        <span>руб/сут</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" text-center">
+                <h2 class="campingName">Дополнительно</h2>
+                <div class="row">
+                    <div class="col-lg-2 col-mb-12"></div>
+                    <div class="col-lg-6 col-mb-12 text-left">
+                        <h2 class="optionName">Питание</h2>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-lg-2 col-mb-12"></div>
+                    <div class="col-lg-6 col-mb-12 text-left">
+                        <span class="lineNutrition"></span>
+                        <span class="optionText">Для участников фестиваля “ЧесTnok” на протяжении 14 дней<br>
+                        фестиваля будет организовано 3-х разовое питание в столовой<br>
+                        пансионата.</span>
+                    </div>
+                    <div class="col-lg-3 col-mb-12 text-center optionSumm ">
+                        <div>750</div>
+                        <span>руб/сут</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-6 text-left">
+                        <h2 class="optionName">Барбекю</h2>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-2"></div>
+                    <div class="col-6 text-left">
+                        <span class="lineBBQ"></span>
+                        <span class="optionText">На территории проведения фестиваля, для всех желающих<br>
+                        подготовлена площадка для приготовления мяса на огне.</span>
+                    </div>
+                    <div class="col-3 text-center optionSumm">
+                        <div>150</div>
+                        <span>руб/сут</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% block payment_second %}
+        </div>
+    {% endblock %}
+{% endblock %}

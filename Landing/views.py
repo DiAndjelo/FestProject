@@ -17,3 +17,8 @@ class ContactView(View):
 class MembersView(View):
     def get(self, request):
         return render(request, 'Landing/members.html')
+
+
+class AccommodationView(View):
+    def get(self, request):
+        return render(request, 'Landing/accommodation.html')
