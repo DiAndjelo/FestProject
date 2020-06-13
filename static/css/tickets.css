@@ -174,19 +174,19 @@ input:focus{
 /* Validation */
 
     .errorInputColor{
-        border: 2px solid #EB7070!important;
+        box-shadow: 0px 0px 0px 1px #EB7070!important;
     }
 
         .errorInputColor:focus{
-            border: 2px solid #EB7070!important;
+            box-shadow: 0px 0px 0px 1px #EB7070!important;
         }
 
     .successInputColor{
-        border: 2px solid #9FFFB4!important;
+        box-shadow: 0px 0px 0px 1px #9FFFB4!important;
     }
 
         .successInputColor:focus{
-            border: 2px solid #9FFFB4!important;
+            box-shadow: 0px 0px 0px 1px #9FFFB4!important;
         }
 
     .errorRecord, .errorSName, .errorFName, .errorTel{
