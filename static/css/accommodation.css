@@ -42,7 +42,7 @@
 .first div:first-child {
     font-size:30px;
     margin-right:0px;
-    
+
 }
 
 .first div:last-child {
@@ -95,7 +95,7 @@
 .line {
     width: 5px;
     height: 63px;
-    
+
     background: #393939;
     border-radius: 100px;
     display: inline-block;
@@ -138,7 +138,7 @@
 .lineVip {
     width: 5px;
     height: 63px;
-    
+
     background: #EDC043;
     border-radius: 100px;
     display: inline-block;
@@ -149,7 +149,7 @@
 .lineNutrition {
     width: 5px;
     height: 45px;
-    
+
     background: #393939;
     border-radius: 100px;
     display: inline-block;
@@ -160,41 +160,10 @@
 .lineBBQ {
         width: 5px;
     height: 31px;
-    
+
     background: #393939;
     border-radius: 100px;
     display: inline-block;
     position: relative;
     top:2px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
