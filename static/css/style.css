@@ -126,9 +126,9 @@ body{
 }
 @media (max-width:991px) {
   .grad-mask{
-    height: 300vh;
-    background: linear-gradient(180deg, rgba(14, 10, 22, 0) 0%, #00060F 100%);
-    bottom: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(14, 10, 22, 0) 0%, #00060F 70%);
+    bottom: -170px;
     width: 100%;
   }
 }
