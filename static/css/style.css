@@ -37,6 +37,7 @@ font-weight: normal;
 }
 .zoom {
   display:inline-block;
+  margin: 0;
   position: relative;
 }
 
@@ -109,7 +110,6 @@ font-weight: normal;
     width:100%;
   }
 }
-
 .width_text{
   width: 68%;
 }
