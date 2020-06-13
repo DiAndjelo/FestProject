@@ -81,7 +81,20 @@ body{
     width: 100%;
   }
 }
-video {
+.video_background{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      transform: translateX(-50%) translateY(-50%);
+      background-size: cover;
+      transition: 1s opacity;
+}
+.video_head{
     max-width: 100%;
     width: 100%;
     vertical-align: middle;
@@ -94,6 +107,7 @@ video {
   position: absolute;
   z-index: -1;
 }
+
 #myVideo {
     width: 100%;
     min-width: 720px;
@@ -104,7 +118,13 @@ video {
     object-fit: cover;
     z-index: 3;
 }
-
+#videofull {
+    width: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    object-fit: cover;
+    z-index: 3;
+}
 #section0 {
     position: relative;
     overflow: hidden;
