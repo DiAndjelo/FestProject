@@ -73,19 +73,21 @@ function f_nameValidation(fname, inputID, errorID, id) {
 
 //Функция проверки поля ввода телефона
 
-function telValidation(tel, errorID, id) {
-    $("#" + tel).mask('+7(999)999-99-99');
-    if ($('#' + tel).val().length == 0) {
+function telValidation(inputID, errorID, id) {
+    $("#" + inputID).mask('+7(999)999-99-99');
+    if ($('#' + inputID).val().length == 0) {
         $("#" + errorID).html("Введите номер телефона");
-        $('#' + tel).removeClass('successInputColor').addClass('errorInputColor');
+        $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+        $("#num" + i).empty();
         return false;
-    } else if ($("#" + tel).val().length != 16) {
+    } else if ($("#" + inputID).val().length != 16) {
         $('#' + errorID).html("Неверно введен номер телефона");
         $('#' + tel).removeClass('successInputColor').addClass('errorInputColor');
+        $("#num" + i).empty();
         return false;
     } else {
        $("#" + errorID).html("");
-       $('#' + tel).removeClass('errorInputColor').addClass('successInputColor');
+       $('#' + inputID).removeClass('errorInputColor').addClass('successInputColor');
        var k = $("#" + tel).val();
 
        $("#num" + id).empty();

@@ -139,7 +139,7 @@ footer{
             text-align: justify;
             font-weight: 300;
             font-size: 14px;
-            line-height: 14px;
+            line-height: 25px;
             color: #000000;
         }
 
@@ -217,6 +217,11 @@ footer{
         margin: 50px 0;
     }
 
+    .form-control{
+        border-color: #ced4da !important;
+    }
+
+
 /* Validation */
 
     .errorInputColor{
@@ -248,8 +253,4 @@ footer{
     font-weight: 300;
     font-size: 14px;
     line-height: 14px;
-}
-
-.form-control{
-    border-color: #ced4da !important;
 }
