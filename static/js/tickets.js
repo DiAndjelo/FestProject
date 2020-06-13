@@ -35,7 +35,7 @@ function ticketAdd(){
     $('.firstName:last').attr('id', 'fname'+ i);
     $('.firstName:last').attr('oninput', "f_nameValidation(this.value, this.id, 'efname" + i + "'," + i + ')');
     $('.telName:last').attr('id', 'tel'+ i);
-    $('.telName:last').attr('oninput', "s_telValidation(this.value, this.id, 'etel" + i + "'," + i + ')');
+    $('.telName:last').attr('onblur', "telValidation(this.id, 'etel" + i + "'," + i + ')');
     $('.errorSName:last').attr('id', 'esname'+ i);
     $('.errorFName:last').attr('id', 'efname'+ i);
     $('.errorTel:last').attr('id', 'etel'+ i)
