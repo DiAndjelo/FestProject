@@ -6,6 +6,6 @@ from django.conf import settings
 from Payment import views
 
 urlpatterns = [
-    path('', views.LandingView.as_view(), name='tickets'),
+    path('', views.PaymentView.as_view(), name='tickets'),
     path('success/', views.SuccessView.as_view(), name='success_view'),
 ]

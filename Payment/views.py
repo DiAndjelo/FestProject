@@ -8,10 +8,21 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from yandex_checkout import Payment, Configuration
 
+from Payment.forms import PaymentForm
+from Payment.models import Ticket, PaymentModel
 
-class LandingView(View):
+
+class PaymentView(View):
     def get(self, request):
-        return render(request, 'Payment/payment.html')
+        product_id = 1
+        ticket = Ticket.objects.get(id=product_id)
+        return render(request, 'Payment/payment.html', locals())
+
+
+class AddPayment(View):
+    def post(self, request, pk):
+        form = PaymentForm(request.POST)
+        order = PaymentModel
 
 
 class SuccessView(View):
