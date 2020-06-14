@@ -1144,7 +1144,7 @@ h6.thisday{
   }
   .text_page{
     font-size: 15px;
-    line-height: 15px;
+    line-height: 18px !important;
   }
   .nickname{
     font-size: 17px !important;
