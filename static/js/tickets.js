@@ -22,7 +22,7 @@ $('.num').attr('id', 'num'+ i);
 
 // Функция добавления участника, добавление новых ID
 
-function ticketAdd(){
+$('#btn_add_ticket').on('click', function(){
     var ticket = $(".tickets_block_row").get(0).outerHTML;
     $(ticket).insertAfter(".tickets_block_row:last");
     suball = $('.tickets_block_row').length;
@@ -31,11 +31,11 @@ function ticketAdd(){
     i++;
     $('.tickets_block_row:last').attr('id', 'block' + i);
     $('.secondName:last').attr('id', 'sname'+ i);
-    $('.secondName:last').attr('oninput', "s_nameValidation(this.value, this.id, 'esname" + i + "'," + i + ')');
+    $('.secondName:last').attr('data-id', i);
     $('.firstName:last').attr('id', 'fname'+ i);
-    $('.firstName:last').attr('oninput', "f_nameValidation(this.value, this.id, 'efname" + i + "'," + i + ')');
+    $('.firstName:last').attr('data-id', i);
     $('.telName:last').attr('id', 'tel'+ i);
-    $('.telName:last').attr('onblur', "telValidation(this.id, 'etel" + i + "'," + i + ')');
+    $('.telName:last').attr('data-id', i);
     $('.errorSName:last').attr('id', 'esname'+ i);
     $('.errorFName:last').attr('id', 'efname'+ i);
     $('.errorTel:last').attr('id', 'etel'+ i)
@@ -59,11 +59,11 @@ function ticketAdd(){
     $('.num:last').empty();
     $('p.total_summ').empty();
     $('p.total_summ').append(suball * 3000+" руб.");
-}
+});
 
 // Функция удаления участника, удаление ID
 
-function ticketRemove(){
+$(document).on('click', '#btn_remove_ticket', function(){
     if($('.tickets_block_row').length > 1){
         $(".tickets_block_row:last").slideUp(300,function(){
             $(this).remove();
@@ -76,4 +76,4 @@ function ticketRemove(){
             $('p.total_summ').append(suball * 3000+" руб.");
         });
     }
-}
+});

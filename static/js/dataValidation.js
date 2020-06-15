@@ -1,110 +1,111 @@
 //Функция проверки поля ввода фамилии
 
-function s_nameValidation(sname, inputID, errorID, id) {
-   if(sname.length === 0) {
-      $('#' + errorID).html("Введите фамилию");
-      $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+$(document).on('input', '.secondName', function(){
+   if(this.value.length === 0) {
+      $('#esname' + $(this).attr("data-id")).html("Введите фамилию");
+      $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
       $("#fam" + i).empty();
       return false;
-  } else if (sname.length < 2 ) {
-      $('#' + errorID).html("Не менее двух символов");
-      $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+  } else if (this.value.length < 2 ) {
+      $('#esname' + $(this).attr("data-id")).html("Не менее двух символов");
+      $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
       $("#fam" + i).empty();
       return false;
-  } else if (sname.length > 30 ) {
-      $('#' + errorID).html("Не более 30 символов");
-      $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+  } else if (this.value.length > 30 ) {
+      $('#esname' + $(this).attr("data-id")).html("Не более 30 символов");
+      $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
       $("#fam" + i).empty();
       return false;
    } else {
       var re = /^[А-яЁ ё]{0,}$/;
-      if(!re.test(sname)) {
-           $('#' + errorID).html("Только русские буквы");
-           $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+      if(!re.test(this.value)) {
+           $('#esname' + $(this).attr("data-id")).html("Только русские буквы");
+           $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
            $("#fam" + i).empty();
            return false;
       } else {
-           $('#' + errorID).html("");
-           $('#' + inputID).removeClass('errorInputColor').addClass('successInputColor');
-           $(sname).html();
+           $('#esname' + $(this).attr("data-id")).html("");
+           $('#sname' + $(this).attr("data-id")).removeClass('errorInputColor').addClass('successInputColor');
 
-           $("#fam" + id).empty();
-           $("#fam" + id).append($('#sname'+ id).val());
+           $("#fam" + $(this).attr("data-id")).empty();
+           $("#fam" + $(this).attr("data-id")).append($('#sname'+ $(this).attr("data-id")).val());
            return true;
       }
    }
-}
+});
 
 //Функция проверки поля ввода имени
 
-function f_nameValidation(fname, inputID, errorID, id) {
-   if(fname.length === 0) {
-      $('#' + errorID).html("Введите имя");
-      $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+$(document).on('input', '.firstName', function(){
+   if(this.value.length === 0) {
+      $('#efname' + $(this).attr("data-id")).html("Введите имя");
+      $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
       $("#nam" + i).empty();
       return false;
-  } else if (fname.length < 2 ) {
-      $('#' + errorID).html("Не менее двух символов");
-      $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+  } else if (this.value.length < 2 ) {
+      $('#efname' + $(this).attr("data-id")).html("Не менее двух символов");
+      $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
       $("#nam" + i).empty();
       return false;
-  } else if (fname.length > 30 ) {
-      $('#' + errorID).html("Не более 30 символов");
-      $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+  } else if (this.value.length > 30 ) {
+      $('#efname' + $(this).attr("data-id")).html("Не более 30 символов");
+      $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
       $("#nam" + i).empty();
       return false;
    } else {
       var re = /^[А-яЁ ё]{0,}$/;
-      if(!re.test(fname)) {
-           $('#' + errorID).html("Только русские буквы");
-           $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+      if(!re.test(this.value)) {
+           $('#efname' + $(this).attr("data-id")).html("Только русские буквы");
+           $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
            $("#nam" + i).empty();
            return false;
       } else {
-           $('#' + errorID).html("");
-           $('#' + inputID).removeClass('errorInputColor').addClass('successInputColor');
+           $('#efname' + $(this).attr("data-id")).html("");
+           $('#fname' + $(this).attr("data-id")).removeClass('errorInputColor').addClass('successInputColor');
 
-           $("#nam" + id).empty();
-           $("#nam" + id).append($('#fname'+ id).val());
+           $("#nam" + $(this).attr("data-id")).empty();
+           $("#nam" + $(this).attr("data-id")).append($('#fname'+ $(this).attr("data-id")).val());
            return true;
       }
    }
-}
+});
 
 //Функция проверки поля ввода телефона
+$(document).on('input', '.telName', function(){
+    $('#tel' + $(this).attr("data-id")).mask('+7(999)999-99-99');
+});
 
-function telValidation(inputID, errorID, id) {
-    $("#" + inputID).mask('+7(999)999-99-99');
-    if ($('#' + inputID).val().length == 0) {
-        $("#" + errorID).html("Введите номер телефона");
-        $('#' + inputID).removeClass('successInputColor').addClass('errorInputColor');
+$(document).on('blur', '.telName', function(){
+    $('#tel' + $(this).attr("data-id")).mask('+7(999)999-99-99');
+    if ($('#tel' + $(this).attr("data-id")).val().length == 0) {
+        $('#etel' + $(this).attr("data-id")).html("Введите номер телефона");
+        $('#tel' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
         $("#num" + i).empty();
         return false;
-    } else if ($("#" + inputID).val().length != 16) {
-        $('#' + errorID).html("Неверно введен номер телефона");
-        $('#' + tel).removeClass('successInputColor').addClass('errorInputColor');
+    } else if ($('#tel' + $(this).attr("data-id")).val().length != 16) {
+        $('#etel' + $(this).attr("data-id")).html("Неверно введен номер телефона");
+        $('#tel' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
         $("#num" + i).empty();
         return false;
     } else {
-       $("#" + errorID).html("");
-       $('#' + inputID).removeClass('errorInputColor').addClass('successInputColor');
-       var k = $("#" + tel).val();
+       $('#etel' + $(this).attr("data-id")).html("");
+       $('#tel' + $(this).attr("data-id")).removeClass('errorInputColor').addClass('successInputColor');
 
-       $("#num" + id).empty();
-       $("#num" + id).append($('#tel'+ id).val());
+       $("#num" + $(this).attr("data-id")).empty();
+       $("#num" + $(this).attr("data-id")).append($('#tel'+ $(this).attr("data-id")).val());
        return true;
    }
-}
+});
 
 //Функция проверки поля ввода почты
 
-function mailValidation(mail) {
+$('#mailReview').on('blur', function(){
     var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(mail.length === 0) {
+    if(this.value.length === 0) {
        $('#errorReviewMail').html("Введите электронную почту");
        $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
        return false;
-    } else if (!pattern .test(mail)) {
+    } else if (!pattern .test(this.value)) {
         $('#errorReviewMail').html("Неверный ввод");
         $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
         return false;
@@ -113,22 +114,22 @@ function mailValidation(mail) {
         $("#mailReview").removeClass('errorInputColor').addClass('successInputColor');
         return true;
    }
-}
+});
 
 //Функция подтверждения поля ввода почты
 
-function conmailValidation(mailConfirm) {
+$('#emailConfirm').on('blur', function(){
     var mail = document.getElementById("mailReview").value;
     var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(mailConfirm.length === 0) {
+    if(this.value.length === 0) {
        $('#errorReviewMailConf').html("Введите электронную почту");
        $("#emailConfirm").removeClass('successInputColor').addClass('errorInputColor');
        return false;
-    } else if (!pattern .test(mailConfirm)) {
+    } else if (!pattern .test(this.value)) {
         $('#errorReviewMailConf').html("Неверный ввод");
         $("#emailConfirm").removeClass('successInputColor').addClass('errorInputColor');
         return false;
-    } else if (mailConfirm != mail) {
+    } else if (this.value != mail) {
         $('#errorReviewMailConf').html("Email не совпадает");
         $("#emailConfirm").removeClass('successInputColor').addClass('errorInputColor');
         return false;
@@ -138,4 +139,4 @@ function conmailValidation(mailConfirm) {
         $("#emailConfirm").removeClass('errorInputColor').addClass('successInputColor');
         return true;
     }
-}
+});
