@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -16,8 +16,44 @@ class PaymentView(View):
     def get(self, request):
         product_id = 1
         ticket = Ticket.objects.get(id=product_id)
+        nmb = 1
         return render(request, 'Payment/payment.html', locals())
 
+
+class AddingTicket(View):
+    def post(self, request):
+        return_dict = dict()
+        data = request.POST
+        nmb = data.get("nmb")
+        print(nmb)
+        # is_delete = data.get("is_delete")
+        #
+        # if is_delete == 'true':
+        #     ProductInBasket.objects.filter(id=product_id).update(is_active=False)
+        # else:
+        #     new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key, product_id=product_id,
+        #                                                                  is_active=True, defaults={"nmb": nmb})
+        #     if not created:
+        #         print ("not created")
+        #         new_product.nmb += int(nmb)
+        #         new_product.save(force_update=True)
+        #
+        # #common code for 2 cases
+        # products_in_basket = ProductInBasket.objects.filter(session_key=session_key, is_active=True, order__isnull=True)
+        # products_total_nmb = products_in_basket.count()
+        # return_dict["products_total_nmb"] = products_total_nmb
+        #
+        # return_dict["products"] = list()
+        #
+        # for item in  products_in_basket:
+        #     product_dict = dict()
+        #     product_dict["id"] = item.id
+        #     product_dict["name"] = item.product.name
+        #     product_dict["price_per_item"] = item.price_per_item
+        #     product_dict["nmb"] = item.nmb
+        #     return_dict["products"].append(product_dict)
+
+        return JsonResponse(return_dict)
 
 class AddPayment(View):
     def post(self, request):
