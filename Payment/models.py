@@ -57,6 +57,7 @@ class TicketPay(models.Model):
     order = models.ForeignKey(PaymentModel, on_delete=models.CASCADE)
     name = models.CharField("Имя", max_length=64, blank=False, null=False, default=None)
     surname = models.CharField("Фамилия", max_length=64, blank=False, null=False, default=None)
+    email = models.EmailField('Email', max_length=64, blank=False, null=False)
     # customer_email = models.EmailField("Email", max_length=128, blank=False, null=False, default=None)
     phone = models.CharField("Телефон", max_length=48, blank=True, null=True, default=None)
     generated_code = models.CharField("Персональный ключ", max_length=6, blank=True, null=False)
@@ -76,7 +77,6 @@ class TicketPay(models.Model):
             a = randint(0, 35)
             b = str(b) + str(alphabet[a])
         for i in PaymentModel.objects.all():
-            print(i.id, ' ', self.order.id)
             if i.id == self.order.id:
                 checker = True
                 count = i

@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views.generic.base import View
@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 from yandex_checkout import Payment, Configuration
 
 from Payment.forms import PaymentForm
-from Payment.models import Ticket, PaymentModel
+from Payment.models import Ticket, PaymentModel, TicketPay
 
 
 class PaymentView(View):
@@ -20,9 +20,20 @@ class PaymentView(View):
 
 
 class AddPayment(View):
-    def post(self, request, pk):
+    def post(self, request):
         form = PaymentForm(request.POST)
-        order = PaymentModel
+        pk = 1  # смена билета
+        ticket = Ticket.objects.get(id=pk)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            name = form.cleaned_data['name']
+            surname = form.cleaned_data['surname']
+            phone = form.cleaned_data['phone']
+            order = PaymentModel.objects.create(email=email, ticket=ticket, nmb=0)
+            order.save()
+            ticket_pay = TicketPay.objects.update_or_create(order=order, name=name, surname=surname, phone=phone, email=email)
+            ticket_pay.save()
+        return redirect('tickets')
 
 
 class SuccessView(View):

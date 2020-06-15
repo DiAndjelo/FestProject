@@ -92,44 +92,47 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row tickets_block_row mb-3">
-                            <div class="col-10 col-md-3 col-xl-2 mb-3">
-                                Билет <span>№<span class="number_r"></span></span>
-                            </div>
-                            <div class="col-10 col-md-3 col-xl-2 mb-3">
-                                <label>Фамилия</label>
-                                <input type="text" class="form-control secondName" oninput="s_nameValidation(this.value, this.id, 'esname1', 1)" placeholder="Фамилия">
-                                <div class="errorSName mt-1" ></div>
-                            </div>
-                            <div class="col-10 col-md-3 col-xl-2 mb-3">
-                                <label>Имя</label>
-                                <input type="text" class="form-control firstName" oninput="f_nameValidation(this.value, this.id, 'efname1', 1)" placeholder="Имя">
-                                <div class="errorFName mt-1">
+                        <form action="{% url 'add_payment' %}" method="post" id="formPayment">
+                            {% csrf_token %}
+                            <div class="row tickets_block_row mb-3">
+                                <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                    Билет <span>№<span class="number_r"></span></span>
+                                </div>
+                                <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                    <label>Фамилия</label>
+                                    <input type="text" name="surname" class="form-control secondName" oninput="s_nameValidation(this.value, this.id, 'esname1', 1)" placeholder="Фамилия">
+                                    <div class="errorSName mt-1" ></div>
+                                </div>
+                                <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                    <label>Имя</label>
+                                    <input type="text" name="name" class="form-control firstName" oninput="f_nameValidation(this.value, this.id, 'efname1', 1)" placeholder="Имя">
+                                    <div class="errorFName mt-1">
+                                    </div>
+                                </div>
+                                <div class="col-10 col-md-3 col-xl-2 mb-3">
+                                    <label>Номер телефона</label>
+                                    <input type="text" name="phone" class="form-control telName"
+                                    oninput="$(this).mask('+7(999)999-99-99');" onblur="telValidation(this.id, 'etel1', 1)" placeholder="+7 (xxx) xxx-xx-xx">
+                                    <div class="errorTel mt-1"></div>
                                 </div>
                             </div>
-                            <div class="col-10 col-md-3 col-xl-2 mb-3">
-                                <label>Номер телефона</label>
-                                <input type="text" class="form-control telName"
-                                oninput="$(this).mask('+7(999)999-99-99');" onblur="telValidation(this.id, 'etel1', 1)" placeholder="+7 (xxx) xxx-xx-xx">
-                                <div class="errorTel mt-1"></div>
-                            </div>
-                        </div>
-                        <p class="tickets_text"><span>Билеты будут отправлены на Вашу электронную почту.</span><br></span> Будьте внимательны! Проверьте правильность ввода адреса перед подтверждением платежа.</p>
-                        <div class="row">
-                            <div class="col-lg-3 col-xl-2 d-none d-lg-block">
-                            </div>
-                            <div class="col-10 col-md-4 col-lg-3">
-                                <label for="email">Электронная почта</label>
-                                <input type="email" class="form-control" id='mailReview' onblur="mailValidation(this.value)" placeholder="Email">
-                                <div class="errorRecord mt-1" id="errorReviewMail">
+                            <p class="tickets_text"><span>Билеты будут отправлены на Вашу электронную почту.</span><br></span> Будьте внимательны! Проверьте правильность ввода адреса перед подтверждением платежа.</p>
+                            <div class="row">
+                                <div class="col-lg-3 col-xl-2 d-none d-lg-block">
+                                </div>
+                                <div class="col-10 col-md-4 col-lg-3">
+                                    <label for="email">Электронная почта</label>
+                                    <input type="email" name="email" class="form-control" id='mailReview' onblur="mailValidation(this.value)" placeholder="Email">
+                                    <div class="errorRecord mt-1" id="errorReviewMail">
+                                    </div>
+                                </div>
+                                <div class="col-10 col-md-4 col-lg-3">
+                                    <label for="emailConfirm">Подтверждение эл. п.</label>
+                                    <input type="email" class="form-control" id="emailConfirm" onblur="conmailValidation(this.value)" placeholder="Подтверждение Email">
+                                    <div class="errorRecord mt-1" id="errorReviewMailConf"></div>
                                 </div>
                             </div>
-                            <div class="col-10 col-md-4 col-lg-3">
-                                <label for="emailConfirm">Подтверждение эл. п.</label>
-                                <input type="email" class="form-control" id="emailConfirm" onblur="conmailValidation(this.value)" placeholder="Подтверждение Email">
-                                <div class="errorRecord mt-1" id="errorReviewMailConf"></div>
-                            </div>
-                        </div>
+
                     </div>
                     <!-- Блок с вводом данных карты -->
                     <!-- <div class="tickets_payment_block px-sm-3">
@@ -214,7 +217,8 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="{% url 'payment_view' %}"><button type="button" class="btn btn-payment">Оплатить</button></a>
+                        <a href="{% url 'payment_view' %}"><button type="submit" class="btn btn-payment">Оплатить</button></a>
+                        </form>
                     </div>
                 </div>
             </div>
