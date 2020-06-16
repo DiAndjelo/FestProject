@@ -49,15 +49,24 @@ class AddPayment(View):
 
         order = PaymentModel(email=email, ticket=ticket)
         order.save(int(nmb), True)
-
         for i in range(int(nmb)):
             form = PaymentForm
             name = data.getlist("name")[i]
             surname = data.getlist("surname")[i]
             phone = data.getlist("phone")[i]
+            count_of_errors = 0
+            if name == None or name == '' or ' ' in name:
+                count_of_errors += 1
+            if surname == None or surname == '' or ' ' in surname:
+                count_of_errors += 1
+            if phone == None or phone == '' or ' ' in phone:
+                count_of_errors += 1
+            if email == None or email == '' or ' ' in email:
+                count_of_errors += 1
+            if count_of_errors > 0:
+                return redirect('tickets')
             ticket_pay = TicketPay.objects.create(order=order, name=name, surname=surname, phone=phone, email=email)
 
-        print(order.total_price)
         return redirect('payment_view', int(order.total_price))
 
 
@@ -102,6 +111,8 @@ class YandexNotifications(APIView):
 
         Payment.capture(payment_id)
 
+        # нужно забрать айдишники, за которые заплачено и привязать тут полю is_payed значение True
+        # после отправить на мыло ключ с инфой
         # otpravka email s klyu4om
 
         return Response(status=200)

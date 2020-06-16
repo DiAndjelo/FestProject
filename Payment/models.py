@@ -62,6 +62,7 @@ class TicketPay(models.Model):
     generated_code = models.CharField("Персональный ключ", max_length=6, blank=True, null=False)
     created = models.DateTimeField("Создано", auto_now_add=True, auto_now=False)
     updated = models.DateTimeField("Обновлено", auto_now_add=False, auto_now=True)
+    is_payed = models.BooleanField("Оплачено?", default=False)
 
     def save(self, *args, **kwargs):
         b = ''
