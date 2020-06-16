@@ -37,14 +37,13 @@ class PaymentModel(models.Model):
         verbose_name = "Билет в заказе"
         verbose_name_plural = "Билеты в заказе"
 
-    def save(self, *args, **kwargs):
+    def save(self, nmb=0, is_view=False, *args, **kwargs):
         price_per_item = self.ticket.price
         self.price_per_item = price_per_item
-        nmb = 0
-        for i in TicketPay.objects.all():
-            if PaymentModel.objects.get(id=i.order.id):
-                nmb += 1
-            print(nmb)
+        if not is_view:
+            for i in TicketPay.objects.all():
+                if PaymentModel.objects.get(id=i.order.id):
+                    nmb += 1
         self.nmb = nmb
         self.total_price = int(self.nmb) * price_per_item
 
@@ -74,16 +73,22 @@ class TicketPay(models.Model):
         checker = False
         count = ''
         for i in range(5):
-            a = randint(0, 35)
+            a = randint(0, len(alphabet)-1)
             b = str(b) + str(alphabet[a])
         for i in PaymentModel.objects.all():
             if i.id == self.order.id:
                 checker = True
-                count = i
+                try:
+                    i.save(*args, **kwargs)
+                except:
+                    pass
 
         self.generated_code = b
-        if checker:
-            count.save(*args, **kwargs)
+        # try:
+        #     if checker:
+        #         count.save(*args, **kwargs)
+        # except:
+        #     pass
         super(TicketPay, self).save(*args, **kwargs)
 
     def __str__(self):

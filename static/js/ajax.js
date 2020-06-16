@@ -50,4 +50,34 @@ $(document).ready(function(){
             console.log('1')
         }
     });
+
+    // var payment_form = $('#formPayment');
+    //
+    // function createPayment(nmb){
+    //     let data = {};
+    //     let data.email = $('mailReview').val();
+    //     let data.nmb = nmb;
+    //     console.log(data.email);
+    //     console.log(nmb);
+    //     var url = payment_form.attr("action");
+    //
+    //      $.ajax({
+    //          url: url,
+    //          type: 'POST',
+    //          data: data,
+    //          cache: true,
+    //          success: function (data) {
+    //              console.log("OK");
+    //          },
+    //          error: function(){
+    //              console.log("error")
+    //          }
+    //      })
+    // }
+    //
+    // payment_form.on('submit', function (e) {
+    //     e.preventDefault();
+    //     createPayment(nmb);
+    // })
+
 });

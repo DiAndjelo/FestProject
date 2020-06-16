@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{% url 'add_payment' %}" method="post" id="formPayment">
+                        <form id="formPayment" action="{% url 'add_payment' %}" method="post">
                             {% csrf_token %}
                             <div class="row tickets_block_row mb-3">
                                 <div class="col-10 col-md-3 col-xl-2 mb-3">
@@ -118,7 +118,7 @@
                                 <div class="col-10 col-md-3 col-xl-2 mb-3">
                                     <label>Номер телефона</label>
                                     <input type="text" name="phone" class="form-control telName" data-id="1"
-                                      placeholder="+7 (xxx) xxx-xx-xx">
+                                      placeholder="+7(___) ___-__-__">
                                     <div class="errorTel mt-1"></div>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="{% url 'payment_view' %}"><button type="submit" class="btn btn-payment">Оплатить</button></a>
+                        <button type="submit" class="btn btn-payment">Оплатить</button>
                         </form>
                     </div>
                 </div>

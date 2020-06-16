@@ -3,6 +3,32 @@ from django.contrib import admin
 # Register your models here.
 from Payment.models import Ticket, TicketPay, PaymentModel
 
-admin.site.register(Ticket)
-admin.site.register(TicketPay)
-admin.site.register(PaymentModel)
+
+class TicketAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'price')
+
+    class Meta:
+        model = Ticket
+
+
+admin.site.register(Ticket, TicketAdmin)
+
+
+class TicketPayAdmin(admin.ModelAdmin):
+    list_display = ('id', 'surname', 'name', 'email')
+
+    class Meta:
+        model = TicketPay
+
+
+admin.site.register(TicketPay, TicketPayAdmin)
+
+
+class PaymentModelAdmin(admin.ModelAdmin):
+    list_display = ('id', 'email', 'total_price')
+
+    class Meta:
+        model = PaymentModel
+
+
+admin.site.register(PaymentModel, PaymentModelAdmin)

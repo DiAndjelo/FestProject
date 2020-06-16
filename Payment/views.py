@@ -25,51 +25,40 @@ class AddingTicket(View):
         return_dict = dict()
         data = request.POST
         nmb = data.get("nmb")
-        print(nmb)
-        # is_delete = data.get("is_delete")
-        #
-        # if is_delete == 'true':
-        #     ProductInBasket.objects.filter(id=product_id).update(is_active=False)
-        # else:
-        #     new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key, product_id=product_id,
-        #                                                                  is_active=True, defaults={"nmb": nmb})
-        #     if not created:
-        #         print ("not created")
-        #         new_product.nmb += int(nmb)
-        #         new_product.save(force_update=True)
-        #
-        # #common code for 2 cases
-        # products_in_basket = ProductInBasket.objects.filter(session_key=session_key, is_active=True, order__isnull=True)
-        # products_total_nmb = products_in_basket.count()
-        # return_dict["products_total_nmb"] = products_total_nmb
-        #
-        # return_dict["products"] = list()
-        #
-        # for item in  products_in_basket:
-        #     product_dict = dict()
-        #     product_dict["id"] = item.id
-        #     product_dict["name"] = item.product.name
-        #     product_dict["price_per_item"] = item.price_per_item
-        #     product_dict["nmb"] = item.nmb
-        #     return_dict["products"].append(product_dict)
-
+        request.session["nmb"] = nmb
+        request.session["checker"] = 'edited'
         return JsonResponse(return_dict)
+
 
 class AddPayment(View):
     def post(self, request):
-        form = PaymentForm(request.POST)
-        pk = 1  # смена билета
+        data = request.POST
+        email = data.get("email")
+        pk = 1
         ticket = Ticket.objects.get(id=pk)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            name = form.cleaned_data['name']
-            surname = form.cleaned_data['surname']
-            phone = form.cleaned_data['phone']
-            order = PaymentModel.objects.create(email=email, ticket=ticket, nmb=0)
-            order.save()
-            ticket_pay = TicketPay.objects.update_or_create(order=order, name=name, surname=surname, phone=phone, email=email)
-            ticket_pay.save()
-        return redirect('tickets')
+
+        print(data)
+        try:
+            if request.session["checker"] == 'edited':
+                nmb = request.session["nmb"]
+                request.session.flush()
+            else:
+                nmb = 1
+        except:
+            nmb = 1
+
+        order = PaymentModel(email=email, ticket=ticket)
+        order.save(int(nmb), True)
+
+        for i in range(int(nmb)):
+            form = PaymentForm
+            name = data.getlist("name")[i]
+            surname = data.getlist("surname")[i]
+            phone = data.getlist("phone")[i]
+            ticket_pay = TicketPay.objects.create(order=order, name=name, surname=surname, phone=phone, email=email)
+
+        print(order.total_price)
+        return redirect('payment_view', int(order.total_price))
 
 
 class SuccessView(View):
@@ -78,16 +67,17 @@ class SuccessView(View):
 
 
 class YandexPayment(View):
-    def get(self, request):
+    def get(self, request, value=3000):
         Configuration.account_id = '718911'
         Configuration.secret_key = 'test_LvcNnzMH8UOAI0Rc6Dw7MvP8O6WAZoQwsF0kW7e5tY4'
 
-        value = 3000
+        nmb = int(value/3000)
+
         currency = "RUB"
 
         return_url = "https://chestnokfest.live/tickets/success/"
 
-        description = "some description"
+        description = str("Покупка " + str(nmb) + " билета(ов) за " + str(value))
 
         payment = Payment.create({
             "amount": {

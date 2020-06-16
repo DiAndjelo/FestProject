@@ -7,5 +7,5 @@ class PaymentForm(forms.ModelForm):
 
     class Meta:
         model = TicketPay
-        fields = ('name', 'surname', 'phone', 'email')
+        fields = ('order', 'name', 'surname', 'phone', 'email')
 
