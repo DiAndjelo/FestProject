@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
-
+from django.core.mail import send_mail
 # Create your views here.
 from django.views.generic.base import View
 from rest_framework.permissions import AllowAny
@@ -86,7 +86,7 @@ class YandexPayment(View):
 
         currency = "RUB"
 
-        return_url = "https://chestnokfest.live/tickets/success/"
+        return_url = "https://chestnokfest.live/"
 
         description = str("Покупка " + str(nmb) + " билета(ов) за " + str(value))
 
@@ -119,6 +119,8 @@ class YandexNotifications(APIView):
         order_id = request.data['object']['metadata']['id']
         order = PaymentModel.objects.get(id=order_id)
         tickets = TicketPay.objects.all()
+        send_email = False
+        gen_codes = []
         for ticket in tickets:
             if ticket.order == order:
                 if not ticket.is_saved:
@@ -126,7 +128,16 @@ class YandexNotifications(APIView):
                     ticket.is_payed = True
                     ticket.is_saved = True
                     ticket.save()
+                    send_email = True
+                    email = ticket.email
+                    gen_codes.append(ticket.generated_code)
                     print(ticket.is_payed)
+        if send_email:
+            gen_codes = ' '.join(gen_codes)
+            print(gen_codes)
+            print(email)
+            send_mail('Тест отправка Билета', gen_codes, 'info@chestnokfest.live', [email])
+
 
 
 

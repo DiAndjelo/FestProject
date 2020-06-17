@@ -124,3 +124,10 @@ STATIC_URL = '/static/'
 # STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = [STATIC_DIR]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+EMAIL_HOST = 'smtp.jino.ru'
+EMAIL_HOST_USER = 'info@chestnokfest.live'
+EMAIL_HOST_PASSWORD = '35653565Nick'
+EMAIL_PORT = 465
+# EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
