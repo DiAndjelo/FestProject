@@ -28,7 +28,7 @@ urlpatterns = [
     path('members/', views.MembersView.as_view(), name='members'),
     path('accommodation/', views.AccommodationView.as_view(), name='accommodation'),
     path('tickets/', include('Payment.urls')),
-    path('api/payment/<int:value>/', YandexPayment.as_view(), name='payment_view'),
+    path('api/payment/<int:value>/<int:id>/', YandexPayment.as_view(), name='payment_view'),
     path('api/payment/notifications/', YandexNotifications.as_view(), name='payment_notification_view'),
 ]
 if settings.DEBUG:

@@ -66,8 +66,9 @@ class AddPayment(View):
             if count_of_errors > 0:
                 return redirect('tickets')
             ticket_pay = TicketPay.objects.create(order=order, name=name, surname=surname, phone=phone, email=email)
-
-        return redirect('payment_view', int(order.total_price))
+        print(order.id)
+        print('----------')
+        return redirect('payment_view', int(order.total_price), order.id)
 
 
 class SuccessView(View):
@@ -76,10 +77,11 @@ class SuccessView(View):
 
 
 class YandexPayment(View):
-    def get(self, request, value=3000):
+    def get(self, request, value=3000, id=None):
         Configuration.account_id = '718911'
         Configuration.secret_key = 'test_LvcNnzMH8UOAI0Rc6Dw7MvP8O6WAZoQwsF0kW7e5tY4'
 
+        print(id)
         nmb = int(value/3000)
 
         currency = "RUB"
@@ -97,7 +99,8 @@ class YandexPayment(View):
                 "type": "redirect",
                 "return_url": return_url
             },
-            "description": description
+            "description": description,
+            "metadata": {'id': id,}
         })
 
         return HttpResponseRedirect(payment.confirmation.confirmation_url)
@@ -107,9 +110,16 @@ class YandexNotifications(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
+        Configuration.account_id = '718911'
+        Configuration.secret_key = 'test_LvcNnzMH8UOAI0Rc6Dw7MvP8O6WAZoQwsF0kW7e5tY4'
+
         payment_id = request.data['object']['id']
 
         Payment.capture(payment_id)
+
+        print(request.data['metadata']['id'])
+
+
 
         # нужно забрать айдишники, за которые заплачено и привязать тут полю is_payed значение True
         # после отправить на мыло ключ с инфой
