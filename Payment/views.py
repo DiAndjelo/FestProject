@@ -7,7 +7,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from yandex_checkout import Payment, Configuration
-
+from django.template.loader import get_template
 from Payment.forms import PaymentForm
 from Payment.models import Ticket, PaymentModel, TicketPay
 
@@ -121,6 +121,8 @@ class YandexNotifications(APIView):
         tickets = TicketPay.objects.all()
         send_email = False
         gen_codes = []
+
+        render_tickets = []
         for ticket in tickets:
             if ticket.order == order:
                 if not ticket.is_saved:
@@ -131,12 +133,19 @@ class YandexNotifications(APIView):
                     send_email = True
                     email = ticket.email
                     gen_codes.append(ticket.generated_code)
+                    render_tickets.append(ticket)
                     print(ticket.is_payed)
         if send_email:
             gen_codes = ' '.join(gen_codes)
             print(gen_codes)
             print(email)
-            send_mail('Тест отправка Билета', gen_codes, 'info@chestnokfest.live', [email])
+
+            context = {
+                'tickets': render_tickets,
+            }
+            # print(context['tickets'][0])
+            send_mail('Ваш заказ с билетом(ами)', gen_codes, 'info@chestnokfest.live', [email], html_message=get_template('Payment/letter.html').render(context))
+            # send_mail('Ваш заказ с билетом(ами)', gen_codes, 'info@chestnokfest.live', [email])
 
 
 
