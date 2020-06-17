@@ -15,7 +15,7 @@ admin.site.register(Ticket, TicketAdmin)
 
 
 class TicketPayAdmin(admin.ModelAdmin):
-    list_display = ('id', 'surname', 'name', 'email')
+    list_display = ('id', 'surname', 'name', 'email', 'is_payed')
 
     class Meta:
         model = TicketPay

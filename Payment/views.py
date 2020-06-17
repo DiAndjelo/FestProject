@@ -116,8 +116,17 @@ class YandexNotifications(APIView):
         payment_id = request.data['object']['id']
 
         Payment.capture(payment_id)
-
-        print(request.data['metadata']['id'])
+        order_id = request.data['object']['metadata']['id']
+        order = PaymentModel.objects.get(id=order_id)
+        tickets = TicketPay.objects.all()
+        for ticket in tickets:
+            if ticket.order == order:
+                if not ticket.is_saved:
+                    print(ticket.is_payed)
+                    ticket.is_payed = True
+                    ticket.is_saved = True
+                    ticket.save()
+                    print(ticket.is_payed)
 
 
 

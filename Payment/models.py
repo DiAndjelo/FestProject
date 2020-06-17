@@ -63,6 +63,7 @@ class TicketPay(models.Model):
     created = models.DateTimeField("Создано", auto_now_add=True, auto_now=False)
     updated = models.DateTimeField("Обновлено", auto_now_add=False, auto_now=True)
     is_payed = models.BooleanField("Оплачено?", default=False)
+    is_saved = models.BooleanField("Сохранено?", default=False)
 
     def save(self, *args, **kwargs):
         b = ''
@@ -79,10 +80,11 @@ class TicketPay(models.Model):
         for i in PaymentModel.objects.all():
             if i.id == self.order.id:
                 checker = True
-                try:
-                    i.save(*args, **kwargs)
-                except:
-                    pass
+                if not self.is_saved:
+                    try:
+                        i.save(*args, **kwargs)
+                    except:
+                        pass
 
         self.generated_code = b
         # try:
