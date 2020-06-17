@@ -71,7 +71,7 @@ $(document).on('input', '.firstName', function(){
 });
 
 //Функция проверки поля ввода телефона
-$(document).on('input', '.telName', function(){
+$(document).on('focus', '.telName', function(){
     $('#tel' + $(this).attr("data-id")).mask('+7(999)999-99-99');
 });
 
