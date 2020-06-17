@@ -8,7 +8,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from yandex_checkout import Payment, Configuration
 from django.template.loader import get_template
-from Payment.forms import PaymentForm
 from Payment.models import Ticket, PaymentModel, TicketPay
 
 
@@ -50,7 +49,6 @@ class AddPayment(View):
         order = PaymentModel(email=email, ticket=ticket)
         order.save(int(nmb), True)
         for i in range(int(nmb)):
-            form = PaymentForm
             name = data.getlist("name")[i]
             surname = data.getlist("surname")[i]
             phone = data.getlist("phone")[i]
