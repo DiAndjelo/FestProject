@@ -165,24 +165,24 @@ $( document ).ready(function() {
 });
 
 function snameValidation(sname, inputID, errorID) {
-     if(name.length === 0) {
+     if(sname.length === 0) {
        $(errorID).html("Введите фамилию");
        $(inputID).addClass('errorInputColor');
        $(inputID).removeClass('successInputColor');
        return false;
-    } else if (name.length < 2 ) {
+   } else if (sname.length < 2 ) {
        $(errorID).html("Не менее двух символов");
        $(inputID).addClass('errorInputColor');
        $(inputID).removeClass('successInputColor');
        return false;
-    } else if (name.length > 30 ) {
+   } else if (sname.length > 30 ) {
        $(errorID).html("Не более 30 символов");
        $(inputID).addClass('errorInputColor');
        $(inputID).removeClass('successInputColor');
        return false;
     } else {
        var re = /^[А-яЁ ё]{0,}$/;
-       if(!re.test(name)) {
+       if(!re.test(sname)) {
             $(errorID).html("Только русские буквы");
             $(inputID).addClass('errorInputColor');
             $(inputID).removeClass('successInputColor');
@@ -197,24 +197,24 @@ function snameValidation(sname, inputID, errorID) {
 }
 
 function fnameValidation(fname, inputID, errorID) {
-     if(name.length === 0) {
+     if(fname.length === 0) {
        $(errorID).html("Введите имя");
        $(inputID).addClass('errorInputColor');
        $(inputID).removeClass('successInputColor');
        return false;
-    } else if (name.length < 2 ) {
+   } else if (fname.length < 2 ) {
        $(errorID).html("Не менее двух символов");
        $(inputID).addClass('errorInputColor');
        $(inputID).removeClass('successInputColor');
        return false;
-    } else if (name.length > 30 ) {
+   } else if (fname.length > 30 ) {
        $(errorID).html("Не более 30 символов");
        $(inputID).addClass('errorInputColor');
        $(inputID).removeClass('successInputColor');
        return false;
     } else {
        var re = /^[А-яЁ ё]{0,}$/;
-       if(!re.test(name)) {
+       if(!re.test(fname)) {
             $(errorID).html("Только русские буквы");
             $(inputID).addClass('errorInputColor');
             $(inputID).removeClass('successInputColor');
