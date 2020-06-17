@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Participation
+from Landing.models import Participation
 
 
 class ParticipationForm(forms.ModelForm):
