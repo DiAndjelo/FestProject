@@ -1288,3 +1288,7 @@ h6.thisday{
      width: 80%;
    }
 }
+
+.linkMap:hover{
+    text-decoration: none;
+}
