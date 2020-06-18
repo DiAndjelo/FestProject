@@ -214,7 +214,7 @@
                       </div>
                     </div>
                     <div class="row justify-content-center">
-                      <button type="submit" id="memberBtn" class="btn text-uppercase btn-active rounded mt-4 mt-lg-4 text-white">отправить</button>
+                      <button type="submit" id="" class="btn text-uppercase btn-active rounded mt-4 mt-lg-4 text-white">отправить</button>
                     </div>
                   </form>
                 </div>
@@ -1416,23 +1416,21 @@
 
 
 
-                  <div class="col-3 m-0 p-0">
+                  <div class="col-6 col-md-3">
                     <img class="w-100" id="myimg" src="static/img/org/oleg_org.jpg" onmouseover="onMouseIconComm()"  onmouseout="outMouseIconComm()">
-                    <div class="abs w-100 py-1 text-white" style="background: rgba(0, 0, 0, 0.35); bottom: 10px;">123</div>
-                    <script>
-                    var a=document.getElementById("myimg");
+                    <div class="abs w-100 py-1 text-white" style="background: rgba(0, 0, 0, 0.35); bottom: 10px;">1
+                  </div>
+                  <script>
+                      var a=document.fadeOut( "slow",.getElementById("myimg");
 
+                      function onMouseIconComm(){
+                          a.src="static/img/org/lil_oleg_org.jpg";
+                      }
 
-                    function onMouseIconComm(){
-                        a.src="static/img/org/lil_oleg_org.jpg";
-
-                    }
-
-                    function outMouseIconComm(){
-                       a.src = "static/img/org/oleg_org.jpg";
-
-                    }
-                    </script>
+                      function outMouseIconComm(){
+                         a.src = "static/img/org/oleg_org.jpg";
+                      })
+                  </script>
                   </div>
 
 

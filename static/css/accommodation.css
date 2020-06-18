@@ -167,3 +167,15 @@
     position: relative;
     top:2px;
 }
+.phone_accom_modal{
+  font-size: 28px;
+  font-weight: bold;
+  color: #EDC043;
+}
+@media (max-width: 991px) {
+  .phone_accom_modal{
+    font-size: 22px;
+    font-weight: bold;
+    color: #EDC043;
+  }
+}
