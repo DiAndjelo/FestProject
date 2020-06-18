@@ -17,31 +17,31 @@
         </div>
       </div>
 
-      <div class="container-fluid">
+      <div class="container-fluid pt-5 pt-lg-0">
         <div class="row d-flex justify-content-center align-items-center" style="height: 100vh;">
           <div class="grad-mask"></div>
           <!--<img src="{% static 'img/imghead.png' %}" alt="" class="bg-main img-fluid">-->
           <div class="text-center" style="">
             <img src="{% static 'img/logo.png' %}" class="logo_print img-fluid mb-4" alt="">
             <div class="d-flex flex-column flex-md-row justify-content-center" href="#ched">
-              <button onclick="window.location.href = '#schedule';" type="button" class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0" href="#shedule">
+              <a href="#shedule" class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0" href="#shedule">
                 <svg width="6" height="12" class="mr-2"viewBox="0 0 6 12" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.96967C0.512563 0.676777 0.987437 0.676777 1.28033 0.96967L5.78033 5.46967C6.07322 5.76256 6.07322 6.23744 5.78033 6.53033L1.28033 11.0303C0.987437 11.3232 0.512563 11.3232 0.21967 11.0303C-0.0732233 10.7374 -0.0732233 10.2626 0.21967 9.96967L4.18934 6L0.21967 2.03033C-0.0732233 1.73744 -0.0732233 1.26256 0.21967 0.96967Z"/>
                 </svg>
               расписание
-              </button>
-              <button onclick="window.location.href = '#camping';" type="button" class="btn btn-light text-left text-md-center my-4 my-md-0 btn-style text-uppercase px-4 mx-2 mx-md-4">
+              </a>
+              <a href="#camping" class="btn btn-light text-left text-md-center my-4 my-md-0 btn-style text-uppercase px-4 mx-2 mx-md-4">
                 <svg width="6" height="12" class="mr-2"viewBox="0 0 6 12" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.96967C0.512563 0.676777 0.987437 0.676777 1.28033 0.96967L5.78033 5.46967C6.07322 5.76256 6.07322 6.23744 5.78033 6.53033L1.28033 11.0303C0.987437 11.3232 0.512563 11.3232 0.21967 11.0303C-0.0732233 10.7374 -0.0732233 10.2626 0.21967 9.96967L4.18934 6L0.21967 2.03033C-0.0732233 1.73744 -0.0732233 1.26256 0.21967 0.96967Z"/>
                 </svg>
               кемпинг
-              </button>
-              <button onclick="window.location.href = '#coop';" type="button" class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0">
+              </a>
+              <a href="#coop" class="btn btn-light btn-style text-left text-md-center text-uppercase px-4 mx-2 mx-md-0">
                 <svg width="6" height="12" class="mr-2"viewBox="0 0 6 12" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.21967 0.96967C0.512563 0.676777 0.987437 0.676777 1.28033 0.96967L5.78033 5.46967C6.07322 5.76256 6.07322 6.23744 5.78033 6.53033L1.28033 11.0303C0.987437 11.3232 0.512563 11.3232 0.21967 11.0303C-0.0732233 10.7374 -0.0732233 10.2626 0.21967 9.96967L4.18934 6L0.21967 2.03033C-0.0732233 1.73744 -0.0732233 1.26256 0.21967 0.96967Z"/>
                 </svg>
               сотрудничество
-              </button>
+              </a>
             </div>
             <div class="col-12 d-block d-md-none"><div class="row text-muted justify-content-end mt-2 px-2">18+</div></div>
           </div>
@@ -129,17 +129,16 @@
           </div>
 
 
-          <div class="col-12 col-md-1 d-none d-md-block pt-4 mt-2">
-            <div onclick="window.location.href = '#orgGroup';" class="d-flex arrow_box flex-row text-white h-100 justify-content-end">
-              <div class="text-vertical text-uppercase">
-                музыка
-                <svg class="arrow" width="16" height="78" viewBox="0 0 16 78" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" class="square" d="M7.99995 -4.3711e-08C8.55223 -1.95701e-08 8.99994 0.432581 8.99994 0.966197L8.99994 76.8127C8.99994 77.3463 8.55222 77.7789 7.99995 77.7789C7.44767 77.7789 6.99996 77.3463 6.99996 76.8127L6.99996 0.966197C6.99996 0.432581 7.44767 -6.78519e-08 7.99995 -4.3711e-08Z"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8137 71.4201C16.1347 71.8543 16.0306 72.4577 15.5812 72.7679L8 78L0.418839 72.7679C-0.0305691 72.4577 -0.134661 71.8543 0.186346 71.4201C0.507352 70.9858 1.1319 70.8853 1.5813 71.1954L8 75.6253L14.4187 71.1954C14.8681 70.8853 15.4927 70.9858 15.8137 71.4201Z"/>
-                </svg>
-              </div>
-              <div class="text-vertical text-uppercase">
-                нас вдохновляет твоя
+          <div class="col-12 col-md-1 text-left d-none d-md-block">
+            <div class="row m-0 justify-content-start text-vertical mt-4">
+              <div class="abs arrow_box">
+                <a href="#org" class="text-white text-uppercase music_link">
+                  нас вдохновляет твоя<br> музыка
+                  <svg class="arrow"width="16" height="78" viewBox="0 0 16 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99995 -4.3711e-08C8.55223 -1.95701e-08 8.99994 0.432581 8.99994 0.966197L8.99994 76.8127C8.99994 77.3463 8.55222 77.7789 7.99995 77.7789C7.44767 77.7789 6.99996 77.3463 6.99996 76.8127L6.99996 0.966197C6.99996 0.432581 7.44767 -6.78519e-08 7.99995 -4.3711e-08Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8137 71.4201C16.1347 71.8543 16.0306 72.4577 15.5812 72.7679L8 78L0.418839 72.7679C-0.0305698 72.4577 -0.13466 71.8543 0.186346 71.4201C0.507352 70.9858 1.1319 70.8853 1.5813 71.1954L8 75.6253L14.4187 71.1954C14.8681 70.8853 15.4927 70.9858 15.8137 71.4201Z" fill="white"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -225,12 +224,13 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
 
 
 
-    <section class="" id="schedule">
+
+
+    <section class="" id="shedule">
       <div class="container container-padding-bottom">
         <div class="row">
           <div class="col-12 text-white">
@@ -245,9 +245,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">понедельник</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_1_color disable">24</h1>
+                      <h6 class="dayweek d-none d-md-block">понедельник</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_1_color disable">24</h6>
                     </li>
                   </ul>
                 </a>
@@ -257,9 +257,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">вторник</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_2_color disable">25</h1>
+                      <h6 class="dayweek d-none d-md-block">вторник</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_2_color disable">25</h6>
                     </li>
                   </ul>
                 </a>
@@ -269,9 +269,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">среда</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_3_color">26</h1>
+                      <h6 class="dayweek d-none d-md-block">среда</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_3_color">26</h6>
                     </li>
                   </ul>
                 </a>
@@ -281,9 +281,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">четверг</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_4_color">27</h1>
+                      <h6 class="dayweek d-none d-md-block">четверг</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_4_color">27</h6>
                     </li>
                   </ul>
                 </a>
@@ -293,9 +293,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">пятница</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_5_color">28</h1>
+                      <h6 class="dayweek d-none d-md-block">пятница</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_5_color">28</h6>
                     </li>
                   </ul>
                 </a>
@@ -305,9 +305,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">суббота</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_6_color">29</h1>
+                      <h6 class="dayweek d-none d-md-block">суббота</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_6_color">29</h6>
                     </li>
                   </ul>
                 </a>
@@ -317,9 +317,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">воскресенье</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_7_color">30</h1>
+                      <h6 class="dayweek d-none d-md-block">воскресенье</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_7_color">30</h6>
                     </li>
                   </ul>
                 </a>
@@ -329,9 +329,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">понедельник</h1>
-                      <h6 class="moonth">август</h1>
-                      <h6 class="thisday day_8_color">31</h1>
+                      <h6 class="dayweek d-none d-md-block">понедельник</h6>
+                      <h6 class="moonth">август</h6>
+                      <h6 class="thisday day_8_color">31</h6>
                     </li>
                   </ul>
                 </a>
@@ -341,9 +341,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">вторник</h1>
-                      <h6 class="moonth">сентябрь</h1>
-                      <h6 class="thisday day_9_color">01</h1>
+                      <h6 class="dayweek d-none d-md-block">вторник</h6>
+                      <h6 class="moonth">сентябрь</h6>
+                      <h6 class="thisday day_9_color">01</h6>
                     </li>
                   </ul>
                 </a>
@@ -353,9 +353,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">среда</h1>
-                      <h6 class="moonth">сентябрь</h1>
-                      <h6 class="thisday day_10_color">02</h1>
+                      <h6 class="dayweek d-none d-md-block">среда</h6>
+                      <h6 class="moonth">сентябрь</h6>
+                      <h6 class="thisday day_10_color">02</h6>
                     </li>
                   </ul>
                 </a>
@@ -365,9 +365,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">четверг</h1>
-                      <h6 class="moonth">сентябрь</h1>
-                      <h6 class="thisday day_11_color">03</h1>
+                      <h6 class="dayweek d-none d-md-block">четверг</h6>
+                      <h6 class="moonth">сентябрь</h6>
+                      <h6 class="thisday day_11_color">03</h6>
                     </li>
                   </ul>
                 </a>
@@ -377,9 +377,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">пятница</h1>
-                      <h6 class="moonth">сентябрь</h1>
-                      <h6 class="thisday day_12_color">04</h1>
+                      <h6 class="dayweek d-none d-md-block">пятница</h6>
+                      <h6 class="moonth">сентябрь</h6>
+                      <h6 class="thisday day_12_color">04</h6>
                     </li>
                   </ul>
                 </a>
@@ -389,9 +389,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">суббота</h1>
-                      <h6 class="moonth">сентябрь</h1>
-                      <h6 class="thisday day_13_color">05</h1>
+                      <h6 class="dayweek d-none d-md-block">суббота</h6>
+                      <h6 class="moonth">сентябрь</h6>
+                      <h6 class="thisday day_13_color">05</h6>
                     </li>
                   </ul>
                 </a>
@@ -401,9 +401,9 @@
                   <ul class="list-unstyled box">
                     <li class="w-100 h-100 justify-content-center d-flex flex-column align-items-center abs btnday_hover">
                       <ul class="m-0 p-0 list-unstyled zoomIn w-100 h-100 rounded"></ul>
-                      <h6 class="dayweek d-none d-md-block">воскресенье</h1>
-                      <h6 class="moonth">сентябрь</h1>
-                      <h6 class="thisday day_14_color">06</h1>
+                      <h6 class="dayweek d-none d-md-block">воскресенье</h6>
+                      <h6 class="moonth">сентябрь</h6>
+                      <h6 class="thisday day_14_color">06</h6>
                     </li>
                   </ul>
                 </a>
@@ -1254,7 +1254,7 @@
       <div class="container container-padding-bottom">
         <div class="row">
           <div class="col-12 text-white">
-            <h5 class="text-uppercase text-center section_title" id="shedule">фуд-корт</h5>
+            <h5 class="text-uppercase text-center section_title" id="">фуд-корт</h5>
           </div>
           <div class="col-12 text-center mt-2 mb-4">
             <h6 class="text-white">Для участников мепроприятия работают следующие зоны быстрого питания</h6>
@@ -1405,7 +1405,7 @@
       <div class="container container-padding-bottom">
         <div class="row">
           <div class="col-12 text-white mb-4">
-            <h5 class="text-uppercase text-center section_title" id="orgGroup">команда организаторов</h5>
+            <h5 class="text-uppercase text-center section_title">команда организаторов</h5>
           </div>
           <div class="col-12">
             <div class="row m-0 p-0 justify-content-center">

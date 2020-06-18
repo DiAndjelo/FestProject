@@ -437,10 +437,14 @@ background: #020C1C !important;
   margin-top: 15px;
 }
 .arrow_box{
-    cursor: pointer;
+  margin-top: 3px;
+  right: 15px;
 }
-
-.arrow_box:hover .arrow{
+.music_link:hover{
+  color: white;
+  text-decoration: none;
+}
+.music_link:hover .arrow{
   transition: .4s !important;
   margin-top: 60px;
 }
@@ -1222,9 +1226,9 @@ h6.thisday{
   -o-transition: 0.4s ease; /* Opera */
 }
 .btn-style:hover{
-  -webkit-box-shadow: 0px 0px 0px 2px #ffffff;
-  -moz-box-shadow: 0px 0px 0px 2px #ffffff;
-  box-shadow: inset 0px 0px 0px 2px #ffffff;
+  -webkit-box-shadow: 0px 0px 0px 0px #ffffff;
+  -moz-box-shadow: 0px 0px 0px 0px #ffffff;
+  box-shadow: inset 0px 0px 0px 0px #ffffff;
   background: 0 !important;
   color: #ffffff !important;
   fill: #ffffff;

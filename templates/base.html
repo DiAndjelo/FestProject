@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,8 +49,19 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+      $('a[href^="#shedule"], a[href^="#camping"], a[href^="#coop"], a[href^="#org"], *[data-href^="#"]').on('click', function(e){
+          e.preventDefault();
+          var t = 500;
+          var d = $(this).attr('data-href') ? $(this).attr('data-href') : $(this).attr('href');
+          $('html,body').stop().animate({ scrollTop: $(d).offset().top - 15 }, t);
+      });
+    });
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script>
+    <script>
     $(document).ready(function(){
       $('#ex1').zoom();
     });
@@ -96,7 +108,6 @@
       $('#ex15').zoom();
     });
   </script>
-
     <title>{% block head_title %}{% endblock %}</title>
   </head>
   <body>
