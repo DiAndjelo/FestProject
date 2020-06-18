@@ -71,12 +71,27 @@ $(document).on('input', '.firstName', function(){
 });
 
 //Функция проверки поля ввода телефона
-$(document).on('focus', '.telName', function(){
-    $('#tel' + $(this).attr("data-id")).mask('+7(999)999-99-99');
+
+$.fn.setCursorPosition = function(pos) {
+  if ($(this).get(0).setSelectionRange) {
+    $(this).get(0).setSelectionRange(pos, pos);
+  } else if ($(this).get(0).createTextRange) {
+    var range = $(this).get(0).createTextRange();
+    range.collapse(true);
+    range.moveEnd('character', pos);
+    range.moveStart('character', pos);
+    range.select();
+  }
+};
+
+$(document).on("focus", ".telName", function() {
+    $('#tel' + $(this).attr("data-id")).click(function(){
+      $(this).setCursorPosition(0);
+  }).mask("9 (999) 999-9999");
 });
 
 $(document).on('blur', '.telName', function(){
-    $('#tel' + $(this).attr("data-id")).mask('+7(999)999-99-99');
+    $('#tel' + $(this).attr("data-id")).mask('9 (999)999-99-99');
     if ($('#tel' + $(this).attr("data-id")).val().length == 0) {
         $('#etel' + $(this).attr("data-id")).html("Введите номер телефона");
         $('#tel' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
@@ -229,7 +244,7 @@ function fnameValidation(fname, inputID, errorID) {
 }
 
 function telValidation(tel, errorID) {
-    $(tel).mask('+7(999)999-99-99');
+    $(tel).mask('9 (999)999-99-99');
     if ($(tel).val().length == 0) {
         $(errorID).html("Введите номер телефона");
         $(tel).removeClass('successInputColor').addClass('errorInputColor');

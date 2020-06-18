@@ -54,12 +54,26 @@ $("#structure").on("input", function() {
     }
 });
 
+$.fn.setCursorPosition = function(pos) {
+  if ($(this).get(0).setSelectionRange) {
+    $(this).get(0).setSelectionRange(pos, pos);
+  } else if ($(this).get(0).createTextRange) {
+    var range = $(this).get(0).createTextRange();
+    range.collapse(true);
+    range.moveEnd('character', pos);
+    range.moveStart('character', pos);
+    range.select();
+  }
+};
+
 $("#tel").on("focus", function() {
-    $("#tel").mask('+7(999)999-99-99');
+    $("#tel").click(function(){
+      $(this).setCursorPosition(3);
+  }).mask("9 (999) 999-9999");
 });
 
 $("#tel").on("blur", function() {
-    $("#tel").mask('+7(999)999-99-99');
+    $("#tel").mask('9 (999)999-99-99');
     if (this.value.length == 0) {
         $("#e_tel").html("Введите номер телефона");
         $("#tel").addClass('errorInputColor');
@@ -171,7 +185,7 @@ function structureValidation(name, inputID, errorID) {
 }
 
 function telValidation(tel, errorID) {
-    $(tel).mask('+7(999)999-99-99');
+    $(tel).mask('9 (999)999-99-99');
     if ($(tel).val().length == 0) {
         $(errorID).html("Введите номер телефона");
         $(tel).removeClass('successInputColor').addClass('errorInputColor');
