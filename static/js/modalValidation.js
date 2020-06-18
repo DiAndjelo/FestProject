@@ -55,17 +55,19 @@ $("#structure").on("input", function() {
 });
 
 $("#tel").on("focus", function() {
-    $("#tel").mask('+7(999)999-99-99');
+    $("#tel").click(function(){
+        $(this).setCursorPosition(0);
+    }).mask('9(999)999-99-99');
 });
 
 $("#tel").on("blur", function() {
-    $("#tel").mask('+7(999)999-99-99');
+    $("#tel").mask('9(999)999-99-99');
     if (this.value.length == 0) {
         $("#e_tel").html("Введите номер телефона");
         $("#tel").addClass('errorInputColor');
         $("#tel").removeClass('successInputColor');
         return false;
-    } else if (this.value.length != 16) {
+    } else if (this.value.length != 15) {
         $("#e_tel").html("Неверно введен номер телефона");
         $("#tel").addClass('errorInputColor');
         $("#tel").removeClass('successInputColor');
@@ -103,7 +105,7 @@ $( document ).ready(function() {
 		function(){
 	        if(nameValidation($('#name_label').val(), '#name_label',"#e_name_label")) { flagSend = 1; } else { flagSend = 0;}
             if(structureValidation($('#structure').val(), '#structure','#e_structure')) { flagSend = 1; } else { flagSend = 0;}
-            if(telValidation('#tel','#e_tel') || emailValidation('#email','#e_email')) { flagSend = 1; } else { flagSend = 0;}
+            if(emailValidation('#email','#e_email') || telValidation('#tel','#e_tel')) { flagSend = 1; } else { flagSend = 0;}
 
 		    if (flagSend==1){
 			    return true;
@@ -171,12 +173,12 @@ function structureValidation(name, inputID, errorID) {
 }
 
 function telValidation(tel, errorID) {
-    $(tel).mask('+7(999)999-99-99');
+    $(tel).mask('9(999)999-99-99');
     if ($(tel).val().length == 0) {
         $(errorID).html("Введите номер телефона");
         $(tel).removeClass('successInputColor').addClass('errorInputColor');
         return false;
-    } else if ($(tel).val().length != 16) {
+    } else if ($(tel).val().length != 15) {
         $(errorID).html("Неверно введен номер телефона");
         $(tel).removeClass('successInputColor').addClass('errorInputColor');
         return false;
