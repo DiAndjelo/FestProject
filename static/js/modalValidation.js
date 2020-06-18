@@ -68,7 +68,7 @@ $.fn.setCursorPosition = function(pos) {
 
 $("#tel").on("focus", function() {
     $("#tel").click(function(){
-      $(this).setCursorPosition(3);
+      $(this).setCursorPosition(0);
   }).mask("9 (999) 999-9999");
 });
 
