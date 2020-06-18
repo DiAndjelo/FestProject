@@ -365,17 +365,6 @@ background: #020C1C !important;
   font-size: 22px;
   line-height: 22px;
 }
-.about_org_row{
-  position: relative;
-  margin-top: -30px;
-    background: rgba(0, 0, 0, 0.35);
-}
-.name_org{
-  font-size: 13px;
-  line-height: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
 @media (max-width:991px) {
   .text_about_service{
     font-size: 14px !important;
@@ -638,105 +627,83 @@ background: #020C1C !important;
    background: 0;
 }
 /*галлерея организаторов*/
-
-
-.oleg{
-  width: 100%;
-  height: 100%;
-  background: url("static/img/org/oleg_org.jpg") cover no-repeat !important;
-}
-.oleg:hover{
-background: url("../img/org/lil_oleg_org.jpg") cover no-repeat !important;
-z-index: 10;
-transition: 0.4s;
-}
-
 .width_row_org{
   width: 75%;
+}
+.about_org_row{
+  padding-top: 7px;
+  padding-bottom: 7px;
+  position: relative;
+  margin-top: -36px;
+  background: rgba(0, 0, 0, 0.35);
+}
+.name_org{
+  font-size: 13px;
+  line-height: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.now,.old {
+margin:0;
+padding:0;
+}
+
+.ImgField>.now {
+opacity:1px;
+
+display:block;
+position:absolute;
+transition-duration:0.96s;
+}
+.ImgField:hover{
+  cursor: pointer;
+}
+.ImgField:hover .now{
+opacity:0.00;
+z-index: 0;
+}
+
+div.ImgField {
+display:inline-block;
+background-position:center center;
+background-repeat:no-repeat;
+margin:0;
+margin-bottom: 30px;
+padding:0;
+}
+.ImgField:hover .about_org_row>.name_org{
+  transition: 0.4s;
+  color: #EDC043;
+}
+.ImgField:hover .about_org_row>a>.inst{
+  transition: 0.4s;
+  fill: #EDC043 !important;
+}
+
+
+@media (max-width:480px) {
+  .now,.old {
+  width: 136px;
+  }
+
 }
 @media (max-width: 991px) {
  .width_row_org{
    width: 96%;
  }
-}
-
-.child_gallery_zakhar{
-background: url("../img/org/zakhar_org.jpg") no-repeat;
-display: block;
-width: 166px;
-height: 210px;
--webkit-transition: .4s ease; /* Safari and Chrome */
--moz-transition: .4s ease; /* Firefox 4 */
--o-transition: .4s ease; /* Opera */
-}
-button:hover .child_gallery_zakhar{
-background: url("../img/org/lil_zakhar_org.jpg") no-repeat !important;
-transition: 0.4s;
+ div.ImgField {
+   margin-top: 20px;
+ }
 }
 
 
 
-.child_gallery_anastasia_1{
-background: url("../img/org/anastasiaya_org.jpg") no-repeat;
-display: block;
-width: 166px;
-height: 210px;
--webkit-transition: .4s ease; /* Safari and Chrome */
--moz-transition: .4s ease; /* Firefox 4 */
--o-transition: .4s ease; /* Opera */
-}
-button:hover .child_gallery_anastasia_1{
-background: url("../img/org/lil_anastasiaya_org.jpg") no-repeat !important;
-transition: 0.4s;
-}
 
 
 
-.child_gallery_evgeniya{
-background: url("../img/org/evgenia_org.jpg") no-repeat;
-display: block;
-width: 166px;
-height: 210px;
--webkit-transition: .4s ease; /* Safari and Chrome */
--moz-transition: .4s ease; /* Firefox 4 */
--o-transition: .4s ease; /* Opera */
-}
-button:hover .child_gallery_evgeniya{
-background: url("../img/org/lil_evgenia_org.jpg") no-repeat !important;
-transition: 0.4s;
-}
 
 
 
-.child_gallery_viktor{
-background: url("../img/org/victor_org.jpg") no-repeat;
-display: block;
-width: 166px;
-height: 210px;
--webkit-transition: .4s ease; /* Safari and Chrome */
--moz-transition: .4s ease; /* Firefox 4 */
--o-transition: .4s ease; /* Opera */
-}
-button:hover .child_gallery_viktor{
-background: url("../img/org/lil_victor_org.jpg") no-repeat !important;
-transition: 0.4s;
-}
-
-
-
-.child_gallery_nikita{
-background: url("../img/org/nikita_org.jpg") no-repeat;
-display: block;
-width: 166px;
-height: 210px;
--webkit-transition: .4s ease; /* Safari and Chrome */
--moz-transition: .4s ease; /* Firefox 4 */
--o-transition: .4s ease; /* Opera */
-}
-button:hover .child_gallery_nikita{
-background: url("../img/org/lil_nikita_org.jpg") no-repeat !important;
-transition: 0.4s;
-}
 
 
 
