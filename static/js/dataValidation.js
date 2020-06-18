@@ -150,8 +150,8 @@ $( document ).ready(function() {
 		        if(snameValidation($('#sname' + counti).val(), '#sname' + counti,'#esname' + counti)) { flagSend = 1; } else { flagSend = 0;}
                 if(fnameValidation($('#fname' + counti).val(), '#fname' + counti,'#efname' + counti)) { flagSend = 1; } else { flagSend = 0;}
                 if(telValidation('#tel' + counti,'#etel' + counti)) { flagSend = 1; } else { flagSend = 0;}
-                if(mailValidation('#mailReview')) { flagSend = 1; } else { flagSend = 0;}
-                if(conmailValidation('#emailConfirm')) { flagSend = 1; } else { flagSend = 0;}
+                if(mailValidation("#mailReview", '#errorReviewMail')) { flagSend = 1; } else { flagSend = 0;}
+                if(conmailValidation('#emailConfirm', '#errorReviewMailConf')) { flagSend = 1; } else { flagSend = 0;}
 		        counti++;
 		    }
 
@@ -245,35 +245,36 @@ function telValidation(tel, errorID) {
    }
 }
 
-function mailValidation(mail) {
+function mailValidation(mail, errorID) {
     var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(mail.length === 0) {
-       $('#errorReviewMail').html("Введите электронную почту");
-       $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
+    if($(mail).val().length === 0) {
+       $(errorID).html("Введите электронную почту");
+       $(mail).removeClass('successInputColor').addClass('errorInputColor');
        return false;
-    } else if (!pattern .test(mail)) {
-        $('#errorReviewMail').html("Неверный ввод");
-        $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
+    } else if (!pattern .test($(mail).val())) {
+        $(errorID).html("Неверный ввод");
+        $(mail).removeClass('successInputColor').addClass('errorInputColor');
         return false;
     } else {
-        $('#errorReviewMail').html("");
-        $("#mailReview").removeClass('errorInputColor').addClass('successInputColor');
+        $(errorID).html("");
+        $(mail).removeClass('errorInputColor').addClass('successInputColor');
         return true;
    }
 }
 
-function conmailValidation(mailConfirm) {
-    var mail = document.getElementById("mailReview").value;
-    if(mailConfirm.length === 0) {
+
+
+
+function conmailValidation(mailConfirm, errorID) {
+    if($(mailConfirm).val().length === 0) {
        $('#errorReviewMailConf').html("Введите электронную почту");
        $("#emailConfirm").removeClass('successInputColor').addClass('errorInputColor');
        return false;
-    } else if (mailConfirm != mail) {
+    } else if ($(mailConfirm).val() != $(mail).val()) {
         $('#errorReviewMailConf').html("Email не совпадает");
-        $("#emailConfirm").removeClass('successInputColor').addClass('errorInputColor');
+        $('#emailConfirm').removeClass('successInputColor').addClass('errorInputColor');
         return false;
-
-    } else {
+    }else {
         $('#errorReviewMailConf').html("");
         $("#emailConfirm").removeClass('errorInputColor').addClass('successInputColor');
         return true;
