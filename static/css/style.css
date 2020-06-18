@@ -639,21 +639,26 @@ background: #020C1C !important;
 }
 /*галлерея организаторов*/
 
-.child_gallery_oleg{
-background: url("../img/org/oleg_org.jpg") no-repeat;
-display: block;
-width: 166px;
-height: 210px;
--webkit-transition: .4s ease; /* Safari and Chrome */
--moz-transition: .4s ease; /* Firefox 4 */
--o-transition: .4s ease; /* Opera */
+
+.oleg{
+  width: 100%;
+  height: 100%;
+  background: url("static/img/org/oleg_org.jpg") cover no-repeat !important;
 }
-button:hover .child_gallery_oleg{
-background: url("../img/org/lil_oleg_org.jpg") no-repeat !important;
+.oleg:hover{
+background: url("../img/org/lil_oleg_org.jpg") cover no-repeat !important;
+z-index: 10;
 transition: 0.4s;
 }
 
-
+.width_row_org{
+  width: 75%;
+}
+@media (max-width: 991px) {
+ .width_row_org{
+   width: 96%;
+ }
+}
 
 .child_gallery_zakhar{
 background: url("../img/org/zakhar_org.jpg") no-repeat;
