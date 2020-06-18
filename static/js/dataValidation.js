@@ -83,7 +83,6 @@ $.fn.setCursorPosition = function(pos) {
 };
 
 //Функция проверки поля ввода телефона
-<<<<<<< HEAD
 $(document).on("focus", ".telName", function() {
     $('#tel' + $(this).attr("data-id")).click(function(){
       $(this).setCursorPosition(0);
@@ -92,29 +91,6 @@ $(document).on("focus", ".telName", function() {
 
 $(document).on('blur', '.telName', function(){
     $('#tel' + $(this).attr("data-id")).mask('9(999)999-99-99');
-=======
-
-$.fn.setCursorPosition = function(pos) {
-  if ($(this).get(0).setSelectionRange) {
-    $(this).get(0).setSelectionRange(pos, pos);
-  } else if ($(this).get(0).createTextRange) {
-    var range = $(this).get(0).createTextRange();
-    range.collapse(true);
-    range.moveEnd('character', pos);
-    range.moveStart('character', pos);
-    range.select();
-  }
-};
-
-$(document).on("focus", ".telName", function() {
-    $('#tel' + $(this).attr("data-id")).click(function(){
-      $(this).setCursorPosition(0);
-  }).mask("9 (999) 999-9999");
-});
-
-$(document).on('blur', '.telName', function(){
-    $('#tel' + $(this).attr("data-id")).mask('9 (999)999-99-99');
->>>>>>> 1ed96ee55107e65a2c94f6d3dba670de82e0d5eb
     if ($('#tel' + $(this).attr("data-id")).val().length == 0) {
         $('#etel' + $(this).attr("data-id")).html("Введите номер телефона");
         $('#tel' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
@@ -283,7 +259,7 @@ function telValidation(tel, errorID) {
    }
 }
 
-function mailValidation(mail, errorID) {
+function mailValidation(mail) {
     var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if($(mail).val().length === 0) {
        $('#errorReviewMail').html("Введите электронную почту");
@@ -294,8 +270,8 @@ function mailValidation(mail, errorID) {
         $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
         return false;
     } else {
-        $(errorID).html("");
-        $(mail).removeClass('errorInputColor').addClass('successInputColor');
+        $('#errorReviewMail').html("");
+        $("#mailReview").removeClass('errorInputColor').addClass('successInputColor');
         return true;
    }
 }
@@ -307,9 +283,10 @@ function conmailValidation(mail, mailConfirm) {
        return false;
    } else if ($(mailConfirm).val() != $(mail).val()) {
         $('#errorReviewMailConf').html("Email не совпадает");
-        $('#emailConfirm').removeClass('successInputColor').addClass('errorInputColor');
+        $("#emailConfirm").removeClass('successInputColor').addClass('errorInputColor');
         return false;
-    }else {
+
+    } else {
         $('#errorReviewMailConf').html("");
         $("#emailConfirm").removeClass('errorInputColor').addClass('successInputColor');
         return true;
