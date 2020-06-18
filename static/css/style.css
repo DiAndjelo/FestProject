@@ -628,7 +628,7 @@ background: #020C1C !important;
 }
 /*галлерея организаторов*/
 .width_row_org{
-  width: 75%;
+  width: 85%;
 }
 .about_org_row{
   padding-top: 7px;
@@ -653,7 +653,7 @@ opacity:1px;
 
 display:block;
 position:absolute;
-transition-duration:0.96s;
+transition-duration:0.7s;
 }
 .ImgField:hover{
   cursor: pointer;
@@ -688,11 +688,9 @@ padding:0;
 
 }
 @media (max-width: 991px) {
- .width_row_org{
-   width: 96%;
- }
+
  div.ImgField {
-   margin-top: 20px;
+   margin-top: 0px;
  }
 }
 
@@ -1000,6 +998,10 @@ h6.thisday{
   .cos{
     font-size: 27px;
     line-height: 22px;
+  }
+  .width_row_org{
+
+    width: 96%;
   }
   .service_hover:hover .cos{
     color: #fff !important;
