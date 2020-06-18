@@ -15,18 +15,10 @@ $("#name_label").on("input", function() {
        $("#name_label").removeClass('successInputColor');
        return false;
     } else {
-       var re = /^[А-яЁ ё]{0,}$/;
-       if(!re.test(this.value)) {
-            $("#e_name_label").html("Только русские буквы");
-            $("#name_label").addClass('errorInputColor');
-            $("#name_label").removeClass('successInputColor');
-            return false;
-       } else {
             $("#e_name_label").html("");
             $("#name_label").addClass('successInputColor');
             $("#name_label").removeClass('errorInputColor');
             return true;
-       }
     }
 });
 
@@ -47,7 +39,7 @@ $("#structure").on("input", function() {
        $("#structure").removeClass('successInputColor');
        return false;
     } else {
-       var re = /^[А-яЁ ё]{0,}$/;
+       var re = /^[А-яЁ ё , 0-9]{0,}$/;
        if(!re.test(this.value)) {
             $("#e_structure").html("Только русские буквы");
             $("#structure").addClass('errorInputColor');
@@ -112,8 +104,6 @@ $( document ).ready(function() {
 	        if(nameValidation($('#name_label').val(), '#name_label',"#e_name_label")) { flagSend = 1; } else { flagSend = 0;}
             if(structureValidation($('#structure').val(), '#structure','#e_structure')) { flagSend = 1; } else { flagSend = 0;}
             if(telValidation('#tel','#e_tel') || emailValidation('#email','#e_email')) { flagSend = 1; } else { flagSend = 0;}
-            // if(emailValidation('#email','#e_email')) { flagSend = 1; } else { flagSend = 0;}
-            //if(mailValidation('#email')) { flagSend = 1; } else { flagSend = 0;}
 
 		    if (flagSend==1){
 			    return true;
@@ -141,18 +131,10 @@ function nameValidation(name, inputID, errorID) {
        $(inputID).removeClass('successInputColor');
        return false;
     } else {
-       var re = /^[А-яЁ ё]{0,}$/;
-       if(!re.test(name)) {
-            $(errorID).html("Только русские буквы");
-            $(inputID).addClass('errorInputColor');
-            $(inputID).removeClass('successInputColor');
-            return false;
-       } else {
             $(errorID).html("");
             $(inputID).addClass('successInputColor');
             $(inputID).removeClass('errorInputColor');
             return true;
-       }
     }
 }
 
@@ -173,7 +155,7 @@ function structureValidation(name, inputID, errorID) {
        $(inputID).removeClass('successInputColor');
        return false;
     } else {
-       var re = /^[А-яЁ ё]{0,}$/;
+       var re = /^[А-яЁ ё , 0-9]{0,}$/;
        if(!re.test(name)) {
             $(errorID).html("Только русские буквы");
             $(inputID).addClass('errorInputColor');
