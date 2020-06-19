@@ -1,10 +1,11 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views.generic.base import View
-
+import csv
 from Landing.forms import ParticipationForm
+from Payment.models import TicketPay
 
 
 class LandingView(View):
@@ -19,6 +20,25 @@ class ParticipationView(View):
             participation = form.save()
             participation.save()
         return redirect('landing')
+
+
+class ExportView(View):
+    def get(self, request):
+        print(request.user.is_staff)
+        if request.user.is_staff:
+            response = HttpResponse(content_type='text/csv')
+
+            writer = csv.writer(response)
+            writer.writerow(['ID', 'Surname', 'Name', 'Email', 'Code', 'Is Payed?'])
+
+            for ticket in TicketPay.objects.all().values_list('id', 'surname', 'name', 'email', 'generated_code', 'is_payed'):
+                writer.writerow(ticket)
+
+            response['Content-Disposition'] = 'attachment; filename="tickets.csv"'
+
+            return response
+        else:
+            return redirect('landing')
 
 
 class ContactView(View):

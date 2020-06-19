@@ -225,6 +225,9 @@
                         </div>
                         <button id="payBtn" type="submit" class="btn btn-payment">Оплатить</button>
                         </form>
+                        {% if user.is_staff %}
+                            <a href="{% url 'export' %}"><button id="payBtn" type="submit" class="btn btn-payment">Скачать БД</button></a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
