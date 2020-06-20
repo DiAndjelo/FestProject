@@ -17,3 +17,14 @@ class Participation(models.Model):
     class Meta:
         verbose_name = "Музыкальная группа"
         verbose_name_plural = "Музыкальные группы"
+
+
+class Reservation(models.Model):
+    phone = models.CharField('Номер телефона', max_length=20, null=False, blank=False)
+
+    def __str__(self):
+        return "Номер телефона %s" % self.phone
+
+    class Meta:
+        verbose_name = "Номер для бронирования"
+        verbose_name_plural = "Номера для бронирования"

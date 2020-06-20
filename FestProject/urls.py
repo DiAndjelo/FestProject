@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.LandingView.as_view(), name='landing'),
     path('adding_participation/', views.ParticipationView.as_view(), name='adding_participation'),
+    path('adding_reservation/', views.ReservationView.as_view(), name='adding_reservation'),
     path('contacts/', views.ContactView.as_view(), name='contacts'),
     path('members/', views.MembersView.as_view(), name='members'),
     path('accommodation/', views.AccommodationView.as_view(), name='accommodation'),
