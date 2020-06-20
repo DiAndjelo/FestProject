@@ -1,0 +1,90 @@
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #00060F ! important;
+    font-family: "HelveticaNeueCyr";
+}
+input, button{
+    outline: none!important;
+}
+input:focus{
+    outline:none!important;
+}
+
+
+.layerBody{
+    position: absolute;
+    top: 0;
+    background: url(../../templates/fest (2)/fest/img/layer.jpg) no-repeat;
+    width: 100%;
+    background-size: 100%;
+}
+
+/* Стили для блока контактной информации */
+
+.contact_section{
+    padding-top: 110px;
+}
+
+
+
+.contact_section_block{
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+}
+
+    .contact_section_block h2{
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 30px;
+        color: #ffffff;
+    }
+
+    .contact_section_block p{
+        font-family: "HelveticaNeueCyr";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 17px;
+        color: #ffffff;
+    }
+
+    .contact_section_block a{
+        color: #ffffff;
+    }
+
+        .contact_section_block a:hover{
+            color: #EDC043;
+            text-decoration: none;
+            transition: .4s;
+        }
+
+    .contact_section_block svg{
+        width: 25px;
+    }
+
+    .contactTel{
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 50px;
+        color: #ffffff;
+    }
+
+    .contactMail{
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 28px;
+        color: #ffffff;
+    }
+
+    @media(max-width:567px){
+        .contactTel{
+            font-size: 27px;
+            line-height: 27px;
+        }
+        .contactMail{
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
