@@ -1,5 +1,5 @@
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -105,3 +105,7 @@ class AddingTicket(View):
         request.session["nmb"] = nmb
         request.session["checker"] = 'edited'
         return JsonResponse(return_dict)
+
+
+def error_404_view(request, exception):
+    return render(request, 'errors/404.html')

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's5=wt8r@t0%)hn#!dv-(hd$#ydufor^8=r%ys^+6e&j#qz_745'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['chestnokfest.live']
 
@@ -121,9 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_DIR = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [STATIC_DIR]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MYSITE_URL = '/home/users/9/9284081313/domains/chestnokfest.live'
+STATIC_ROOT = os.path.join(MYSITE_URL, 'static')
+STATIC_DIR = os.path.join(BASE_DIR, 'static_prod')
+STATICFILES_DIRS = [STATIC_DIR]
 
 EMAIL_HOST = 'smtp.jino.ru'
 EMAIL_HOST_USER = 'info@chestnokfest.live'
