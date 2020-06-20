@@ -1267,6 +1267,8 @@
                 <span aria-hidden="true" class="text-white">&times;</span>
               </button>
               <div class="text-center py-3">
+                  <form id="adding_questions" action="{% url 'adding_questions' %}" method="post">
+                    {% csrf_token %}
                 <div class="border-0 d-block">
                   <h5 class="modal-title text-center px-5">Задайте вопрос по телефону</h5>
                 </div>
@@ -1286,6 +1288,7 @@
                 <div class="d-flex mt-2 flex-row justify-content-center">
                   <button type="submit" id="memberBtn" class="btn px-4 text-uppercase btn-showmap-rev rounded"><span class="mx-2">отправить</span></button>
                 </div>
+                  </form>
               </div>
             </div>
         </div>

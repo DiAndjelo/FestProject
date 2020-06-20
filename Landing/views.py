@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.template.loader import get_template
 from django.views.generic.base import View
 import csv
-from Landing.forms import ParticipationForm, ReservationForm
+from Landing.forms import ParticipationForm, ReservationForm, QuestionsForm
 from Payment.models import TicketPay
 
 
@@ -49,6 +49,17 @@ class ReservationView(View):
             # html_message=get_template('Payment/letter.html').render())
             reservation.save()
         return redirect('accommodation')
+
+
+class QuestionsView(View):
+    def post(self, request):
+        form = QuestionsForm(request.POST)
+        if form.is_valid():
+            questions = form.save()
+            send_mail('Вопросы', form.cleaned_data['phone'], 'info@chestnokfest.live', ['info@chestnokfest.live'])
+            # html_message=get_template('Payment/letter.html').render())
+            questions.save()
+        return redirect('landing')
 
 
 class ExportView(View):
