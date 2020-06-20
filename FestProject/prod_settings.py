@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MYSITE_URL = '/home/users/9/9284081313/domains/chestnokfest.live'
 STATIC_ROOT = os.path.join(MYSITE_URL, 'static')
-STATIC_DIR = os.path.join(BASE_DIR, 'static_prod')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [STATIC_DIR]
 
 EMAIL_HOST = 'smtp.jino.ru'
