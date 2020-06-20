@@ -726,6 +726,8 @@
               <button type="button" class="mt-0 mt-lg-2 text-right close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" class="text-white">&times;</span>
               </button>
+                 <form id="adding_participation" action="{% url 'adding_reservation' %}" method="post">
+                    {% csrf_token %}
               <div class="text-center py-3">
                 <div class="border-0 d-block">
                   <h5 class="modal-title text-center px-5">Бронирование по телефону</h5>
@@ -747,6 +749,7 @@
                   <button type="submit" id="memberBtn" class="btn px-4 text-uppercase btn-showmap-rev rounded"><span class="mx-2">отправить</span></button>
                 </div>
               </div>
+                 </form>
             </div>
         </div>
       </div>

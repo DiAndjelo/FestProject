@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from Landing.models import Participation
+from Landing.models import Participation, Reservation
 
 
 class ParticipationAdmin(admin.ModelAdmin):
@@ -12,3 +12,13 @@ class ParticipationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Participation, ParticipationAdmin)
+
+
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ('id', 'phone')
+
+    class Meta:
+        model = Reservation
+
+
+admin.site.register(Reservation, ReservationAdmin)

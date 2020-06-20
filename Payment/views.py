@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 from yandex_checkout import Payment, Configuration
 from django.template.loader import get_template
 from Payment.models import Ticket, PaymentModel, TicketPay
-
+import string
 
 class PaymentView(View):
     def get(self, request):
@@ -45,22 +45,37 @@ class AddPayment(View):
                 nmb = 1
         except:
             nmb = 1
-
+        letters = []
+        for i in string.ascii_letters:
+            letters.append(i)
         order = PaymentModel(email=email, ticket=ticket)
         order.save(int(nmb), True)
+        a = ord('а')
         for i in range(int(nmb)):
             name = data.getlist("name")[i]
             surname = data.getlist("surname")[i]
             phone = data.getlist("phone")[i]
             count_of_errors = 0
-            if name == None or name == '' or ' ' in name:
+            if name == None or name == '':
                 count_of_errors += 1
-            if surname == None or surname == '' or ' ' in surname:
+            for i in string.ascii_letters:
+                if i in name:
+                    count_of_errors += 1
+            if surname == None or surname == '':
                 count_of_errors += 1
-            if phone == None or phone == '' or ' ' in phone:
+            for i in string.ascii_letters:
+                if i in surname:
+                    count_of_errors += 1
+            if phone == None or phone == '':
                 count_of_errors += 1
-            if email == None or email == '' or ' ' in email:
+            for i in string.ascii_letters:
+                if i in phone:
+                    count_of_errors += 1
+            if email == None or email == '':
                 count_of_errors += 1
+            for i in ''.join([chr(i) for i in range(a,a+6)] + [chr(a+33)] + [chr(i) for i in range(a+6,a+32)]):
+                if i in email:
+                    count_of_errors += 1
             if count_of_errors > 0:
                 return redirect('tickets')
             ticket_pay = TicketPay.objects.create(order=order, name=name, surname=surname, phone=phone, email=email)
