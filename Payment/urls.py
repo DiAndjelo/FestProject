@@ -8,7 +8,7 @@ from Payment import views
 urlpatterns = [
     path('', views.PaymentView.as_view(),
          name='tickets'),
-    path('success/', views.SuccessView.as_view(), name='success_view'),
+    path('payment_redirect/', views.SuccessView.as_view(), name='payment_redirect'),
     path('adding_payment/', views.AddPayment.as_view(), name='add_payment'),
     path('update_ticket/', views.AddingTicket.as_view(), name='update_ticket'),
 ]

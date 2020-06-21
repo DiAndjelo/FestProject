@@ -99,7 +99,7 @@ class YandexPayment(View):
 
         currency = "RUB"
 
-        return_url = "https://chestnokfest.live/success/"
+        return_url = "https://chestnokfest.live/tickets/payment_redirect/"
 
         description = str("Покупка " + str(nmb) + " билета(ов) за " + str(value))
 
