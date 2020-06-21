@@ -32,6 +32,7 @@ urlpatterns = [
     path('accommodation/', views.AccommodationView.as_view(), name='accommodation'),
     path('tickets/', include('Payment.urls')),
     path('export/', views.ExportView.as_view(), name='export'),
+    path('success_participation', views.SuccessParticipation.as_view(), name='success_participation'),
     path('api/payment/<int:value>/<int:id>/', YandexPayment.as_view(), name='payment_view'),
     path('api/payment/notifications/', YandexNotifications.as_view(), name='payment_notification_view'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

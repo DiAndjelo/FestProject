@@ -37,7 +37,12 @@ class ParticipationView(View):
 
             participation.save()
 
-        return redirect('landing')
+        return redirect('success_participation')
+
+
+class SuccessParticipation(View):
+    def get(self, request):
+        return render(request, 'success_redirects/Participation.html')
 
 
 class ReservationView(View):
