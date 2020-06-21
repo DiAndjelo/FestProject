@@ -42,7 +42,12 @@ class ParticipationView(View):
 
 class SuccessParticipation(View):
     def get(self, request):
-        return render(request, 'success_redirects/Participation.html')
+        return render(request, 'success_redirects/participation.html')
+
+
+class SuccessQuestionsReservation(View):
+    def get(self, request):
+        return render(request, 'success_redirects/questions_reservation.html')
 
 
 class ReservationView(View):
@@ -53,7 +58,7 @@ class ReservationView(View):
             send_mail('Бронирование', form.cleaned_data['phone'], 'info@chestnokfest.live', ['info@chestnokfest.live'])
             # html_message=get_template('Payment/letter.html').render())
             reservation.save()
-        return redirect('accommodation')
+        return redirect('success_questions_reservations')
 
 
 class QuestionsView(View):
@@ -64,7 +69,7 @@ class QuestionsView(View):
             send_mail('Вопросы', form.cleaned_data['phone'], 'info@chestnokfest.live', ['info@chestnokfest.live'])
             # html_message=get_template('Payment/letter.html').render())
             questions.save()
-        return redirect('landing')
+        return redirect('success_questions_reservations')
 
 
 class ExportView(View):
