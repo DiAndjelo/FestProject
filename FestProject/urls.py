@@ -52,8 +52,8 @@ urlpatterns = [
                                                "Disallow: /adding_reservation\n"
                                                "Disallow: /adding_questions\n"
                                                "Disallow: /export\n"
-                                               "Disallow: /update_ticket\n"
-                                               "Disallow: /adding_payment\n"
+                                               "Disallow: /tickets/update_ticket\n"
+                                               "Disallow: /tickets/adding_payment\n"
                                                "Disallow: /api\n"
                                                "Sitemap: https://chestnokfest.live/sitemap.xml",
                                                content_type="text/plain"), name="robots_file"),
