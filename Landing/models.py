@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+from django.shortcuts import reverse
+from django.contrib.sitemaps import Sitemap
 
 
 class Participation(models.Model):

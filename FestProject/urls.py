@@ -19,7 +19,14 @@ from django.urls import path, include
 
 from django.conf import settings
 from Landing import views
+from Landing.sitemaps import StaticSitemap
 from Payment.views import YandexPayment, YandexNotifications
+from django.contrib.sitemaps.views import sitemap
+
+sitemaps = {
+    'static': StaticSitemap
+}
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +38,7 @@ urlpatterns = [
     path('members/', views.MembersView.as_view(), name='members'),
     path('accommodation/', views.AccommodationView.as_view(), name='accommodation'),
     path('tickets/', include('Payment.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('export/', views.ExportView.as_view(), name='export'),
     path('success_participation/', views.SuccessParticipation.as_view(), name='success_participation'),
     path('success_questions_reservations/', views.SuccessQuestionsReservation.as_view(),

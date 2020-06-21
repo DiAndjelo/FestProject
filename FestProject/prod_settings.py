@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Landing.apps.LandingConfig',
     'Payment.apps.PaymentConfig',
+    'django.contrib.sitemaps',
     'rest_framework',
 ]
 
