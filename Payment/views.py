@@ -86,7 +86,7 @@ class AddPayment(View):
 
 class SuccessView(View):
     def get(self, request):
-        return render(request, 'Payment/success.html')
+        return render(request, 'success_redirects/payment_redirect.html')
 
 
 class YandexPayment(View):
@@ -99,7 +99,7 @@ class YandexPayment(View):
 
         currency = "RUB"
 
-        return_url = "https://chestnokfest.live/"
+        return_url = "https://chestnokfest.live/success/"
 
         description = str("Покупка " + str(nmb) + " билета(ов) за " + str(value))
 
