@@ -46,6 +46,8 @@
           <div class="border-0 d-block">
             <h5 class="modal-title text-center px-5">Заявка на участие в фестивале!</h5>
           </div>
+            <form id="adding_participation" action="{% url 'adding_participation' %}" method="post">
+                    {% csrf_token %}
           <div class="modal-body">
             <div class="container p-0 px-lg-5">
               <div class="modal-about text-center mb-4">
@@ -57,13 +59,13 @@
                 <div class="row justify-content-between">
                   <div class="col-12 col-lg-5 mt-2 mt-lg-2">
                     <label for="name_Label">Название коллектива:</label>
-                    <input class="input_modal py-2 px-4 text-white w-100" id="name_label" placeholder="Название" type="text" value="" autocomplete="off" required>
+                    <input class="input_modal py-2 px-4 text-white w-100" name="name" id="name_label" placeholder="Название" type="text" value="" autocomplete="off" required>
                     <div  class="errorRecord mt-1" id="e_name_label">
                     </div>
                   </div>
                   <div class="col-12 col-lg-5 mt-2 mt-lg-2">
                     <label for="structure">Музыкальный состав:</label>
-                    <input class="input_modal py-2 px-4 text-white w-100" id="structure" placeholder="Гитара, бас, ударник, вокалист" autocomplete="off" type="text" value="" required>
+                    <input class="input_modal py-2 px-4 text-white w-100" name="consist" id="structure" placeholder="Гитара, бас, ударник, вокалист" autocomplete="off" type="text" value="" required>
                     <div class="errorRecord mt-1" id="e_structure">
                     </div>
                   </div>
@@ -71,14 +73,14 @@
                 <div class="row justify-content-between">
                   <div class="col-12 col-lg-5 mt-2 mt-lg-2">
                       <label for="email">Электронная почта:</label>
-                      <input class="input_modal py-2 px-4 text-white w-100" id="email" placeholder="Электронная почта" type="text" value="" autocomplete="off" required>
+                      <input class="input_modal py-2 px-4 text-white w-100" name="email" id="email" placeholder="Электронная почта" type="text" value="" autocomplete="off" required>
                       <div class="errorRecord mt-1" id="e_email">
                       </div>
                   </div>
                   <div class="d-none d-lg-block col-md-2 text-center abs" style="top: 50px;">или</div>
                   <div class="col-12 col-lg-5 mt-2 mt-lg-2">
                     <label for="tel">Телефон:</label>
-                    <input class="input_modal py-2 px-4 text-white w-100" id="tel" placeholder="Телефон" type="tel" value="" autocomplete="off">
+                    <input class="input_modal py-2 px-4 text-white w-100" name="phone" id="tel" placeholder="Телефон" type="tel" value="" autocomplete="off">
                     <div class="errorRecord mt-1" id="e_tel">
                     </div>
                   </div>
@@ -86,7 +88,7 @@
                 <div class="row justify-content-between">
                   <div class="col-12 mt-2 mt-lg-2">
                     <label for="about_you">Почему именно ты?</label>
-                    <textarea class="input_modal py-2 px-4 text-white input_modal w-100" id="about_you" placeholder="Расскажите о себе" type="text" value="" autocomplete="off" name="name" rows="3" cols="80"></textarea>
+                    <textarea class="input_modal py-2 px-4 text-white input_modal w-100" id="about_you" placeholder="Расскажите о себе" type="text" value="" autocomplete="off" name="text" rows="3" cols="80"></textarea>
                     <div class="invalid-feedback">
                     Расскажи немного о себе
                     </div>
@@ -98,6 +100,7 @@
               </form>
             </div>
           </div>
+            </form>
         </div>
       </div>
     </div>
