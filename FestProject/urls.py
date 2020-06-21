@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path, include
 
 from django.conf import settings
@@ -45,6 +46,17 @@ urlpatterns = [
          name='success_questions_reservations'),
     path('api/payment/<int:value>/<int:id>/', YandexPayment.as_view(), name='payment_view'),
     path('api/payment/notifications/', YandexNotifications.as_view(), name='payment_notification_view'),
+    path('robots.txt/', lambda x: HttpResponse("User-agent: \n"
+                                               "Disallow: /admin\n"
+                                               "Disallow: /adding_participation\n"
+                                               "Disallow: /adding_reservation\n"
+                                               "Disallow: /adding_questions\n"
+                                               "Disallow: /export\n"
+                                               "Disallow: /update_ticket\n"
+                                               "Disallow: /adding_payment\n"
+                                               "Disallow: /api\n"
+                                               "Sitemap: https://chestnokfest.live/sitemap.xml",
+                                               content_type="text/plain"), name="robots_file"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = 'Landing.views.error_404_view'
