@@ -650,13 +650,12 @@ background: #020C1C !important;
    font-weight: bold;
    font-size: 14px;
    line-height: 14px;
-   padding: 15px 0px;;
+   padding: 15px 0px;
 }
 .btn_question{
   width: 65%;
 }
 
-}
 .btn_howroad:hover{
   background: #EDC043 !important;
   border: 2px solid #EDC043 !important;
