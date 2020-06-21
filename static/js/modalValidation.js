@@ -80,6 +80,32 @@ $("#tel").on("blur", function() {
     }
 });
 
+$("#telBack").on("focus", function() {
+    $("#telBack").click(function(){
+        $(this).setCursorPosition(0);
+    }).mask('9(999)999-99-99');
+});
+
+$("#telBack").on("blur", function() {
+    $("#telBack").mask('9(999)999-99-99');
+    if (this.value.length == 0) {
+        $("#e_telBack").html("Введите номер телефона");
+        $("#telBack").addClass('errorInputColor');
+        $("#telBack").removeClass('successInputColor');
+        return false;
+    } else if (this.value.length != 15) {
+        $("#e_telBack").html("Неверно введен номер телефона");
+        $("#telBack").addClass('errorInputColor');
+        $("#telBack").removeClass('successInputColor');
+        return false;
+    } else {
+        $("#e_telBack").html("");
+        $("#telBack").addClass('successInputColor');
+        $("#telBack").removeClass('errorInputColor');
+        return true;
+    }
+});
+
 $("#email").on("blur", function() {
     var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(this.value.length === 0) {
@@ -105,12 +131,27 @@ $( document ).ready(function() {
 		function(){
 	        if(nameValidation($('#name_label').val(), '#name_label',"#e_name_label")) { flagSend = 1; } else { flagSend = 0;}
             if(structureValidation($('#structure').val(), '#structure','#e_structure')) { flagSend = 1; } else { flagSend = 0;}
-            if(emailValidation('#email','#e_email') || telValidation('#tel','#e_tel')) { flagSend = 1; } else { flagSend = 0;}
+            if(emailValidation('#email','#e_email')) { flagSend = 1; } else { flagSend = 0;}
+            if(telValidation('#tel','#e_tel')) { flagSend = 1; } else { flagSend = 0;}
 
-		    if (flagSend==1){
-			    return true;
-		    } else {
+		    if (flagSend==0){
 			    return false;
+		    } else {
+			    return true;
+		    }
+		}
+	);
+});
+
+$( document ).ready(function() {
+    $("#telback").click(
+		function(){
+            if(telValidation('#telBack','#e_telBack')) { flagSend = 1; } else { flagSend = 0;}
+
+		    if (flagSend==0){
+			    return false;
+		    } else {
+			    return true;
 		    }
 		}
 	);

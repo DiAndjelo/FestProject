@@ -169,10 +169,10 @@ $( document ).ready(function() {
 		        counti++;
 		    }
 
-		    if (flagSend==1){
-			    return true;
-		    } else  {
+		    if (flagSend==0){
 			    return false;
+		    } else  {
+			    return true;
 		    }
 		}
 	);
@@ -248,7 +248,7 @@ function telValidation(tel, errorID) {
         $(errorID).html("Введите номер телефона");
         $(tel).removeClass('successInputColor').addClass('errorInputColor');
         return false;
-    } else if ($("#" + tel).val().length != 15) {
+    } else if ($(tel).val().length != 15) {
         $(errorID).html("Неверно введен номер телефона");
         $(tel).removeClass('successInputColor').addClass('errorInputColor');
         return false;
