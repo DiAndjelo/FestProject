@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}
+    Спасибо за заявку
+{% endblock %}
+{% block content %}
+    {% block payment_first %}
+    {% endblock %}
+    <video class="video_background" id="bgvid" playsinline autoplay muted loop>
+      <source src="{% static 'img/videos4.mp4' %}" type="video/mp4">
+    </video>
+
+    <section class="tickets_warning mb-2">
+        <div class="container">
+            <div class="row m-0 align-items-center text-center">
+                <div class="col-12 tickets_warning_block">
+                    <div class="row align-items-center text-center">
+                        <div class="col-1 text-right pr-0">
+                            <span class="warning_sign">!</span>
+                        </div>
+                        <div class="col-10 col-sm-11 text-justify">
+                            <p>Спасибо за заявку. Ожидайте звонка в течение суток.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% block payment_second %}
+        </div>
+    {% endblock %}
+{% endblock %}
