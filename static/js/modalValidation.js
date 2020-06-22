@@ -107,13 +107,23 @@ $("#telBack").on("blur", function() {
 });
 
 $("#email").on("blur", function() {
-    var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var pattern  = /^(([^<>()[\]\\.,;:@\"]+(\.[^<>()[\]\\.,;:@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(this.value.length === 0) {
        $('#e_email').html("Введите электронную почту");
        $("#email").addClass('errorInputColor');
        $("#email").removeClass('successInputColor');
        return false;
-    } else if (!pattern .test(this.value)) {
+    } else if (this.value.length < 2 ) {
+       $("#e_email").html("Не менее двух символов");
+       $("#email").addClass('errorInputColor');
+       $("#email").removeClass('successInputColor');
+       return false;
+   } else if (this.value.length > 30 ) {
+      $("#e_email").html("Не более 30 символов");
+      $("#email").addClass('errorInputColor');
+      $("#email").removeClass('successInputColor');
+      return false;
+   } else if (!pattern .test(this.value)) {
         $('#e_email').html("Неверный ввод");
         $("#email").addClass('errorInputColor');
         $("#email").removeClass('successInputColor');
@@ -129,10 +139,7 @@ $("#email").on("blur", function() {
 $( document ).ready(function() {
     $("#memberBtn").click(
 		function(){
-	        if(nameValidation($('#name_label').val(), '#name_label',"#e_name_label")) { flagSend = 1; } else { flagSend = 0;}
-            if(structureValidation($('#structure').val(), '#structure','#e_structure')) { flagSend = 1; } else { flagSend = 0;}
-            if(emailValidation('#email','#e_email')) { flagSend = 1; } else { flagSend = 0;}
-            if(telValidation('#tel','#e_tel')) { flagSend = 1; } else { flagSend = 0;}
+	        if(nameValidation($('#name_label').val(), '#name_label',"#e_name_label") && structureValidation($('#structure').val(), '#structure','#e_structure') && emailValidation('#email','#e_email') && telValidation('#tel','#e_tel')) { flagSend = 1; } else { flagSend = 0;}
 
 		    if (flagSend==0){
 			    return false;
@@ -231,9 +238,17 @@ function telValidation(tel, errorID) {
 }
 
 function emailValidation(mail, errorID) {
-    var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var pattern  = /^(([^<>()[\]\\.,;:@\"]+(\.[^<>()[\]\\.,;:@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if($(mail).val().length === 0) {
        $(errorID).html("Введите электронную почту");
+       $(mail).removeClass('successInputColor').addClass('errorInputColor');
+       return false;
+    } else if (mail.length < 2 ) {
+       $(errorID).html("Не менее двух символов");
+       $(mail).removeClass('successInputColor').addClass('errorInputColor');
+       return false;
+    } else if (mail.length > 30 ) {
+       $(errorID).html("Не более 30 символов");
        $(mail).removeClass('successInputColor').addClass('errorInputColor');
        return false;
     } else if (!pattern .test($(mail).val())) {
