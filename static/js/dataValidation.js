@@ -114,7 +114,7 @@ $(document).on('blur', '.telName', function(){
 //Функция проверки поля ввода почты
 
 $('#mailReview').on('blur', function(){
-    var pattern  = /^(([^<>()[\]\\.,;:@\"]+(\.[^<>()[\]\\.,;:@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var pattern  = /^\s*(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s*$/;
     if(this.value.length === 0) {
        $('#errorReviewMail').html("Введите электронную почту");
        $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
@@ -270,7 +270,7 @@ function telValidation(tel, errorID) {
 }
 
 function mailValidation(mail) {
-    var pattern  = /^(([^<>()[\]\\.,;:@\"]+(\.[^<>()[\]\\.,;:@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var pattern  = /^\s*(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s*$/;
     if($(mail).val().length === 0) {
        $('#errorReviewMail').html("Введите электронную почту");
        $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
