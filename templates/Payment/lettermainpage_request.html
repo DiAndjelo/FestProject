@@ -26,57 +26,61 @@
     <table  style="margin: 0 auto; min-width: 320px; max-width: 600px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
         <tr>
             <td align="center" style="color: white; text-align: center; text-transform: uppercase; font-style: normal; font-weight: bold; font-size: 15px; line-height: 30px;">
-                <h2>хэй, {название группы}! <br>ты уже близок к большой сцене!</h2>
+                <h2>хэй, {{ name }}! <br>Добро пожаловать на фестиваль!</h2>
             </td>
         </tr>
     </table>
     <table  style="margin: 0 auto; min-width: 320px; max-width: 600px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
         <tr>
             <td align="center" style="font-style: normal; font-weight: bold; font-size: 18px; font-weight: 400; line-height: 18px; color: #EDC043;">
-                <p style="margin-bottom: 2%;">А сейчас тебе необходимо сделать следующее:</p>
+                <p style="margin-bottom: 2%;">Состав музыкального коллектива приглашён для участия в фестивале ЧесТnоk</p>
             </td>
         </tr>
     </table>
     <table  style="margin: 0 auto; min-width: 320px; max-width: 500px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
         <tr>
             <td align="" style="font-style: normal; font-weight: normal; font-size: 18px; line-height: 18px; color: #FFFFFF;">
-                <p style="">1. Показать на что ты способен - отправить аудио или видео файл на почту <a href="mailto:info@chestnokfest.live" style="text-decoration: none; color: #EDC043;">info@chestnokfest.live</a></p>
-                <p style="">2. Написать нам полный состав группы с контактной информацией</p>
+                {% for member in members %}
+                    <p style="">{{ member.nmb }}. {{ member.name }} - {{ member.role }}</p>
+                {% endfor %}
             </td>
         </tr>
     </table>
-    <table  style="margin: 0 auto; min-width: 320px; max-width: 410px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
+    <table  style="margin: 0 auto; min-width: 320px; max-width: 600px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
         <tr>
-            <td align="" style="font-style: normal; font-weight: normal; font-size: 14px; line-height: 14px; color: #9C9C9C;">
-                <a>а. Ф.И.О - Номер телефона - Эл. почта - Роль в группе</a>
-            </td>
-        </tr>
-        <tr>
-            <td align="" style="font-style: normal; font-weight: normal; font-size: 14px; line-height: 14px; color: #9C9C9C;">
-                <a style="">б. Ф.И.О - Номер телефона - Эл. почта - Роль в группе</a>
-            </td>
-        </tr>
-        <tr>
-            <td align="" style="font-style: normal; font-weight: normal; font-size: 14px; line-height: 14px; color: #9C9C9C;">
-                <a style="">в. и. т. д.</a>
+            <td align="center" style="font-style: normal; font-weight: bold; font-size: 18px; font-weight: 400; line-height: 18px; color: #EDC043;">
+                <p style="margin-bottom: 2%;">Индивидуальный номер музыкального коллектива</p>
             </td>
         </tr>
     </table>
     <table  style="margin: 0 auto; min-width: 320px; max-width: 540px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
         <tr>
             <td align="center">
-                <p style="font-style: normal; font-weight: 400; font-size: 17px; line-height: 18px; text-transform: uppercase; color: #EDC043;">мы рассмотрим твою заявку в течении 24 часов!</p>
+                <p style="font-style: normal; font-weight: bold; font-size: 30px; line-height: 18px; text-transform: uppercase; color: #FFFFFF;">{{ id }}</p>
             </td>
         </tr>
     </table>
     <table  style="margin: 0 auto; margin-bottom: 5%; min-width: 320px; max-width: 540px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
         <tr>
             <td align="center">
-                <p style="font-style: normal; font-weight: bold; font-size: 17px; line-height: 18px; color: #FFFFFF;">Наличие собственного инструмента не обязательно!</p>
+                <p style="font-style: normal; font-weight: bold; font-size: 17px; line-height: 18px; color: #FFFFFF;">Состав коллектива внесен в списки пропускного контроля</p>
             </td>
         </tr>
     </table>
-
+    <table  style="margin: 0 auto; min-width: 320px; max-width: 540px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
+        <tr>
+            <td align="center">
+                <p style="font-style: normal; font-weight: 400; font-size: 17px; line-height: 18px; text-transform: uppercase; color: #EDC043;">Дата проведения - 24 августа - 6 сентября 2020</p>
+            </td>
+        </tr>
+    </table>
+    <table  style="margin: 0 auto; margin-bottom: 5%; min-width: 320px; max-width: 540px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
+        <tr>
+            <td align="center">
+                <p style="font-style: normal; font-weight: bold; font-size: 17px; line-height: 18px; color: #FFFFFF;">До встречи на ЧесTnok!</p>
+            </td>
+        </tr>
+    </table>
 
     <table  style="margin: 0 auto; min-width: 320px; max-width: 600px; color: white; background-color: #00060F; width: 100%; font-family: 'Verdana';" bg-color="#00060F">
         <tr>
