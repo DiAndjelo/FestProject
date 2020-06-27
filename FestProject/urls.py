@@ -55,7 +55,11 @@ urlpatterns = [
                                                "Disallow: /tickets/update_ticket\n"
                                                "Disallow: /tickets/adding_payment\n"
                                                "Disallow: /api\n"
+                                               "Disallow: /success_participation\n"
+                                               "Disallow: /success_questions_reservations\n"
+                                               "Disallow: /tickets/payment_redirect\n"
                                                "Disallow: /static\n"
+                                               "Allow: /static/favicon\n"
                                                "Sitemap: https://chestnokfest.live/sitemap.xml",
                                                content_type="text/plain"), name="robots_file"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

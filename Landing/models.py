@@ -12,7 +12,7 @@ class Participation(models.Model):
     consist = models.CharField('Музыкальный состав', max_length=128)
     phone = models.CharField('Номер телефона', max_length=20, null=True, blank=True)
     email = models.EmailField('E-mail', max_length=128, null=True, blank=True)
-    text = models.TextField('Текст', max_length=1024, default='')
+    text = models.TextField('Текст', max_length=1024, default='', blank=True, null=True)
     is_confirmed = models.BooleanField('Подтверждено?', default=False)
     is_email = models.BooleanField('Отправлять сообщение о подтверждении?', default=False)
 
