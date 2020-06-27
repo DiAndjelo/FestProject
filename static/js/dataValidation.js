@@ -114,12 +114,22 @@ $(document).on('blur', '.telName', function(){
 //Функция проверки поля ввода почты
 
 $('#mailReview').on('blur', function(){
-    var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var pattern  = /^\s*(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s*$/;
     if(this.value.length === 0) {
        $('#errorReviewMail').html("Введите электронную почту");
        $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
        return false;
-    } else if (!pattern .test(this.value)) {
+    } else if ($(mail).val().length < 2 ) {
+        $('#errorReviewMail').html("Не менее двух символов");
+        $("#mailReview").addClass('errorInputColor');
+        $("#mailReview").removeClass('successInputColor');
+        return false;
+    } else if ($(mail).val().length > 30 ) {
+        $('#errorReviewMail').html("Не более 30 символов");
+        $("#mailReview").addClass('errorInputColor');
+        $("#mailReview").removeClass('successInputColor');
+        return false;
+     } else if (!pattern .test(this.value)) {
         $('#errorReviewMail').html("Неверный ввод");
         $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
         return false;
@@ -260,12 +270,23 @@ function telValidation(tel, errorID) {
 }
 
 function mailValidation(mail) {
-    var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var pattern  = /^\s*(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s*$/;
     if($(mail).val().length === 0) {
        $('#errorReviewMail').html("Введите электронную почту");
        $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
        return false;
-   } else if (!pattern .test($(mail).val())) {
+   } else if ($(mail).val().length < 2 ) {
+       $('#errorReviewMail').html("Не менее двух символов");
+       $("#mailReview").addClass('errorInputColor');
+       $("#mailReview").removeClass('successInputColor');
+       return false;
+   } else if ($(mail).val().length > 30 ) {
+       $('#errorReviewMail').html("Не более 30 символов");
+       $("#mailReview").addClass('errorInputColor');
+       $("#mailReview").removeClass('successInputColor');
+       return false;
+    }
+    else if (!pattern .test($(mail).val())) {
         $('#errorReviewMail').html("Неверный ввод");
         $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
         return false;
