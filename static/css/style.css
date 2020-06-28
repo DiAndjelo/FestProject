@@ -36,24 +36,15 @@
 }
 
 @-webkit-keyframes autofill {
-  to {
-    color: inherit;
-    background: transparent;
-  }
+    to {
+      color: #ffffff;
+        background: transparent;
+    }
 }
 
-@keyframes autofill {
-  to {
-    color: inherit;
-    background: transparent;
-  }
-}
-
-input:autofill {
-  -webkit-animation-name: autofill;
-          animation-name: autofill;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+input.input_modal:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
 }
 body{
   background: #00060F !important;
@@ -357,7 +348,7 @@ input.input_modal:focus{
 }
 
 .btn-active{
-    
+
   padding: 15px 40px !important;
   border: 2px solid #fff !important;
   font-style: normal;

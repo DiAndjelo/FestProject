@@ -150,4 +150,22 @@
     </div>
   </div>
 </section>
+<script>
+      function stopScroll(e) {
+    var t = e.target;
+    if (t.tagName !== 'INPUT' ||
+        t.type.toLowerCase() !== 'text') return;
+
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+
+    t.style.webkitTransform = 'translate3d(0px,0px,0)';
+    webkitRequestAnimationFrame(function() {
+        t.style.webkitTransform = '';
+    });
+}
+
+document.body.addEventListener('focus', stopScroll);
+document.body.addEventListener('focusin', stopScroll);
+  </script>
 {% endblock %}

@@ -148,7 +148,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="modal fade" style="" id="participation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content p-lg-4 py-2">
@@ -251,7 +251,7 @@
                 <span class="" style="padding-left: 10px !important;"></span>
                 <span>скачать карту</span>
             </a>
-            
+
             <style>a:hover{text-decoration: none;}</style>
             <div class="row my-5 justify-content-center align-items-start m-md-0 px-5 px-md-0 p-md-0">
                 <div class="col-12 col-sm-6 col-md-4">
@@ -1627,15 +1627,15 @@
 <script>
       function stopScroll(e) {
     var t = e.target;
-    if (t.tagName !== 'INPUT' || 
+    if (t.tagName !== 'INPUT' ||
         t.type.toLowerCase() !== 'text') return;
 
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
 
-    t.style.webkitTransform = 'translate3d(0px,-10000px,0)'; 
+    t.style.webkitTransform = 'translate3d(0px,0px,0)';
     webkitRequestAnimationFrame(function() {
-        t.style.webkitTransform = ''; 
+        t.style.webkitTransform = '';
     });
 }
 
