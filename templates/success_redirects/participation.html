@@ -6,9 +6,6 @@
 {% block content %}
     {% block payment_first %}
     {% endblock %}
-    {% block description %}
-
-    {% endblock %}
     <video class="video_background" id="bgvid" playsinline autoplay muted loop>
       <source src="{% static 'img/videos4.mp4' %}" type="video/mp4">
     </video>
@@ -22,7 +19,7 @@
                     <p class="text-center  mt-4 mb-4">На вашу почту отправленно письмо с вашим индивидуальным кодом участника. Просто назовите индивидуальный код на входе фестиваля.</p>
                     <p class="text-center mt-5 mb-4">Можете воспользоваться меню в верхней части страницы, там вы найдёте информацию о <u>проживании</u>, <u>кемпинге</u> и <u>участниках</u> фестиваля.</p>
                     <div class="mb-2 text_fix">
-                        <a href="mailto:info@chestnokfest.live"><u>Общие правила/условия фестиваля</u></a>
+                        <a href="{% static 'pdf/chestnokfest - rules.pdf' %}"><u>Общие правила/условия фестиваля</u></a>
                     </div>
                     <div class="mb-4 text_fix">
                         <a href="mailto:info@chestnokfest.live"><u>Карта общей зоны фестиваля</u></a>

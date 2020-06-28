@@ -53,7 +53,7 @@
     <script>
 
     $(document).ready(function(){
-      $('a[href^="#shedule"], a[href^="#camping"], a[href^="#coop"], a[href^="#org"], *[data-href^="#"]').on('click', function(e){
+      $('a[href^="#shedule"], a[href^="#camping"], a[href^="#coop"], a[href^="#mapfest"], a[href^="#org"], *[data-href^="#"]').on('click', function(e){
           e.preventDefault();
           var t = 500;
           var d = $(this).attr('data-href') ? $(this).attr('data-href') : $(this).attr('href');
@@ -109,6 +109,7 @@
       $('#ex15').zoom();
     });
   </script>
+  
     <title>{% block head_title %}{% endblock %}</title>
   </head>
   <body>

@@ -34,6 +34,27 @@
     font-style: normal;
     font-weight: normal;
 }
+
+@-webkit-keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
+}
+
+@keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
+}
+
+input:autofill {
+  -webkit-animation-name: autofill;
+          animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
 body{
   background: #00060F !important;
   transition: background 11.15s linear;
@@ -312,6 +333,7 @@ input{
 }
 
 input.input_modal{
+  position: relative !importante;
   border-radius: 4px;
   background: 0 !important;
   border: 0;
@@ -650,12 +672,13 @@ background: #020C1C !important;
    font-weight: bold;
    font-size: 14px;
    line-height: 14px;
-   padding: 15px 0px;
+   padding: 15px 0px;;
 }
 .btn_question{
   width: 65%;
 }
 
+}
 .btn_howroad:hover{
   background: #EDC043 !important;
   border: 2px solid #EDC043 !important;

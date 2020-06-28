@@ -19,13 +19,13 @@
                 <div class="col-12 contact_section_block mb-4">
                     <!-- Заголовок контактов -->
                     <h2 class="text-uppercase mt-5">Спасибо!</h2>
-                    <p class="text-center  mt-4 mb-4">Вам скоро перезвонят по оправленному вами номеру для уточнения интересующих вас вопросов.</p>
-                    <p class="text-center mt-5 mb-4">Можете воспользоваться меню в верхней части страницы, там вы найдёте информацию о <u>проживании</u>, <u>кемпинге</u> и <u>участниках</u> фестиваля.</p>
+                    <p class="text-center  mt-4 mb-4">Мы обязательно свяжемся с Вами в течение суток</p>
+                    <p class="text-center mt-5 mb-4">Можете воспользоваться меню в верхней части страницы, там вы найдёте информацию о <a href={% url 'accommodation' %} style="text-decoration: underline;">проживании</a>, <a href="https://chestnokfest.live/accommodation/#camping" style="text-decoration: underline;">кемпинге</a> и <a href={% url 'members' %} style="text-decoration: underline;">участниках</a> фестиваля.</p>
                     <div class="mb-2 text_fix">
-                        <a href="mailto:info@chestnokfest.live"><u>Общие правила/условия фестиваля</u></a>
+                        <a href="{% static 'pdf/chestnokfest - rules.pdf' %}"><u>Общие правила/условия фестиваля</u></a>
                     </div>
                     <div class="mb-4 text_fix">
-                        <a href="mailto:info@chestnokfest.live"><u>Карта общей зоны фестиваля</u></a>
+                        <a href="https://chestnokfest.live/#mapfest"><u>Карта общей зоны фестиваля</u></a>
                     </div>
                     <div class="mb-2 text_fix">
                         <p class="text_fix">По всем вопросам общаться по телефону <a href="tel:89136378982" class="pay_direct_link">+7 (913) 637 - 89 - 82</a> или <a href="mailto:info@chestnokfest.live" class="pay_direct_link">info@chestnokfest.live</a></p>
@@ -38,7 +38,6 @@
                 </div>
             </div>
         </div>
-    </section>
 
     {% block payment_second %}
         </div>

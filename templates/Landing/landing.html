@@ -148,6 +148,7 @@
           </div>
         </div>
       </div>
+      
       <div class="modal fade" style="" id="participation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content p-lg-4 py-2">
@@ -180,30 +181,29 @@
                   <form class="needs-validation" novalidate>
 
                     <div class="row justify-content-between">
-                      <div class="col-12 col-lg-5  mt-2 mt-lg-2">
+                      <div class="col-12 col-lg-6  mt-2 mt-lg-2">
                         <label for="name_Label">Название коллектива:</label>
-                        <input class="input_modal py-2 px-4 text-white w-100" name="name" id="name_label" placeholder="Название" type="text" value="" required autocomplete="off">
+                        <input class="input_modal py-2 px-4 text-white w-100" name="name" id="name_label" placeholder="Название" type="text" value="" required autocomplete="on">
                         <div  class="errorRecord mt-1" id="e_name_label">
                         </div>
                       </div>
-                      <div class="col-12 col-lg-5  mt-2 mt-lg-2">
+                      <div class="col-12 col-lg-6  mt-2 mt-lg-2">
                         <label for="structure">Музыкальный состав:</label>
-                        <input class="input_modal py-2 px-4 text-white w-100" name="consist" id="structure" placeholder="Гитара, бас, ударник, вокалист" required autocomplete="off" type="text" value="" >
+                        <input class="input_modal py-2 px-4 text-white w-100" name="consist" id="structure" placeholder="Гитара, бас, ударник, вокалист" required autocomplete="on" type="text" value="" >
                         <div class="errorRecord mt-1" id="e_structure">
                         </div>
                       </div>
                     </div>
                     <div class="row justify-content-between">
-                      <div class="col-12 col-lg-5  mt-2 mt-lg-2">
+                      <div class="col-12 col-lg-6  mt-2 mt-lg-2">
                           <label for="email">Электронная почта:</label>
-                          <input class="input_modal py-2 px-4 text-white w-100" name="email" id="email" placeholder="Электронная почта" type="text" value="" required autocomplete="off">
+                          <input class="input_modal py-2 px-4 text-white w-100" name="email" id="email" placeholder="Электронная почта" type="text" value="" required autocomplete="on">
                           <div class="errorRecord mt-1" id="e_email">
                           </div>
                       </div>
-                      <div class="d-none d-lg-block col-md-2 text-center abs" style="top: 50px;"></div>
-                      <div class="col-12 col-lg-5  mt-2 mt-lg-2">
+                      <div class="col-12 col-lg-6  mt-2 mt-lg-2">
                         <label for="tel">Телефон:</label>
-                        <input class="input_modal py-2 px-4 text-white w-100" name="phone" id="tel" placeholder="Телефон" type="tel" value="" autocomplete="off" required>
+                        <input class="input_modal py-2 px-4 text-white w-100" name="phone" id="tel" placeholder="Телефон" type="tel" value="" autocomplete="on" required>
                         <div class="errorRecord mt-1" id="e_tel">
                         </div>
                       </div>
@@ -231,7 +231,55 @@
     </section>
 
 
-
+    <section class="pt-3" id="mapfest">
+        <div class="container container-padding-bottom">
+            <div class="row m-0 p-0">
+                <div class="col-12 text-white">
+                    <h5 class="text-uppercase section_title text-center my-0">Карта территории фестиваля</h5>
+                </div>
+            </div>
+            <div class="row mx-0 px-0 justify-content-center align-items-center"  style="padding-top: 50px; padding-bottom: 30px;">
+                <div class="col-12 col-md-10 px-0 px-md-4">
+                    <img name="" src="{% static 'img/mapfest.png' %}" class="w-100 img-fluid">
+                </div>
+            </div>
+            <a href="{% static 'pdf/Карта фестиваля Честнок.pdf' %}" style="width: 184px !important;" class="d-block d-md-none btn btn-showmap mx-auto align-items-center justify-content-center rounded">
+                  <svg width="16"height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 8L8 15L1 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="" style="padding-left: 10px !important;"></span>
+                <span>скачать карту</span>
+            </a>
+            
+            <style>a:hover{text-decoration: none;}</style>
+            <div class="row my-5 justify-content-center align-items-start m-md-0 px-5 px-md-0 p-md-0">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <ul class="list-unstyled text-white my-0" style="font-weight: 300;">
+                        <li><span class="mr-2"><b>1.</b></span>Сцена</li>
+                        <li><span class="mr-2"><b>2.</b></span>Танцпол</li>
+                        <li><span class="mr-2"><b>3.</b></span>Кемпинг + барбекю зона</li>
+                        <li><span class="mr-2"><b>4.</b></span>VIP Кемпинг</li>
+                        <li><span class="mr-2"><b>5.</b></span>Техническая зона</li>
+                        <li><span class="mr-2"><b>6.</b></span>Корпус с номерами</li>
+                        <li><span class="mr-2"><b>7.</b></span>Фудкорт</li>
+                        <li><span class="mr-2"><b>8.</b></span>Хостелы</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <ul class="list-unstyled text-white my-0" style="font-weight: 300;">
+                        <li><span class="mr-2"><b>9.</b></span>Общая зона</li>
+                        <li><span class="mr-2"><b>9.1.</b></span>Релакс зона</li>
+                        <li><span class="mr-2"><b>9.2.</b></span>Резервный кемпинг</li>
+                        <li><span class="mr-2"><b>9.3.</b></span>Зона для пикника</li>
+                        <li><span class="mr-2"><b>10.</b></span>Тропа в горный лес</li>
+                        <li><span class="mr-2"><b>11.</b></span>КПП + организационный пункт</li>
+                        <li><span class="mr-2"><b>12.</b></span>Парковка</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="" id="shedule">
@@ -1283,7 +1331,7 @@
                 </div>
                 <div class="d-flex flex-row justify-content-center border-0 d-block mt-3">
                   <div class="col-10 col-sm-8">
-                    <input class="input_modal py-2 px-4 text-white w-100" name="phone" id="telBack" placeholder="Телефон" type="tel" value="" required autocomplete="off" style="background: #020C1C !important;">
+                    <input class="input_modal py-2 px-4 text-white w-100" name="phone" id="telBack" placeholder="Телефон" type="tel" value="" required autocomplete="on" style="background: #020C1C !important;">
                     <div class="errorRecord mt-1" id="e_telBack"></div>
                   </div>
                 </div>
@@ -1576,7 +1624,24 @@
         </div>
       </div>
     </section>
+<script>
+      function stopScroll(e) {
+    var t = e.target;
+    if (t.tagName !== 'INPUT' || 
+        t.type.toLowerCase() !== 'text') return;
 
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+
+    t.style.webkitTransform = 'translate3d(0px,-10000px,0)'; 
+    webkitRequestAnimationFrame(function() {
+        t.style.webkitTransform = ''; 
+    });
+}
+
+document.body.addEventListener('focus', stopScroll);
+document.body.addEventListener('focusin', stopScroll);
+  </script>
     <script>
     (function() {
       'use strict';

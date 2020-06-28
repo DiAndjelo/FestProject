@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}
+    Оплата
+{% endblock %}
+{% block content %}
+    {% block payment_first %}
+    {% endblock %}
+    <video class="video_background" id="bgvid" playsinline autoplay muted loop>
+      <source src="{% static 'img/videos4.mp4' %}" type="video/mp4">
+    </video>
+    <section style="padding-top: 110px;"class="successPaySection tickets_payment mb-5">
+        <div class="container">
+            <div class="row m-0 align-items-center">
+                <div class="col-12 tickets_payment_section">
+                    <div class="row align-items-center mt-5 successPayBlock">
+                        <div class="col-12 col-sm-4 mb-3 text-center text-sm-right">
+                            <svg width="111" height="111" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M55.5004 0C24.8973 0 0 24.897 0 55.4996C0 86.1023 24.8973 110.999 55.5004 110.999C86.103 110.999 111 86.1023 111 55.4996C111 24.897 86.103 0 55.5004 0ZM55.5004 101.901C29.9141 101.901 9.0983 81.0859 9.0983 55.4996C9.0983 29.9138 29.9141 9.0983 55.5004 9.0983C81.0862 9.0983 101.902 29.9138 101.902 55.4996C101.902 81.0859 81.0862 101.901 55.5004 101.901Z" fill="#9FFFB4"/>
+                            <path d="M79.5094 34.1978L46.5568 67.1507L31.4907 52.0847C29.714 50.3083 26.8338 50.3083 25.0571 52.0847C23.2808 53.8614 23.2808 56.7416 25.0571 58.5183L43.34 76.8011C44.2283 77.6891 45.3926 78.1335 46.5568 78.1335C47.721 78.1335 48.8852 77.6891 49.7736 76.8011L85.943 40.6318C87.7193 38.855 87.7193 35.9749 85.943 34.1982C84.1662 32.4215 81.2857 32.4215 79.5094 34.1978Z" fill="#9FFFB4"/>
+                            </svg>
+                        </div>
+                        <div class="col-12 col-sm-8 text-center text-sm-left">
+                            <p>Ваш платёж обработан успешно!</p>
+                            <p>Мы отправили Ваши электронные билеты на почту <span><b>bagration1976@gmail.com</b></span></p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-payment" name="button">Вернуться на главную</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    {% block payment_second %}
+        </div>
+    {% endblock %}
+{% endblock %}
