@@ -34,9 +34,77 @@ $(document).on('input', '.secondName', function(){
    }
 });
 
+$(document).on('blur', '.secondName', function(){
+   if(this.value.length === 0) {
+      $('#esname' + $(this).attr("data-id")).html("Введите фамилию");
+      $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+      $("#fam" + i).empty();
+      return false;
+  } else if (this.value.length < 2 ) {
+      $('#esname' + $(this).attr("data-id")).html("Не менее двух символов");
+      $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+      $("#fam" + i).empty();
+      return false;
+  } else if (this.value.length > 30 ) {
+      $('#esname' + $(this).attr("data-id")).html("Не более 30 символов");
+      $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+      $("#fam" + i).empty();
+      return false;
+   } else {
+      var re = /^[А-яЁ ё]{0,}$/;
+      if(!re.test(this.value)) {
+           $('#esname' + $(this).attr("data-id")).html("Только русские буквы");
+           $('#sname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+           $("#fam" + i).empty();
+           return false;
+      } else {
+           $('#esname' + $(this).attr("data-id")).html("");
+           $('#sname' + $(this).attr("data-id")).removeClass('errorInputColor').addClass('successInputColor');
+
+           $("#fam" + $(this).attr("data-id")).empty();
+           $("#fam" + $(this).attr("data-id")).append($('#sname'+ $(this).attr("data-id")).val());
+           return true;
+      }
+   }
+});
+
 //Функция проверки поля ввода имени
 
 $(document).on('input', '.firstName', function(){
+   if(this.value.length === 0) {
+      $('#efname' + $(this).attr("data-id")).html("Введите имя");
+      $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+      $("#nam" + i).empty();
+      return false;
+  } else if (this.value.length < 2 ) {
+      $('#efname' + $(this).attr("data-id")).html("Не менее двух символов");
+      $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+      $("#nam" + i).empty();
+      return false;
+  } else if (this.value.length > 30 ) {
+      $('#efname' + $(this).attr("data-id")).html("Не более 30 символов");
+      $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+      $("#nam" + i).empty();
+      return false;
+   } else {
+      var re = /^[А-яЁ ё]{0,}$/;
+      if(!re.test(this.value)) {
+           $('#efname' + $(this).attr("data-id")).html("Только русские буквы");
+           $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
+           $("#nam" + i).empty();
+           return false;
+      } else {
+           $('#efname' + $(this).attr("data-id")).html("");
+           $('#fname' + $(this).attr("data-id")).removeClass('errorInputColor').addClass('successInputColor');
+
+           $("#nam" + $(this).attr("data-id")).empty();
+           $("#nam" + $(this).attr("data-id")).append($('#fname'+ $(this).attr("data-id")).val());
+           return true;
+      }
+   }
+});
+
+$(document).on('blur', '.firstName', function(){
    if(this.value.length === 0) {
       $('#efname' + $(this).attr("data-id")).html("Введите имя");
       $('#fname' + $(this).attr("data-id")).removeClass('successInputColor').addClass('errorInputColor');
