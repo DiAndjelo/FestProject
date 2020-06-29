@@ -136,6 +136,14 @@ $("#email").on("blur", function() {
    }
 });
 
+$("#about_you").on("blur", function() {
+    if(this.value.length === 0) {
+       $("#about_you").removeClass('successInputColor');
+    } else {
+        $("#about_you").addClass('successInputColor');
+   }
+});
+
 $( document ).ready(function() {
     $("#memberBtn").click(
 		function(){

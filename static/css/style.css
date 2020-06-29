@@ -343,7 +343,12 @@ textarea.input_modal{
   box-shadow: 0px 0px 0px 1px #285193;
 }
 input.input_modal:focus{
-  box-shadow: 0px 0px 0px 1px #5983C7;
+  box-shadow: 0px 0px 0px 1px #5983C7 !important;
+  border: 0 !important;
+}
+textarea.input_modal:focus{
+  box-shadow: 0px 0px 0px 1px #5983C7 !important;
+  outline: none !important;
   border: 0 !important;
 }
 
