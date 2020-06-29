@@ -119,12 +119,12 @@ $('#mailReview').on('blur', function(){
        $('#errorReviewMail').html("Введите электронную почту");
        $("#mailReview").removeClass('successInputColor').addClass('errorInputColor');
        return false;
-    } else if ($(mail).val().length < 2 ) {
+    } else if ($("#mailReview").val().length < 2 ) {
         $('#errorReviewMail').html("Не менее двух символов");
         $("#mailReview").addClass('errorInputColor');
         $("#mailReview").removeClass('successInputColor');
         return false;
-    } else if ($(mail).val().length > 30 ) {
+    } else if ($("#mailReview").val().length > 30 ) {
         $('#errorReviewMail').html("Не более 30 символов");
         $("#mailReview").addClass('errorInputColor');
         $("#mailReview").removeClass('successInputColor');
