@@ -34,9 +34,14 @@ $(document).ready(function(){
 
     form_adding_ticket.on('submit', function(e){
         e.preventDefault();
-        nmb = nmb + 1;
-        console.log(nmb);
-        updatingTicket(nmb, is_adding=true);
+        if (nmb!==8){
+            nmb = nmb + 1;
+            console.log(nmb);
+            updatingTicket(nmb, is_adding=true);
+        }
+        else{
+            console.log('8')
+        }
     });
 
     form_remove_ticket.on('submit', function (e) {
