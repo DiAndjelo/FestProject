@@ -109,7 +109,13 @@
       $('#ex15').zoom();
     });
   </script>
-  
+  <script>
+      window.onload = function(){
+          if(window.innerWidth >= 1024)
+          document.getElementById('video-container').innerHTML = '<video class="video_background" playsinline autoplay muted loop id="bgvid"><source src="../static/img/videos4.mp4" type="video/webm"><source src="videos/medoff-video.mp4" type="video/mp4"></video>'
+      };
+  </script>
+
     <title>{% block head_title %}{% endblock %}</title>
   </head>
   <body>
