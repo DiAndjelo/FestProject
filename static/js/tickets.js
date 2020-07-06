@@ -14,6 +14,7 @@ $('.errorSName').attr('id', 'esname'+ i);
 $('.errorFName').attr('id', 'efname'+ i);
 $('.errorTel').attr('id', 'etel'+ i);
 $('span.number_r').append(i);
+$('span.number_r_tick').append(i);
 
 $('.tickets_total').attr('id', 'tic'+ i);
 $('.fam').attr('id', 'fam'+ i);
@@ -57,6 +58,8 @@ $(document).on('click', '#btn_add_ticket', function(){
         $('.fam:last').empty();
         $('.nam:last').empty();
         $('.num:last').empty();
+        $('span.number_r_tick:last').empty();
+        $('span.number_r_tick:last').append(i);
         $('p.total_summ').empty();
         $('p.total_summ').append(suball * 3000+" руб.");
     }
